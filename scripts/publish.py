@@ -141,8 +141,25 @@ def load_plan():
                 errors.append(f"{tag}: do not use <h1>, the page title is the H1")
             if DASHES.search(html):
                 errors.append(f"{tag}: article.html contains an em or en dash")
-            if len(re.sub(r"<[^>]+>", " ", html).split()) < 150:
+            text = htmllib.unescape(re.sub(r"<[^>]+>", " ", html))
+            words = len(text.split())
+            if words < 150:
                 errors.append(f"{tag}: article is under 150 words")
+            hy = sorted(set(re.findall(r"\b\w+-\w+\b", text)))
+            if hy:
+                errors.append(f"{tag}: hyphenated words in visible text: {', '.join(hy[:8])}")
+            links = len(re.findall(r"<a\s[^>]*href=", html, re.I))
+            if links < 10:
+                errors.append(f"{tag}: only {links} links, need at least 10")
+            kw = (m.get("keyword") or "").lower()
+            if kw:
+                heads = " ".join(re.findall(r"<h[234][^>]*>(.*?)</h[234]>", html, re.I | re.S)).lower()
+                if kw not in heads:
+                    errors.append(f"{tag}: keyword '{kw}' not in any H2 to H4")
+                n = text.lower().count(kw)
+                if n < max(5, words // 250):
+                    errors.append(f"{tag}: keyword '{kw}' used {n} times, too few for {words} words")
+            m["_words"] = words
             m["_html"] = html
             thumb = folder / m.get("thumbnail", "thumbnail.webp")
             m["_thumb_path"] = thumb if thumb.is_file() else None

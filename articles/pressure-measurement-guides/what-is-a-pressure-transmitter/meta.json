@@ -1,12 +1,13 @@
 {
   "title": "What Is a Pressure Transmitter and How Does It Work?",
   "slug": "what-is-a-pressure-transmitter",
-  "subtitle": "Working principle, types, output signals and selection tips",
+  "keyword": "pressure transmitter",
+  "subtitle": "Working principle, sensor types, output signals, selection and installation",
   "meta_title": "What Is a Pressure Transmitter? Working Principle and Types",
-  "meta_description": "Learn what a pressure transmitter is, how it works, the main sensor types, 4 to 20 mA and HART outputs, and how to select one for your process.",
-  "summary": "Working principle, sensor types, output signals and selection tips for pressure transmitters.",
+  "meta_description": "Learn what a pressure transmitter is, how it works, the main sensor types, 4 to 20 mA and HART outputs, and how to select and install one correctly.",
+  "summary": "Working principle, sensor types, output signals, selection and installation tips for pressure transmitters.",
+  "card_title": "What Is a Pressure Transmitter",
   "status": "draft",
   "sort_order": 0,
-  "thumbnail": "thumbnail.webp",
-  "card_title": "What Is a Pressure Transmitter"
+  "thumbnail": "thumbnail.webp"
 }
