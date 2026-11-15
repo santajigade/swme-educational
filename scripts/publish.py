@@ -163,6 +163,12 @@ def load_plan():
             m["_html"] = html
             thumb = folder / m.get("thumbnail", "thumbnail.webp")
             m["_thumb_path"] = thumb if thumb.is_file() else None
+            info = folder / "infographic.webp"
+            m["_info_path"] = info if info.is_file() else None
+            if m.get("infographic") and "{{infographic}}" not in html:
+                errors.append(f"{tag}: meta has infographic but article.html lacks {{{{infographic}}}}")
+            if m.get("published") and not re.match(r"^\d{4}-\d{2}-\d{2}$", m["published"]):
+                errors.append(f"{tag}: published must be YYYY-MM-DD")
             m["_category"] = cat_slug
             m["_kind"] = "article"
             m["_dir"] = folder
@@ -342,6 +348,61 @@ def fields_for(item, content=None):
     }
 
 
+SITE = os.environ.get("SWME_BASE_URL", "https://swme.ae").rstrip("/")
+
+
+def nice_date(iso):
+    import datetime
+    try:
+        return datetime.date.fromisoformat(iso).strftime("%d %B %Y").lstrip("0")
+    except Exception:
+        return iso or ""
+
+
+def article_html(a, cat, images):
+    """Article body with header (featured image, byline, share bar) and infographic."""
+    color = cat.get("color", "#5f3dc4")
+    url = f"{SITE}/{a['slug']}"
+    from urllib.parse import quote
+    u, t = quote(url, safe=""), quote(a["title"], safe="")
+    feat, fh = images.url(a.get("_thumb_path"))
+    feat_tag = (f'<img class="img-fluid rounded-3 w-100 mb-3" src="{esc(feat)}" data-hash="{fh}" '
+                f'alt="{esc(a["title"])}" style="aspect-ratio:16/10;object-fit:cover;">') if feat else ""
+    mins = max(1, round(a.get("_words", 0) / 200))
+    meta = (
+        '<div class="d-flex flex-wrap align-items-center gap-3 small text-muted mb-3">'
+        f'<span><i class="bi bi-person-circle me-1" style="color:{color};"></i>Written by <strong>{esc(a.get("author", "SWME Technical Staff"))}</strong></span>'
+        f'<span><i class="bi bi-clock me-1" style="color:{color};"></i>{mins} min read</span>'
+        + (f'<span><i class="bi bi-calendar3 me-1" style="color:{color};"></i>Published on {esc(nice_date(a.get("published")))}</span>' if a.get("published") else "")
+        + '</div>'
+    )
+    shares = [
+        ("LinkedIn", "bi-linkedin", "#0a66c2", f"https://www.linkedin.com/sharing/share-offsite/?url={u}"),
+        ("Facebook", "bi-facebook", "#1877f2", f"https://www.facebook.com/sharer/sharer.php?u={u}"),
+        ("X", "bi-twitter-x", "#000000", f"https://twitter.com/intent/tweet?url={u}&text={t}"),
+        ("WhatsApp", "bi-whatsapp", "#25d366", f"https://wa.me/?text={t}%20{u}"),
+        ("Email", "bi-envelope-fill", "#6c757d", f"mailto:?subject={t}&body={u}"),
+    ]
+    share = ('<div class="d-flex flex-wrap align-items-center gap-2 pb-3 mb-4 border-bottom">'
+             '<span class="small fw-semibold me-1">Share this guide:</span>'
+             + "".join(f'<a class="d-inline-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none" '
+                       f'href="{esc(h)}" target="_blank" rel="noopener" title="Share on {n}" aria-label="Share on {n}" '
+                       f'style="width:34px;height:34px;background:{c};"><i class="bi {i}"></i></a>' for n, i, c, h in shares)
+             + '</div>')
+    body = a["_html"]
+    info = a.get("_info_path")
+    if info and "{{infographic}}" in body:
+        iu, ih = images.url(info)
+        spec = a.get("infographic", {})
+        fig = (f'<figure class="my-5 text-center"><img class="img-fluid rounded-3 border" src="{esc(iu)}" data-hash="{ih}" '
+               f'alt="{esc(spec.get("alt") or spec.get("title") or a["title"])}" loading="lazy">'
+               f'<figcaption class="small text-muted mt-2">{esc(spec.get("title", ""))}</figcaption></figure>') if iu else ""
+        body = body.replace("{{infographic}}", fig)
+    else:
+        body = body.replace("{{infographic}}", "")
+    return feat_tag + meta + share + "\n" + body
+
+
 def file_hash(path):
     return hashlib.sha1(path.read_bytes()).hexdigest()[:12]
 
@@ -482,6 +543,8 @@ def run(args):
         if c["slug"] not in pages:
             do_save(c, parent_id)
 
+    images = ImageCache(admin, args.dry_run)
+
     # 2. articles
     for a in articles:
         cat = pages.get(a["_category"])
@@ -489,10 +552,11 @@ def run(args):
             print(f"  ! {a['slug']}: category page '{a['_category']}' missing, skipped")
             failed += 1
             continue
-        do_save(a, cat["id"])
+        if pages.get(a["slug"], {}).get("id"):
+            images.seed(admin.page_content(pages[a["slug"]]["id"]))
+        do_save(a, cat["id"], article_html(a, all_cats[a["_category"]], images))
 
     # 3. rebuild category listing pages
-    images = ImageCache(admin, args.dry_run)
     touched = {c["slug"] for c in categories} | {a["_category"] for a in articles}
     for slug in sorted(touched, key=lambda s: all_cats[s].get("sort_order", 0)):
         c = all_cats[slug]

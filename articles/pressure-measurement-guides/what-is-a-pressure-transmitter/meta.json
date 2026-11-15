@@ -9,5 +9,29 @@
   "card_title": "What Is a Pressure Transmitter",
   "status": "draft",
   "sort_order": 0,
-  "thumbnail": "thumbnail.webp"
+  "thumbnail": "thumbnail.webp",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "infographic": {
+    "title": "How a Pressure Transmitter Works",
+    "alt": "Infographic showing how a pressure transmitter works in four steps from diaphragm to 4 to 20 mA output",
+    "steps": [
+      [
+        "Process pressure",
+        "Liquid, gas or steam pressure acts on a thin metal or ceramic diaphragm."
+      ],
+      [
+        "Sensing element",
+        "A strain gauge, capacitive cell or silicon chip turns the tiny diaphragm movement into an electrical change."
+      ],
+      [
+        "Signal conditioning",
+        "Electronics amplify the signal, compensate for temperature and linearize the output."
+      ],
+      [
+        "Standard output",
+        "The transmitter sends 4 to 20 mA, HART or fieldbus data to the PLC or DCS."
+      ]
+    ]
+  }
 }

@@ -146,6 +146,61 @@ def make(theme, title, out):
     d.rectangle((56*S, y + 18*S, 156*S, y + 26*S), fill=(255, 196, 64))
     img.convert("RGB").resize((W, H), Image.LANCZOS).save(out, "WEBP", quality=85)
 
+def make_infographic(theme, spec, out):
+    """Vertical step infographic: title band, numbered steps with arrows, footer."""
+    base = hex2rgb(theme["color"])
+    light = mix(base, (255, 255, 255), 0.9)
+    Wd = 1200 * S
+    steps = spec["steps"]
+    tf, lf, bf, sf = font(54*S), font(36*S), font(28*S) if False else None, font(24*S)
+    try:
+        bf = ImageFont.truetype(glob.glob("/usr/share/fonts/**/DejaVuSans.ttf", recursive=True)[0], 28*S)
+    except Exception:
+        bf = font(28*S)
+    tmp = ImageDraw.Draw(Image.new("RGB", (10, 10)))
+    rows = []
+    for label, text in steps:
+        lines = wrap(tmp, text, bf, Wd - 420*S)
+        rows.append((label, lines, max(150*S, int(70*S + len(lines) * 40*S))))
+    head_h, gap, foot_h = 260*S, 50*S, 110*S
+    Ht = head_h + 60*S + sum(r[2] for r in rows) + gap*(len(rows)-1) + 60*S + foot_h
+    img = Image.new("RGB", (Wd, Ht), "white")
+    d = ImageDraw.Draw(img)
+    # header
+    d.rectangle((0, 0, Wd, head_h), fill=base)
+    ov = Image.new("RGBA", (Wd, head_h), (0, 0, 0, 0))
+    background(ImageDraw.Draw(ov), theme["icon"], base)
+    img.paste(Image.alpha_composite(Image.new("RGBA", (Wd, head_h), base + (255,)), ov).convert("RGB"), (0, 0))
+    d = ImageDraw.Draw(img)
+    icon(d, theme["icon"], Wd - 170*S, head_h//2, 75*S, (255, 255, 255), (255, 196, 64))
+    tl = wrap(d, spec["title"], tf, Wd - 420*S)
+    y = head_h/2 - len(tl)*66*S/2
+    for ln in tl:
+        d.text((70*S, y), ln, font=tf, fill="white"); y += 66*S
+    # steps
+    y = head_h + 60*S
+    for i, (label, lines, h) in enumerate(rows):
+        d.rounded_rectangle((60*S, y, Wd - 60*S, y + h), radius=24*S, fill=light)
+        cx, cy, r = 150*S, y + h//2, 52*S
+        d.ellipse((cx-r, cy-r, cx+r, cy+r), fill=base)
+        num = str(i + 1)
+        d.text((cx - d.textlength(num, font=lf)/2, cy - 24*S), num, font=lf, fill="white")
+        ty = y + (h - (46*S + len(lines)*40*S)) / 2
+        d.text((250*S, ty), label, font=lf, fill=mix(base, (0, 0, 0), 0.35))
+        ty += 52*S
+        for ln in lines:
+            d.text((250*S, ty), ln, font=bf, fill=(60, 60, 70)); ty += 40*S
+        if i < len(rows) - 1:
+            ay = y + h + 8*S
+            d.polygon([(cx - 22*S, ay), (cx + 22*S, ay), (cx, ay + gap - 16*S)], fill=base)
+        y += h + gap
+    # footer
+    d.rectangle((0, Ht - foot_h, Wd, Ht), fill=mix(base, (0, 0, 0), 0.3))
+    ft = spec.get("footer", "swme.ae  |  Educational Guides")
+    d.text((70*S, Ht - foot_h/2 - 14*S), ft, font=sf, fill="white")
+    img.resize((Wd//S, Ht//S), Image.LANCZOS).save(out, "WEBP", quality=88)
+
+
 def main():
     cfg = json.loads((ROOT / "config/categories.json").read_text(encoding="utf-8"))
     only_missing = "--missing" in sys.argv
@@ -159,9 +214,13 @@ def main():
         for meta in sorted((ROOT / "articles" / c["slug"]).glob("*/meta.json")):
             m = json.loads(meta.read_text(encoding="utf-8"))
             t = meta.parent / m.get("thumbnail", "thumbnail.webp")
-            if only_missing and t.exists(): continue
+            if only_missing and t.exists() and (not m.get("infographic") or (meta.parent / "infographic.webp").exists()):
+                continue
             short = m.get("card_title") or m["title"].split("?")[0].split(":")[0]
             make(th, short, t); print("article ", t.parent.name)
+            if m.get("infographic"):
+                make_infographic(th, m["infographic"], meta.parent / "infographic.webp")
+                print("infographic", t.parent.name)
 
 if __name__ == "__main__":
     main()

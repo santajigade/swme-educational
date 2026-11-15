@@ -8,7 +8,7 @@
 </ul>
 </div>
 
-<p>A <strong>pressure transmitter</strong> is a field instrument that measures the pressure of a liquid, gas or steam and converts it into a standard electrical signal. The control system, usually a PLC or DCS, reads this signal to monitor the process, run control loops and trigger alarms. In Oil and Gas, Petrochemical, Water and Utilities plants, it is one of the most common instruments on site.</p>
+<p>A <strong>pressure transmitter</strong> is a field instrument that measures the pressure of a liquid, gas or steam and converts it into a standard electrical signal. The control system, usually a <a href="https://zentaengineering.com/automation-robotics/plc-hardware-selection/" target="_blank" rel="noopener">PLC</a> or DCS, reads this signal to monitor the process, run control loops and trigger alarms. In Oil and Gas, Petrochemical, Water and Utilities plants, it is one of the most common instruments on site, and SWME supplies <a href="/pressure-transmitters">pressure transmitters</a> from leading principals for all of these industries.</p>
 
 <p>This guide explains how a pressure transmitter works, which sensor technologies are used, how output signals differ and how to select and install the right model for your application.</p>
 
@@ -43,22 +43,23 @@
 
 <p>Every pressure transmitter follows the same basic chain from process to signal. Understanding this chain helps you diagnose problems in the field.</p>
 
-<div class="row g-3 my-4">
-<div class="col-sm-6 col-lg-3"><div class="p-3 rounded-3 h-100 border"><div class="fw-bold mb-1" style="color:#5f3dc4;">1. Diaphragm</div><div class="small">Process pressure pushes on a thin metal or ceramic diaphragm, which deflects by a very small amount.</div></div></div>
-<div class="col-sm-6 col-lg-3"><div class="p-3 rounded-3 h-100 border"><div class="fw-bold mb-1" style="color:#5f3dc4;">2. Sensing element</div><div class="small">A strain gauge, capacitive cell or silicon chip converts that movement into an electrical change.</div></div></div>
-<div class="col-sm-6 col-lg-3"><div class="p-3 rounded-3 h-100 border"><div class="fw-bold mb-1" style="color:#5f3dc4;">3. Electronics</div><div class="small">The electronics amplify the signal, correct for temperature effects and linearize the output.</div></div></div>
-<div class="col-sm-6 col-lg-3"><div class="p-3 rounded-3 h-100 border"><div class="fw-bold mb-1" style="color:#5f3dc4;">4. Output</div><div class="small">The transmitter sends a 4 to 20 mA current, a digital protocol or both to the control system.</div></div></div>
-</div>
+{{infographic}}
 
 <p>With its sealed sensor and its compensated electronics, a modern transmitter stays stable over years of operation. Many models also include diagnostics that warn you when the sensor or the loop develops a fault.</p>
 
+<div class="d-flex gap-3 p-4 rounded-3 my-4" style="background:#fff9db;border:1px solid #ffe066;">
+<i class="bi bi-lightbulb-fill fs-3" style="color:#f59f00;"></i>
+<div><p class="fw-bold mb-1">Did you know?</p>
+<p class="mb-0">The 4 to 20 mA standard starts at 4 mA instead of 0 mA for a reason. This live zero lets the system tell the difference between a true zero reading and a broken cable. It also gives the transmitter enough current to power its own electronics. You can convert any current value to engineering units with this <a href="https://zentacalculator.com/engineering/4-20ma-scaling/" target="_blank" rel="noopener">4 to 20 mA scaling calculator</a>.</p></div>
+</div>
+
 <h2 id="sensors">Pressure Transmitter Sensor Technologies</h2>
 
-<p>The sensor is the heart of the instrument. Each technology has strengths that suit different processes. You can read more background on the <a href="https://en.wikipedia.org/wiki/Pressure_sensor" target="_blank" rel="noopener">principles of pressure sensors</a>.</p>
+<p>The sensor is the heart of the instrument. Each technology has strengths that suit different processes. You can read more background on the <a href="https://www.instrumentationblog.in/category/process-instrumentation/pressure-measurement/" target="_blank" rel="noopener">principles of pressure measurement</a>.</p>
 
 <div class="table-responsive my-4">
-<table class="table table-bordered align-middle">
-<thead class="table-light"><tr><th>Sensor type</th><th>Principle</th><th>Strengths</th><th>Typical use</th></tr></thead>
+<table class="table table-bordered table-striped align-middle mb-0" style="--bs-table-striped-bg:#f8f6ff;border-color:#e3ddf7;">
+<thead><tr><th style="background:#ece8fb;color:#3b2a8c;">Sensor type</th><th style="background:#ece8fb;color:#3b2a8c;">Principle</th><th style="background:#ece8fb;color:#3b2a8c;">Strengths</th><th style="background:#ece8fb;color:#3b2a8c;">Typical use</th></tr></thead>
 <tbody>
 <tr><td>Piezoresistive silicon</td><td>Resistance changes with strain on a silicon chip</td><td>High sensitivity, compact</td><td>General process, hydraulics</td></tr>
 <tr><td>Capacitive</td><td>Diaphragm movement changes capacitance</td><td>Very high accuracy, low ranges</td><td>Differential pressure, flow and level</td></tr>
@@ -78,15 +79,15 @@
 <div class="col-md-4"><div class="p-4 rounded-3 h-100" style="background:#f3f0ff;"><h3 class="h6 fw-bold">Differential pressure</h3><p class="small mb-0">The difference between two points. It is used for flow, level and filter monitoring.</p></div></div>
 </div>
 
-<p>For differential measurement, SWME supplies dedicated <a href="/differential-pressure-transmitters">differential pressure transmitters</a> designed for high static pressure and stable zero.</p>
+<p>To convert between references, use this <a href="https://zentacalculator.com/engineering/absolute-gauge-pressure/" target="_blank" rel="noopener">absolute to gauge pressure calculator</a>. For differential measurement, SWME supplies dedicated <a href="/differential-pressure-transmitters">differential pressure transmitters</a> designed for high static pressure and stable zero.</p>
 
 <h2 id="outputs">Output Signals and Communication</h2>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Current_loop" target="_blank" rel="noopener">4 to 20 mA current loop</a> remains the industry standard. It resists electrical noise over long cable runs, and a reading of 0 mA immediately shows a broken wire.</p>
+<p>The <a href="https://instrumentationblog.in/calculators/instrumentation-signal/" target="_blank" rel="noopener">4 to 20 mA current loop</a> remains the industry standard. It resists electrical noise over long cable runs, and a reading of 0 mA immediately shows a broken wire.</p>
 
 <div class="table-responsive my-4">
-<table class="table table-bordered align-middle">
-<thead class="table-light"><tr><th>Signal</th><th>Type</th><th>Main benefit</th></tr></thead>
+<table class="table table-bordered table-striped align-middle mb-0" style="--bs-table-striped-bg:#f8f6ff;border-color:#e3ddf7;">
+<thead><tr><th style="background:#ece8fb;color:#3b2a8c;">Signal</th><th style="background:#ece8fb;color:#3b2a8c;">Type</th><th style="background:#ece8fb;color:#3b2a8c;">Main benefit</th></tr></thead>
 <tbody>
 <tr><td>4 to 20 mA</td><td>Analog</td><td>Simple, robust, universal</td></tr>
 <tr><td>4 to 20 mA with HART</td><td>Analog plus digital</td><td>Remote configuration and diagnostics on the same wires</td></tr>
@@ -118,8 +119,8 @@
 <h2 id="installation">Pressure Transmitter Installation Best Practice</h2>
 
 <div class="row g-3 my-4">
-<div class="col-md-6"><div class="p-4 rounded-3 h-100 border"><h3 class="h6 fw-bold">Liquid service</h3><ul class="small mb-0"><li>Mount the transmitter below the tapping point.</li><li>Trapped gas then rises back into the process.</li><li>Fill impulse lines completely before start up.</li></ul></div></div>
-<div class="col-md-6"><div class="p-4 rounded-3 h-100 border"><h3 class="h6 fw-bold">Gas service</h3><ul class="small mb-0"><li>Mount the transmitter above the tapping point.</li><li>Condensate then drains back into the process.</li><li>Slope impulse lines continuously toward the tap.</li></ul></div></div>
+<div class="col-md-6"><div class="p-4 rounded-3 h-100" style="background:#e7f5ff;border:1px solid #d0ebff;"><h3 class="h6 fw-bold" style="color:#1864ab;"><i class="bi bi-droplet-fill me-2"></i>Liquid service</h3><ul class="small mb-0"><li>Mount the transmitter below the tapping point.</li><li>Trapped gas then rises back into the process.</li><li>Fill impulse lines completely before start up.</li></ul></div></div>
+<div class="col-md-6"><div class="p-4 rounded-3 h-100" style="background:#ebfbee;border:1px solid #d3f9d8;"><h3 class="h6 fw-bold" style="color:#2b8a3e;"><i class="bi bi-wind me-2"></i>Gas service</h3><ul class="small mb-0"><li>Mount the transmitter above the tapping point.</li><li>Condensate then drains back into the process.</li><li>Slope impulse lines continuously toward the tap.</li></ul></div></div>
 </div>
 
 <p>Use a valve manifold so you can isolate, vent and check zero without removing the instrument. SWME supplies <a href="/manifolds-fittings">manifolds and fittings</a> for single and differential transmitters. In addition, keep impulse lines short and protect them from freezing or overheating.</p>
@@ -137,12 +138,8 @@
 
 <h2 id="faq">Frequently Asked Questions</h2>
 
-<details open class="mb-3"><summary class="fw-semibold">What is the difference between a pressure transmitter and a pressure transducer?</summary><p class="mt-2">A transducer converts pressure into a raw electrical signal, often in millivolts. A transmitter adds electronics that condition this signal into a standard output such as 4 to 20 mA, suitable for long cable runs.</p></details>
-
-<details open class="mb-3"><summary class="fw-semibold">How often should a pressure transmitter be calibrated?</summary><p class="mt-2">Most plants check critical transmitters every 12 to 24 months. Safety loops and custody transfer points often need shorter intervals, as defined by your site procedures.</p></details>
-
-<details open class="mb-3"><summary class="fw-semibold">Can one pressure transmitter measure level?</summary><p class="mt-2">Yes. A gauge or differential pressure transmitter can calculate liquid level from hydrostatic pressure, provided the liquid density is known and stable.</p></details>
-
-<details open class="mb-3"><summary class="fw-semibold">What does turndown ratio mean?</summary><p class="mt-2">Turndown is how far the maximum range can be reduced while keeping specified performance. For example, a 100 bar sensor with 10:1 turndown can be ranged down to 10 bar.</p></details>
-
-<p class="mt-4">SWME supplies a wide range of <a href="/pressure-transmitters">pressure transmitters</a> from leading principals for Oil and Gas, Petrochemical, Water and Utilities applications across the GCC. If you need help choosing the right model, <a href="/inquiry">send us your process details</a> and our engineers will recommend a suitable solution.</p>
+<div class="border rounded-3 px-4 py-2 my-4" style="background:#faf9ff;">
+<details open class="py-2 border-bottom"><summary class="fw-semibold">What is the difference between a pressure transmitter and a pressure transducer?</summary><p class="mt-2 mb-1 small">A transducer converts pressure into a raw electrical signal, often in millivolts. A transmitter adds electronics that condition this signal into a standard output such as 4 to 20 mA.</p></details>
+<details class="py-2 border-bottom"><summary class="fw-semibold">How often should a pressure transmitter be calibrated?</summary><p class="mt-2 mb-1 small">Most plants check critical transmitters every 12 to 24 months. Safety loops often need shorter intervals, as defined by your site procedures.</p></details>
+<details class="py-2"><summary class="fw-semibold">Can a pressure transmitter measure level?</summary><p class="mt-2 mb-1 small">Yes. It can calculate liquid level from <a href="https://www.instrumentationblog.in/hydrostatic-pressure-formula/" target="_blank" rel="noopener">hydrostatic pressure</a> when the density is known. See this guide to <a href="https://www.instrumentationblog.in/dp-transmitter-level-measurement/" target="_blank" rel="noopener">DP transmitter level measurement</a>.</p></details>
+</div>
