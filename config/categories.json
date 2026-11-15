@@ -8,7 +8,7 @@
     "summary": "Practical guides on instrumentation basics, selection, installation and maintenance from SWME engineers.",
     "intro": "<p>Welcome to the SWME Educational section, a free learning resource for engineers, technicians and buyers in the Oil and Gas, Petrochemical, Water and Utilities industries. Here you will find clear, practical guides on how instruments work, how to select the right device for your process, and how to install, calibrate and maintain it for reliable performance.</p>\n<p>Our articles cover pressure, temperature, level and flow measurement, gas detection and industrial valves, written by the engineering team that has supported projects across the GCC since 2004.</p>",
     "grid_heading": "Browse by topic",
-    "status": "draft"
+    "status": "published"
   },
   "categories": [
     {
@@ -21,7 +21,7 @@
       "intro": "<p>Explore practical guides on flow measurement for liquids, gases and steam. Learn how each flow meter technology works, where it fits best and how to install and maintain it for accurate readings.</p>",
       "thumbnail": "assets/categories/flow.webp",
       "sort_order": 10,
-      "status": "draft",
+      "status": "published",
       "color": "#1971c2",
       "icon": "bi-water"
     },
@@ -35,7 +35,7 @@
       "intro": "<p>Understand gauge, absolute and differential pressure, and learn how to choose the right gauge, transmitter, switch or diaphragm seal for your process conditions.</p>",
       "thumbnail": "assets/categories/pressure.webp",
       "sort_order": 20,
-      "status": "draft",
+      "status": "published",
       "color": "#5f3dc4",
       "icon": "bi-speedometer2"
     },
@@ -49,7 +49,7 @@
       "intro": "<p>Learn how continuous and point level instruments work in tanks, silos and vessels, and how to select the right technology for liquids, slurries and bulk solids.</p>",
       "thumbnail": "assets/categories/level.webp",
       "sort_order": 30,
-      "status": "draft",
+      "status": "published",
       "color": "#0c8599",
       "icon": "bi-moisture"
     },
@@ -63,7 +63,7 @@
       "intro": "<p>Get clear explanations of RTDs, thermocouples, thermowells and transmitters, with practical advice on accuracy, response time and installation.</p>",
       "thumbnail": "assets/categories/temperature.webp",
       "sort_order": 40,
-      "status": "draft",
+      "status": "published",
       "color": "#d9480f",
       "icon": "bi-thermometer-half"
     },
@@ -77,7 +77,7 @@
       "intro": "<p>Learn how gas sensors work, where to place fixed detectors and how to calibrate and bump test portable units to keep your people and plant safe.</p>",
       "thumbnail": "assets/categories/gas-detection.webp",
       "sort_order": 50,
-      "status": "draft",
+      "status": "published",
       "color": "#2b8a3e",
       "icon": "bi-exclamation-triangle"
     },
@@ -91,7 +91,7 @@
       "intro": "<p>Compare valve types, understand API and ASME standards, and learn how to choose materials, pressure classes and end connections for demanding service.</p>",
       "thumbnail": "assets/categories/valves.webp",
       "sort_order": 60,
-      "status": "draft",
+      "status": "published",
       "color": "#e67700",
       "icon": "bi-gear-wide-connected"
     }
