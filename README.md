@@ -76,6 +76,18 @@ swme.ae blocks GitHub's servers, so publishing runs on a self-hosted runner
 * Run the workflow manually with `all` for a full resync.
 * Updating an existing slug updates that page instead of creating a duplicate.
 
+## Writing articles (recommended)
+
+Write each article as `tools/content/<slug>.py` using the template components
+(takeaways, toc, rows, table, dyk, twocol, checklist, mistakes, faq, INFOGRAPHIC),
+then run:
+
+```
+python tools/build_article.py <slug>
+python tools/make_card_images.py --missing
+python scripts/publish.py --validate
+```
+
 ## Card images
 
 `python tools/make_card_images.py` regenerates category and article card images
