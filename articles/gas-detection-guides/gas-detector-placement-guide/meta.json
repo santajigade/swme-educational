@@ -1,0 +1,37 @@
+{
+  "title": "Gas Detector Placement Guide: Where to Install Fixed Detectors",
+  "keyword": "gas detector placement",
+  "subtitle": "Gas density, leak sources, airflow, mounting height and coverage",
+  "meta_title": "Gas Detector Placement Guide for Fixed Detectors",
+  "meta_description": "A practical gas detector placement guide: how gas density, leak sources, ventilation and mounting height decide where to install fixed gas detectors.",
+  "summary": "Where to install fixed gas detectors based on gas density, leak sources and airflow.",
+  "card_title": "Gas Detector Placement Guide",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 2,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "Where to Mount Gas Detectors",
+    "alt": "Infographic showing gas detector placement heights for heavy, light and air density gases",
+    "steps": [
+      [
+        "Heavier than air",
+        "H2S, propane, butane: mount 0.3 to 0.5 m above floor or grade."
+      ],
+      [
+        "Lighter than air",
+        "Methane, hydrogen, ammonia: mount near the ceiling or highest point."
+      ],
+      [
+        "Similar to air",
+        "CO and O2: mount in the breathing zone, about 1.5 m above floor."
+      ],
+      [
+        "Near leak sources",
+        "Place detectors close to pumps, valves, flanges and compressor seals."
+      ]
+    ]
+  },
+  "slug": "gas-detector-placement-guide"
+}

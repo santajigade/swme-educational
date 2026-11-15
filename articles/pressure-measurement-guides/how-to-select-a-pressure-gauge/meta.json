@@ -1,0 +1,37 @@
+{
+  "title": "How to Select a Pressure Gauge: A Practical Checklist",
+  "keyword": "select a pressure gauge",
+  "subtitle": "Range, accuracy class, dial size, materials, filling and accessories",
+  "meta_title": "How to Select a Pressure Gauge: Practical Checklist",
+  "meta_description": "Learn how to select a pressure gauge: range, accuracy class, dial size, wetted materials, liquid filling, connections and protective accessories.",
+  "summary": "A step by step checklist for choosing the right range, accuracy, materials and accessories.",
+  "card_title": "How to Select a Pressure Gauge",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 2,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "Pressure Gauge Selection in 4 Steps",
+    "alt": "Infographic showing four steps to select a pressure gauge: range, accuracy, materials and installation",
+    "steps": [
+      [
+        "Set the range",
+        "Choose a full scale about twice the normal working pressure."
+      ],
+      [
+        "Pick the accuracy class",
+        "Class 1.0 for process lines, 0.25 or better for test gauges."
+      ],
+      [
+        "Match the materials",
+        "Select wetted parts and case materials for the medium and site."
+      ],
+      [
+        "Protect the gauge",
+        "Add liquid filling, snubbers, siphons or seals where needed."
+      ]
+    ]
+  },
+  "slug": "how-to-select-a-pressure-gauge"
+}

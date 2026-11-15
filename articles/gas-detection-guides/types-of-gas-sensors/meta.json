@@ -1,0 +1,37 @@
+{
+  "title": "Types of Gas Sensors Explained for Industrial Safety",
+  "keyword": "gas sensors",
+  "subtitle": "Catalytic, infrared, electrochemical, PID and semiconductor technologies",
+  "meta_title": "Types of Gas Sensors Explained for Industrial Safety",
+  "meta_description": "Learn how the main types of gas sensors work: catalytic bead, infrared, electrochemical, PID and semiconductor, with strengths, limits and uses.",
+  "summary": "How catalytic, infrared, electrochemical, PID and semiconductor gas sensors work.",
+  "card_title": "Types of Gas Sensors",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 1,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "Which Gas Sensor for Which Hazard?",
+    "alt": "Infographic matching gas hazards to the right types of gas sensors",
+    "steps": [
+      [
+        "Flammable gases",
+        "Catalytic bead or infrared sensors measure 0 to 100% LEL."
+      ],
+      [
+        "Toxic gases",
+        "Electrochemical cells measure H2S, CO, Cl2 and NH3 in ppm."
+      ],
+      [
+        "Oxygen",
+        "Electrochemical oxygen cells warn of deficiency or enrichment."
+      ],
+      [
+        "Solvents and VOCs",
+        "Photoionisation detectors measure low ppm organic vapours."
+      ]
+    ]
+  },
+  "slug": "types-of-gas-sensors"
+}

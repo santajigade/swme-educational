@@ -1,0 +1,37 @@
+{
+  "title": "Types of Flow Meters Explained: Principles and Selection",
+  "keyword": "types of flow meters",
+  "subtitle": "How each flow meter works, where it fits best and how to choose",
+  "meta_title": "Types of Flow Meters Explained: Principles and Uses",
+  "meta_description": "Compare the main types of flow meters: differential pressure, electromagnetic, vortex, turbine, ultrasonic, Coriolis and variable area, with selection tips.",
+  "summary": "Working principles, strengths and typical uses of the main flow meter technologies.",
+  "card_title": "Types of Flow Meters",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 1,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "Choosing a Flow Meter",
+    "alt": "Infographic showing four questions to choose between the main types of flow meters",
+    "steps": [
+      [
+        "What is the fluid?",
+        "Liquid, gas, steam or slurry, and is it conductive or clean?"
+      ],
+      [
+        "Volume or mass?",
+        "Volumetric meters measure flow rate; Coriolis measures mass directly."
+      ],
+      [
+        "Pipe and range",
+        "Check line size, flow range, turndown and straight run available."
+      ],
+      [
+        "Accuracy and cost",
+        "Balance accuracy, pressure loss, maintenance and installed cost."
+      ]
+    ]
+  },
+  "slug": "types-of-flow-meters"
+}

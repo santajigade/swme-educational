@@ -30,7 +30,7 @@ Approved on 15 November 2026 (sample: what-is-a-pressure-transmitter).
   zentacalculator.com and zentaengineering.com, then official sites.
 * Focus keyword in at least one H2 to H4 and used naturally throughout.
 * Plain, professional whitepaper tone with "For example," and "In addition,".
-* About 1,300 to 1,500 words.
+* About 800 to 1,300 words, concise and scannable.
 
 ## meta.json
 title, slug, keyword, subtitle, meta_title (max 60), meta_description (max 160),

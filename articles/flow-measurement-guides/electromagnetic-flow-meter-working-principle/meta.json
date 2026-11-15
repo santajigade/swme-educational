@@ -1,0 +1,37 @@
+{
+  "title": "Electromagnetic Flow Meter Working Principle Explained",
+  "keyword": "electromagnetic flow meter",
+  "subtitle": "Faraday's law, liners, electrodes, grounding and installation",
+  "meta_title": "Electromagnetic Flow Meter Working Principle Explained",
+  "meta_description": "Learn how an electromagnetic flow meter works, from Faraday's law to liners, electrodes, grounding, sizing and installation rules for accurate readings.",
+  "summary": "Faraday's law, liner and electrode choice, grounding and installation for magnetic flow meters.",
+  "card_title": "Electromagnetic Flow Meter Working Principle",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 2,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "How a Magnetic Flow Meter Works",
+    "alt": "Infographic showing how an electromagnetic flow meter measures conductive liquid flow in four steps",
+    "steps": [
+      [
+        "Magnetic field",
+        "Coils around the pipe create a magnetic field across the flow."
+      ],
+      [
+        "Moving conductor",
+        "The conductive liquid acts as a conductor moving through the field."
+      ],
+      [
+        "Induced voltage",
+        "Electrodes pick up a small voltage proportional to flow velocity."
+      ],
+      [
+        "Flow output",
+        "The transmitter multiplies velocity by pipe area and sends the flow signal."
+      ]
+    ]
+  },
+  "slug": "electromagnetic-flow-meter-working-principle"
+}

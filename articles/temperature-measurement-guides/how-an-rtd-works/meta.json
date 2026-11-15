@@ -1,0 +1,37 @@
+{
+  "title": "How an RTD Works: Pt100 Principle, Wiring and Accuracy",
+  "keyword": "RTD",
+  "subtitle": "Resistance temperature detectors, Pt100 values, 2, 3 and 4 wire circuits",
+  "meta_title": "How an RTD Works: Pt100 Principle, Wiring and Accuracy",
+  "meta_description": "Learn how an RTD works, why Pt100 sensors are used, accuracy classes, 2, 3 and 4 wire connections and installation tips for accurate temperature.",
+  "summary": "Pt100 principle, accuracy classes, wiring options and installation tips for RTD sensors.",
+  "card_title": "How an RTD Works",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 1,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "How an RTD Measures Temperature",
+    "alt": "Infographic showing how an RTD Pt100 sensor converts temperature into a resistance and a 4 to 20 mA signal",
+    "steps": [
+      [
+        "Heat reaches the element",
+        "Process heat passes through the thermowell and sheath to the platinum element."
+      ],
+      [
+        "Resistance changes",
+        "Platinum resistance rises about 0.385 ohm per degree Celsius for a Pt100."
+      ],
+      [
+        "Small current applied",
+        "The transmitter passes a tiny current and measures the voltage across the element."
+      ],
+      [
+        "Temperature output",
+        "Resistance is converted to temperature and sent as 4 to 20 mA or HART."
+      ]
+    ]
+  },
+  "slug": "how-an-rtd-works"
+}

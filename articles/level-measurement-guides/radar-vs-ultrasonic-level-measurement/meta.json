@@ -1,0 +1,37 @@
+{
+  "title": "Radar vs Ultrasonic Level Measurement: Which One to Choose?",
+  "keyword": "radar vs ultrasonic level",
+  "subtitle": "Working principles, strengths, limits and selection for tanks and silos",
+  "meta_title": "Radar vs Ultrasonic Level Measurement Compared",
+  "meta_description": "Compare radar vs ultrasonic level measurement: how each works, effect of vapour, foam and temperature, accuracy, cost and how to choose for your tank.",
+  "summary": "How radar and ultrasonic level transmitters work and when to choose each one.",
+  "card_title": "Radar vs Ultrasonic Level Measurement",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 1,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "Noncontact Level Measurement",
+    "alt": "Infographic showing how radar vs ultrasonic level measurement works using time of flight",
+    "steps": [
+      [
+        "Send a pulse",
+        "The sensor sends a sound pulse (ultrasonic) or microwave pulse (radar) down to the surface."
+      ],
+      [
+        "Surface reflection",
+        "The pulse reflects from the liquid or solid surface back to the sensor."
+      ],
+      [
+        "Time of flight",
+        "The sensor measures the travel time and calculates the distance."
+      ],
+      [
+        "Level output",
+        "Tank height minus distance gives level, sent as 4 to 20 mA or HART."
+      ]
+    ]
+  },
+  "slug": "radar-vs-ultrasonic-level-measurement"
+}

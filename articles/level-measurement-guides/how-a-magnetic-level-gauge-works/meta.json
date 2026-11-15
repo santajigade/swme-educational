@@ -1,0 +1,37 @@
+{
+  "title": "How a Magnetic Level Gauge Works",
+  "keyword": "magnetic level gauge",
+  "subtitle": "Float, flags, switches and transmitters for safe visual level indication",
+  "meta_title": "How a Magnetic Level Gauge Works: Principle and Uses",
+  "meta_description": "Learn how a magnetic level gauge works, its float and flag indicator, add on switches and transmitters, materials, sizing and installation tips.",
+  "summary": "Float and flag principle, add on switches and transmitters, and selection tips.",
+  "card_title": "How a Magnetic Level Gauge Works",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 2,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "Inside a Magnetic Level Gauge",
+    "alt": "Infographic showing how a magnetic level gauge works with float, magnet and flag indicator",
+    "steps": [
+      [
+        "Chamber fills",
+        "The side chamber connects to the vessel, so liquid rises to the same level."
+      ],
+      [
+        "Float follows",
+        "A float with a built in magnet rides on the liquid surface."
+      ],
+      [
+        "Flags rotate",
+        "Magnetic flags outside the chamber turn from white to red as the float passes."
+      ],
+      [
+        "Signals added",
+        "Optional switches and transmitters read the same magnet for remote use."
+      ]
+    ]
+  },
+  "slug": "how-a-magnetic-level-gauge-works"
+}

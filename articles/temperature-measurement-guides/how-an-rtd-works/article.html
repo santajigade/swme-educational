@@ -1,0 +1,47 @@
+<div class="p-4 rounded-3 mb-4" style="background:#fff1ea;border-left:4px solid #d9480f;"><p class="fw-semibold mb-2" style="color:#d9480f;">Key takeaways</p><ul class="mb-0"><li>An RTD measures temperature through the change in resistance of a metal, usually platinum.</li><li>A Pt100 has 100 ohms at 0 degrees Celsius and about 138.5 ohms at 100 degrees Celsius.</li><li>Three wire and four wire circuits cancel the resistance of the connecting cables.</li><li>RTD sensors are more accurate and stable than thermocouples but cover a lower temperature range.</li></ul></div>
+
+<p>A resistance temperature detector, or <strong>RTD</strong>, is the most common sensor for accurate process temperature between about minus 200 and plus 600 degrees Celsius. It is used in pipelines, tanks, heat exchangers and HVAC systems across every industry.</p>
+<p>This guide explains how an RTD works, what the Pt100 tables mean and how to wire the sensor for the best accuracy. SWME supplies <a href="/rtd-thermocouples">RTD and thermocouple sensors</a>, <a href="/temperature-transmitters">temperature transmitters</a> and <a href="/thermowells">thermowells</a>.</p>
+
+<div class="border rounded-3 p-4 mb-4"><p class="fw-semibold mb-2">In this guide</p><ol class="mb-0"><li><a href="#principle">Working principle</a></li><li><a href="#pt100">Pt100 and Pt1000 values</a></li><li><a href="#accuracy">Accuracy classes</a></li><li><a href="#wiring">RTD wiring: 2, 3 and 4 wire</a></li><li><a href="#vs">RTD or thermocouple?</a></li><li><a href="#mistakes">Common mistakes</a></li><li><a href="#faq">FAQ</a></li></ol></div>
+
+<h2 id="principle">How an RTD Works</h2>
+
+<p>The electrical resistance of a pure metal increases as it gets hotter. Platinum is the preferred metal because its resistance changes in a very stable, repeatable and almost linear way. The sensing element is either a fine wire coil or a thin platinum film on a ceramic substrate.</p>
+<p>The transmitter passes a small, constant current through the element and measures the voltage across it. Using Ohm's law, it calculates the resistance and then converts it to temperature. For example, a measured resistance of 119.4 ohms corresponds to about 50 degrees Celsius for a Pt100.</p>
+
+{{infographic}}
+
+<h2 id="pt100">Pt100 and Pt1000 Values</h2>
+
+<div class="table-responsive my-4"><table class="table table-bordered table-striped align-middle mb-0" style="--bs-table-striped-bg:#fff1ea;border-color:#ffe3d5;"><thead><tr><th style="background:#ffe3d5;color:#a33608;">Temperature</th><th style="background:#ffe3d5;color:#a33608;">Pt100 resistance</th><th style="background:#ffe3d5;color:#a33608;">Pt1000 resistance</th></tr></thead><tbody><tr><td>Minus 50 degrees Celsius</td><td>80.31 ohm</td><td>803.1 ohm</td></tr><tr><td>0 degrees Celsius</td><td>100.00 ohm</td><td>1000.0 ohm</td></tr><tr><td>50 degrees Celsius</td><td>119.40 ohm</td><td>1194.0 ohm</td></tr><tr><td>100 degrees Celsius</td><td>138.51 ohm</td><td>1385.1 ohm</td></tr><tr><td>200 degrees Celsius</td><td>175.86 ohm</td><td>1758.6 ohm</td></tr></tbody></table></div>
+
+<p>These values follow the IEC 60751 standard. You can calculate any point with the <a href="https://zentacalculator.com/engineering/pt100-resistance/" target="_blank" rel="noopener">Pt100 and Pt1000 resistance calculator</a>. A Pt1000 has ten times the resistance, so cable resistance matters less, which makes it popular in building automation.</p>
+
+<div class="d-flex gap-3 p-4 rounded-3 my-4" style="background:#fff9db;border:1px solid #ffe066;"><i class="bi bi-lightbulb-fill fs-3" style="color:#f59f00;"></i><div><p class="fw-bold mb-1">Did you know?</p><p class="mb-0">A Pt100 changes by only about 0.385 ohm per degree Celsius. That means 1 ohm of extra cable resistance looks like an error of more than 2.5 degrees Celsius. This is why two wire connections are rarely used for accurate process measurement. Check the effect with the <a href="https://zentacalculator.com/engineering/rtd-lead-wire-error/" target="_blank" rel="noopener">RTD lead wire error calculator</a>.</p></div></div>
+
+<h2 id="accuracy">Accuracy Classes</h2>
+
+<div class="my-3"><div class="p-3 mb-2 rounded-3" style="background:#fff1ea;border-left:4px solid #d9480f;"><strong style="color:#d9480f;">Class AA (1/3 DIN):</strong> plus or minus 0.1 degrees Celsius at 0 degrees Celsius; for laboratory and critical measurements.</div><div class="p-3 mb-2 rounded-3" style="background:#fff1ea;border-left:4px solid #d9480f;"><strong style="color:#d9480f;">Class A:</strong> plus or minus 0.15 degrees Celsius at 0 degrees Celsius; for precise process control.</div><div class="p-3 mb-2 rounded-3" style="background:#fff1ea;border-left:4px solid #d9480f;"><strong style="color:#d9480f;">Class B:</strong> plus or minus 0.3 degrees Celsius at 0 degrees Celsius; the standard industrial choice.</div></div>
+
+<p>Tolerance grows with temperature, so a class B sensor at 200 degrees Celsius may be off by about 1.3 degrees Celsius. In addition, the transmitter and installation add their own errors.</p>
+
+<h2 id="wiring">RTD Wiring: 2, 3 and 4 Wire</h2>
+
+<div class="row g-3 my-4"><div class="col-md-6"><div class="p-4 rounded-3 h-100" style="background:#e7f5ff;border:1px solid #d0ebff;"><h3 class="h5 fw-bold" style="color:#1864ab;"><i class="bi bi-diagram-2 me-2"></i>2 and 3 wire</h3><ul class="mb-0"><li>2 wire: cable resistance adds directly to the reading.</li><li>3 wire: a third lead lets the transmitter subtract cable resistance.</li><li>3 wire is the industrial standard for most process RTD loops.</li></ul></div></div><div class="col-md-6"><div class="p-4 rounded-3 h-100" style="background:#ebfbee;border:1px solid #d3f9d8;"><h3 class="h5 fw-bold" style="color:#2b8a3e;"><i class="bi bi-diagram-3 me-2"></i>4 wire</h3><ul class="mb-0"><li>Separate leads carry current and measure voltage.</li><li>Cable resistance is almost fully cancelled.</li><li>Used for laboratory, custody and very long cable runs.</li></ul></div></div></div>
+
+<p>Mounting a head transmitter on the sensor shortens the RTD cable to a few centimetres and sends a robust 4 to 20 mA signal to the control room. See this practical guide to <a href="https://www.instrumentationblog.in/temperature-transmitter-wiring/" target="_blank" rel="noopener">temperature transmitter wiring</a>.</p>
+
+<h2 id="vs">RTD or Thermocouple?</h2>
+
+<div class="table-responsive my-4"><table class="table table-bordered table-striped align-middle mb-0" style="--bs-table-striped-bg:#fff1ea;border-color:#ffe3d5;"><thead><tr><th style="background:#ffe3d5;color:#a33608;">Factor</th><th style="background:#ffe3d5;color:#a33608;">RTD</th><th style="background:#ffe3d5;color:#a33608;">Thermocouple</th></tr></thead><tbody><tr><td>Typical range</td><td>Minus 200 to 600 degrees Celsius</td><td>Up to 1,700 degrees Celsius</td></tr><tr><td>Accuracy</td><td>Higher</td><td>Lower</td></tr><tr><td>Long term stability</td><td>Excellent</td><td>Drifts at high temperature</td></tr><tr><td>Response time</td><td>Slower</td><td>Faster</td></tr><tr><td>Cost</td><td>Higher</td><td>Lower</td></tr></tbody></table></div>
+
+<p>For a deeper comparison at high temperatures, read our blog on <a href="/blog/rtd-vs-thermocouple-high-temperature-guide">RTD vs thermocouple for high temperature</a>. Every RTD should also be protected by a well; see <a href="/what-is-a-thermowell">what is a thermowell</a>.</p>
+
+<h2 id="mistakes">Common Mistakes to Avoid</h2>
+
+<div class="my-3"><div class="p-3 mb-2 rounded-3" style="background:#fff4e6;border-left:4px solid #f08c00;"><strong style="color:#d9480f;">Two wire connection on long cables.</strong> Cable resistance shows up as a large temperature offset.</div><div class="p-3 mb-2 rounded-3" style="background:#fff4e6;border-left:4px solid #f08c00;"><strong style="color:#d9480f;">Too short immersion length.</strong> Heat conducted along the stem makes the reading too low.</div><div class="p-3 mb-2 rounded-3" style="background:#fff4e6;border-left:4px solid #f08c00;"><strong style="color:#d9480f;">Wrong curve in the transmitter.</strong> Pt100 and Pt1000, or different alpha values, give large errors.</div><div class="p-3 mb-2 rounded-3" style="background:#fff4e6;border-left:4px solid #f08c00;"><strong style="color:#d9480f;">Vibration without support.</strong> Wire wound elements can crack; use thin film or spring loaded designs.</div></div>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+
+<div class="border rounded-3 px-4 py-2 my-4" style="background:#fff1ea;"><details open class="py-2 border-bottom"><summary class="fw-semibold">What does Pt100 mean?</summary><p class="mt-2 mb-1">Pt is the chemical symbol for platinum, and 100 is the resistance in ohms at 0 degrees Celsius.</p></details><details class="py-2 border-bottom"><summary class="fw-semibold">Is an RTD better than a thermocouple?</summary><p class="mt-2 mb-1">An RTD is more accurate and stable below about 600 degrees Celsius. A thermocouple is better for very high temperatures and fast response.</p></details><details class="py-2"><summary class="fw-semibold">How do I test an RTD?</summary><p class="mt-2 mb-1">Disconnect it and measure the resistance with a multimeter, then compare it with the Pt100 table for the known temperature.</p></details></div>

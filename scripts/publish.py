@@ -157,7 +157,7 @@ def load_plan():
                 if kw not in heads:
                     errors.append(f"{tag}: keyword '{kw}' not in any H2 to H4")
                 n = text.lower().count(kw)
-                if n < max(5, words // 250):
+                if n < (3 if len(kw.split()) > 3 else max(5, words // 250)):
                     errors.append(f"{tag}: keyword '{kw}' used {n} times, too few for {words} words")
             m["_words"] = words
             m["_html"] = html

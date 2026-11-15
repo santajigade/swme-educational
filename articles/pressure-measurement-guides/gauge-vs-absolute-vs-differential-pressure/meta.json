@@ -1,0 +1,37 @@
+{
+  "title": "Gauge vs Absolute vs Differential Pressure Explained",
+  "keyword": "gauge vs absolute vs differential pressure",
+  "subtitle": "Reference points, formulas, examples and how to choose the right measurement",
+  "meta_title": "Gauge vs Absolute vs Differential Pressure Explained",
+  "meta_description": "Understand gauge vs absolute vs differential pressure, how each is referenced, how to convert between them and which one your application needs.",
+  "summary": "Reference points, conversions, examples and selection tips for the three pressure types.",
+  "card_title": "Gauge vs Absolute vs Differential Pressure",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 1,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "Three Ways to Measure Pressure",
+    "alt": "Infographic comparing gauge, absolute and differential pressure reference points",
+    "steps": [
+      [
+        "Absolute pressure",
+        "Measured from a perfect vacuum. Zero means no pressure at all."
+      ],
+      [
+        "Atmospheric pressure",
+        "About 1.013 bar at sea level. It changes with weather and altitude."
+      ],
+      [
+        "Gauge pressure",
+        "Measured from local atmosphere. Absolute pressure minus atmospheric pressure."
+      ],
+      [
+        "Differential pressure",
+        "The difference between two process points, independent of atmosphere."
+      ]
+    ]
+  },
+  "slug": "gauge-vs-absolute-vs-differential-pressure"
+}

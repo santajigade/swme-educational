@@ -1,0 +1,37 @@
+{
+  "title": "What Is a Thermowell and Why Does It Matter?",
+  "keyword": "thermowell",
+  "subtitle": "Types, materials, immersion length and wake frequency calculation",
+  "meta_title": "What Is a Thermowell? Types, Materials and Sizing",
+  "meta_description": "Learn what a thermowell is, the main types and materials, how to choose immersion length and why wake frequency calculations prevent failures.",
+  "summary": "Types, materials, immersion length and wake frequency basics for thermowells.",
+  "card_title": "What Is a Thermowell",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "published",
+  "sort_order": 2,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "title": "Thermowell Selection in 4 Steps",
+    "alt": "Infographic showing four steps to select a thermowell: type, material, length and wake frequency check",
+    "steps": [
+      [
+        "Choose the type",
+        "Threaded, socket weld, weld in or flanged, to suit the pipe and pressure."
+      ],
+      [
+        "Select the material",
+        "Match the bar stock to the fluid, temperature and corrosion risk."
+      ],
+      [
+        "Set immersion length",
+        "Place the sensor tip in the central part of the flow for a true reading."
+      ],
+      [
+        "Check wake frequency",
+        "Calculate per ASME PTC 19.3 TW to avoid vibration and fatigue failure."
+      ]
+    ]
+  },
+  "slug": "what-is-a-thermowell"
+}
