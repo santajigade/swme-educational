@@ -170,6 +170,20 @@ class Admin:
         self.base = base.rstrip("/")
         self.s = requests.Session()
         self.s.headers["User-Agent"] = "SWME-Educational-Publisher/1.0"
+        orig = self.s.request
+
+        def request_with_retry(method, url, **kw):
+            import requests as rq
+            for attempt in range(4):
+                try:
+                    return orig(method, url, **kw)
+                except (rq.ConnectionError, rq.Timeout) as e:
+                    if attempt == 3:
+                        raise
+                    wait = 5 * (attempt + 1)
+                    print(f"    connection problem ({type(e).__name__}), retrying in {wait}s")
+                    time.sleep(wait)
+        self.s.request = request_with_retry
         self.email, self.password = email, password
 
     def url(self, path):
