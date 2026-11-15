@@ -1,0 +1,11 @@
+name: diag
+on: workflow_dispatch
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          getent ahosts swme.ae || true
+          curl -4 -sS -o /dev/null -w "v4 %{http_code} %{time_connect}\n" --max-time 20 https://swme.ae/ || echo v4 fail
+          curl -6 -sS -o /dev/null -w "v6 %{http_code}\n" --max-time 20 https://swme.ae/ || echo v6 fail
+          curl -sS --max-time 15 https://api.ipify.org; echo
