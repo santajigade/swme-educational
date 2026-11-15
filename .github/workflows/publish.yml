@@ -68,4 +68,8 @@ jobs:
           SWME_PASSWORD: ${{ secrets.SWME_PASSWORD }}
         run: |
           case "${{ inputs.mode }}" in
-            all)
+            all)     python scripts/publish.py ;;
+            dry-run) python scripts/publish.py --dry-run ;;
+            *)       git diff --name-only HEAD~1 HEAD > changed.txt || git ls-files > changed.txt
+                     python scripts/publish.py --changed changed.txt ;;
+          esac
