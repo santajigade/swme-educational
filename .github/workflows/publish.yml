@@ -1,0 +1,71 @@
+name: Publish to swme.ae Educational
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "articles/**"
+      - "config/**"
+      - "assets/**"
+  pull_request:
+    paths:
+      - "articles/**"
+      - "config/**"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "changed = only new/edited articles, all = full sync, dry-run = test login only"
+        type: choice
+        options: [changed, all, dry-run]
+        default: changed
+
+concurrency:
+  group: swme-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate articles
+        run: python scripts/publish.py --validate
+
+      - name: List changed files
+        if: github.event_name == 'push'
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            git ls-files > changed.txt
+          else
+            git diff --name-only "$BEFORE" "${{ github.sha }}" > changed.txt
+          fi
+          cat changed.txt
+
+      - name: Publish (push)
+        if: github.event_name == 'push'
+        env:
+          SWME_BASE_URL: ${{ vars.SWME_BASE_URL || 'https://swme.ae' }}
+          SWME_EMAIL: ${{ secrets.SWME_EMAIL }}
+          SWME_PASSWORD: ${{ secrets.SWME_PASSWORD }}
+        run: python scripts/publish.py --changed changed.txt
+
+      - name: Publish (manual)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          SWME_BASE_URL: ${{ vars.SWME_BASE_URL || 'https://swme.ae' }}
+          SWME_EMAIL: ${{ secrets.SWME_EMAIL }}
+          SWME_PASSWORD: ${{ secrets.SWME_PASSWORD }}
+        run: |
+          case "${{ inputs.mode }}" in
+            all)
