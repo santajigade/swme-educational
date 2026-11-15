@@ -142,30 +142,30 @@ def make(theme, title, out, text_only=False):
         img.convert("RGB").resize((W, H), Image.LANCZOS).save(out, "WEBP", quality=85)
         return
     if title:
-        cx, cy, r = int(W*S*0.76), int(H*S*0.5), int(H*S*0.25)
+        cx, cy, r = int(W*S*0.5), int(H*S*0.37), int(H*S*0.15)
     else:
         cx, cy, r = int(W*S*0.5), int(H*S*0.5), int(H*S*0.3)
     halo = Image.new("RGBA", img.size, (0, 0, 0, 0))
-    ImageDraw.Draw(halo).ellipse((cx-r*1.6, cy-r*1.6, cx+r*1.6, cy+r*1.6), fill=(255, 255, 255, 34))
+    ImageDraw.Draw(halo).ellipse((cx-r*1.75, cy-r*1.75, cx+r*1.75, cy+r*1.75), fill=(255, 255, 255, 34))
     img = Image.alpha_composite(img, halo)
     d = ImageDraw.Draw(img)
     icon(d, theme["icon"], cx, cy, r, (255, 255, 255), (255, 196, 64))
     if not title:
         img.convert("RGB").resize((W, H), Image.LANCZOS).save(out, "WEBP", quality=85)
         return
-    maxw = W*S*0.46
-    size = 58
+    maxw = W*S*0.6
+    size = 50
     while True:
         fnt = font(size*S)
         lines = wrap(d, title, fnt, maxw)
-        if (len(lines) <= 3 and all(d.textlength(l, font=fnt) <= maxw for l in lines)) or size <= 28:
+        if (len(lines) <= 1 and d.textlength(lines[0], font=fnt) <= maxw) or size <= 30:
             break
         size -= 2
     lh = fnt.size*1.18
-    y = H*S/2 - lh*len(lines)/2
+    y = H*S*0.66
     for ln in lines:
-        d.text((56*S, y), ln, font=fnt, fill="white"); y += lh
-    d.rectangle((56*S, y + 18*S, 156*S, y + 26*S), fill=(255, 196, 64))
+        d.text(((W*S - d.textlength(ln, font=fnt))/2, y), ln, font=fnt, fill="white"); y += lh
+    d.rectangle((W*S/2 - 40*S, y + 12*S, W*S/2 + 40*S, y + 19*S), fill=(255, 196, 64))
     img.convert("RGB").resize((W, H), Image.LANCZOS).save(out, "WEBP", quality=85)
 
 def render_infographic(theme, spec, shown=None, active=None, needle=300):
