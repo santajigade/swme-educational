@@ -580,6 +580,24 @@ def run(args):
         return 1
     parent_id = pages[parent_slug]["id"]
 
+    if filt is not None:
+        all_c, all_a = load_plan()[2], load_plan()[3]
+        have_c = {c["slug"] for c in categories}
+        have_a = {a["slug"] for a in articles}
+        miss_c = [c for c in all_c if c["slug"] not in pages and c["slug"] not in have_c]
+        miss_a = [a for a in all_a if a["slug"] not in pages and a["slug"] not in have_a
+                  and a.get("status") == "published"]
+        for c in miss_c:
+            categories.append(c)
+        for a in miss_a:
+            articles.append(a)
+            if a["_category"] not in {c["slug"] for c in categories}:
+                cc = next(c for c in all_c if c["slug"] == a["_category"])
+                cc["_only_if_missing"] = True
+                categories.append(cc)
+        if miss_c or miss_a:
+            print(f"Catch up: {len(miss_c)} categories and {len(miss_a)} articles not yet on the site.")
+
     report, failed = [], 0
     all_cats = {c["slug"]: c for c in load_plan()[2]}
     all_articles = load_plan()[3]

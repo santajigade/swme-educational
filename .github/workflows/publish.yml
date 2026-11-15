@@ -10,6 +10,8 @@ on:
       - "articles/**"
       - "config/**"
       - "assets/**"
+  schedule:
+    - cron: "17 */3 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -58,6 +60,12 @@ jobs:
       - name: List changed files (manual)
         if: github.event_name == 'workflow_dispatch' && inputs.mode == 'changed'
         run: python scripts/changed.py HEAD~1 HEAD
+
+      - name: Catch up (scheduled)
+        if: github.event_name == 'schedule'
+        run: |
+          type nul > changed.txt
+          python scripts/publish.py --changed changed.txt
 
       - name: Publish changed
         if: github.event_name == 'push' || inputs.mode == 'changed'

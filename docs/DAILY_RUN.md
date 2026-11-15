@@ -49,8 +49,9 @@ publish something wrong.
 6. **Confirm**: dispatching is automatic. Check the newest run with
    `gh api repos/santajigade/swme-educational/actions/runs?per_page=1` and its jobs every
    60 seconds for up to 15 minutes. The publish log must end with "0 failed".
-   * If the publish job stays "queued", the PC runner is offline. The job will run when the PC
-     is on and run.cmd is started (GitHub keeps it queued for 24 hours). Say so in the report.
+   * If the publish job stays "queued", the PC runner is offline. Nothing is lost: every publish
+     run, and a catch up check every 3 hours, publishes all guides that are not yet live as soon
+     as the PC is on and run.cmd is running. Say so in the report.
    * If it fails, read the job log and report the error. Never force anything on the live site.
 
 ## Report (one short SendUserMessage)
