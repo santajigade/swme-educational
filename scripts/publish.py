@@ -311,6 +311,9 @@ class Admin:
     def save(self, page_id, parent_id, fields, thumb_path, dry_run=False):
         path = f"page-edit.php?id={page_id}" if page_id else f"page-edit.php?parent_id={parent_id}"
         data = self.current_form(path)
+        if page_id and str(data.get("parent_id", "")) != str(parent_id):
+            raise PublishError(f"page /{fields.get('slug')} already exists under another parent "
+                               f"(id {data.get('parent_id') or 'top level'}); refusing to overwrite a page we do not own")
         data.update({k: ("" if v is None else str(v)) for k, v in fields.items()})
         data["parent_id"] = str(parent_id)
         if dry_run:
