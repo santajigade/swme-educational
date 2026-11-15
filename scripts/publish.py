@@ -37,7 +37,7 @@ FORBIDDEN_TAGS = re.compile(r"<\s*(script|style|iframe\s+[^>]*srcdoc)\b", re.I)
 DASHES = re.compile("[–—]")
 TEMPLATES = {"default", "category"}
 STATUSES = {"published", "draft"}
-IMG_TYPES = {".webp": "image/webp", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png"}
+IMG_TYPES = {".gif": "image/gif", ".webp": "image/webp", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png"}
 
 
 class PublishError(Exception):
@@ -163,8 +163,8 @@ def load_plan():
             m["_html"] = html
             thumb = folder / m.get("thumbnail", "thumbnail.webp")
             m["_thumb_path"] = thumb if thumb.is_file() else None
-            info = folder / "infographic.webp"
-            m["_info_path"] = info if info.is_file() else None
+            info = next((folder / f for f in ("infographic.gif", "infographic.webp") if (folder / f).is_file()), None)
+            m["_info_path"] = info
             if m.get("infographic") and "{{infographic}}" not in html:
                 errors.append(f"{tag}: meta has infographic but article.html lacks {{{{infographic}}}}")
             if m.get("published") and not re.match(r"^\d{4}-\d{2}-\d{2}$", m["published"]):
@@ -177,7 +177,7 @@ def load_plan():
     for item in categories + articles:
         p = item.get("_thumb_path")
         if p and p.suffix.lower() not in IMG_TYPES:
-            errors.append(f"{item['slug']}: thumbnail must be webp, jpg or png")
+            errors.append(f"{item['slug']}: thumbnail must be webp, jpg, png or gif")
         if p and p.stat().st_size > 10 * 1024 * 1024:
             errors.append(f"{item['slug']}: thumbnail over 10 MB")
     return parent_slug, parent, categories, articles, errors

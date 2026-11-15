@@ -56,14 +56,14 @@ def background(d, kind, base):
         for y in range(60*S, h, 160*S):
             d.rectangle((0, y, w, y+22*S), fill=faint)
 
-def icon(d, kind, cx, cy, r, ink, accent):
+def icon(d, kind, cx, cy, r, ink, accent, needle=300):
     lw = int(r*0.09)
     if kind == "gauge":
         d.ellipse((cx-r, cy-r, cx+r, cy+r), outline=ink, width=lw)
         for i in range(11):
             a = math.radians(135 + i*27)
             d.line((cx+math.cos(a)*r*0.72, cy+math.sin(a)*r*0.72, cx+math.cos(a)*r*0.88, cy+math.sin(a)*r*0.88), fill=ink, width=lw//2)
-        a = math.radians(300)
+        a = math.radians(needle)
         d.line((cx, cy, cx+math.cos(a)*r*0.7, cy+math.sin(a)*r*0.7), fill=accent, width=lw)
         d.ellipse((cx-r*0.1, cy-r*0.1, cx+r*0.1, cy+r*0.1), fill=ink)
         d.rectangle((cx-r*0.15, cy+r, cx+r*0.15, cy+r*1.3), fill=ink)
@@ -168,7 +168,7 @@ def make(theme, title, out, text_only=False):
     d.rectangle((56*S, y + 18*S, 156*S, y + 26*S), fill=(255, 196, 64))
     img.convert("RGB").resize((W, H), Image.LANCZOS).save(out, "WEBP", quality=85)
 
-def make_infographic(theme, spec, out):
+def render_infographic(theme, spec, shown=None, active=None, needle=300):
     """Vertical step infographic: title band, numbered steps with arrows, footer."""
     base = hex2rgb(theme["color"])
     light = mix(base, (255, 255, 255), 0.9)
@@ -194,15 +194,23 @@ def make_infographic(theme, spec, out):
     background(ImageDraw.Draw(ov), theme["icon"], base)
     img.paste(Image.alpha_composite(Image.new("RGBA", (Wd, head_h), base + (255,)), ov).convert("RGB"), (0, 0))
     d = ImageDraw.Draw(img)
-    icon(d, theme["icon"], Wd - 170*S, head_h//2, 75*S, (255, 255, 255), (255, 196, 64))
+    icon(d, theme["icon"], Wd - 170*S, head_h//2, 75*S, (255, 255, 255), (255, 196, 64), needle)
     tl = wrap(d, spec["title"], tf, Wd - 420*S)
     y = head_h/2 - len(tl)*66*S/2
     for ln in tl:
         d.text((70*S, y), ln, font=tf, fill="white"); y += 66*S
     # steps
     y = head_h + 60*S
+    n_shown = len(rows) if shown is None else shown
     for i, (label, lines, h) in enumerate(rows):
-        d.rounded_rectangle((60*S, y, Wd - 60*S, y + h), radius=24*S, fill=light)
+        if i >= n_shown:
+            d.rounded_rectangle((60*S, y, Wd - 60*S, y + h), radius=24*S, outline=mix(base, (255, 255, 255), 0.85), width=3*S)
+            y += h + gap
+            continue
+        fill = mix(base, (255, 255, 255), 0.78) if i == active else light
+        d.rounded_rectangle((60*S, y, Wd - 60*S, y + h), radius=24*S, fill=fill)
+        if i == active:
+            d.rounded_rectangle((60*S, y, 72*S, y + h), radius=6*S, fill=(255, 196, 64))
         cx, cy, r = 150*S, y + h//2, 52*S
         d.ellipse((cx-r, cy-r, cx+r, cy+r), fill=base)
         num = str(i + 1)
@@ -212,7 +220,7 @@ def make_infographic(theme, spec, out):
         ty += 52*S
         for ln in lines:
             d.text((250*S, ty), ln, font=bf, fill=(60, 60, 70)); ty += 40*S
-        if i < len(rows) - 1:
+        if i < n_shown - 1:
             ay = y + h + 8*S
             d.polygon([(cx - 22*S, ay), (cx + 22*S, ay), (cx, ay + gap - 16*S)], fill=base)
         y += h + gap
@@ -220,7 +228,20 @@ def make_infographic(theme, spec, out):
     d.rectangle((0, Ht - foot_h, Wd, Ht), fill=mix(base, (0, 0, 0), 0.3))
     ft = spec.get("footer", "swme.ae  |  Educational Guides")
     d.text((70*S, Ht - foot_h/2 - 14*S), ft, font=sf, fill="white")
-    img.resize((Wd//S, Ht//S), Image.LANCZOS).save(out, "WEBP", quality=88)
+    return img.resize((Wd//S * 2 // 3, Ht//S * 2 // 3), Image.LANCZOS)
+
+
+def make_infographic(theme, spec, out):
+    """Animated GIF: steps appear one by one, then the full graphic holds."""
+    n = len(spec["steps"])
+    frames, durations = [], []
+    frames.append(render_infographic(theme, spec, shown=0, needle=150)); durations.append(700)
+    for k in range(1, n + 1):
+        frames.append(render_infographic(theme, spec, shown=k, active=k - 1, needle=150 + 150 * k / n))
+        durations.append(1100)
+    frames.append(render_infographic(theme, spec, shown=n, needle=300)); durations.append(3500)
+    pal = [f.convert("P", palette=Image.ADAPTIVE, colors=128) for f in frames]
+    pal[0].save(out, save_all=True, append_images=pal[1:], duration=durations, loop=0, optimize=True, disposal=2)
 
 
 def main():
@@ -236,12 +257,12 @@ def main():
         for meta in sorted((ROOT / "articles" / c["slug"]).glob("*/meta.json")):
             m = json.loads(meta.read_text(encoding="utf-8"))
             t = meta.parent / m.get("thumbnail", "thumbnail.webp")
-            if only_missing and t.exists() and (not m.get("infographic") or (meta.parent / "infographic.webp").exists()):
+            if only_missing and t.exists() and (not m.get("infographic") or (meta.parent / "infographic.gif").exists()):
                 continue
             short = m.get("card_title") or m["title"].split("?")[0].split(":")[0]
             make(th, short, t, text_only=True); print("article ", t.parent.name)
             if m.get("infographic"):
-                make_infographic(th, m["infographic"], meta.parent / "infographic.webp")
+                make_infographic(th, m["infographic"], meta.parent / "infographic.gif")
                 print("infographic", t.parent.name)
 
 if __name__ == "__main__":
