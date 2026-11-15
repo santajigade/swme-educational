@@ -397,7 +397,11 @@ def article_html(a, cat, images):
         body = body.replace("{{infographic}}", fig)
     else:
         body = body.replace("{{infographic}}", "")
-    return meta + share + "\n" + body
+    link_css = ('<style>article.prose:has(.edu-article) a:not([title^="Share"]):not(.card)'
+                '{color:#0d6efd !important;text-decoration:underline;text-underline-offset:2px;}'
+                'article.prose:has(.edu-article) a:not([title^="Share"]):not(.card):hover{color:#0a58ca !important;}</style>'
+                '<div class="edu-article"></div>')
+    return link_css + meta + share + "\n" + body
 
 
 def file_hash(path):
