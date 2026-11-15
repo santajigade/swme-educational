@@ -284,7 +284,7 @@ class Admin:
                 values[name] = el.get("value", "")
         return values
 
-    def upload_image(self, path):
+    def upload_image(self, path, name=None):
         """Upload an image through the editor's upload endpoint, return its URL or None."""
         if not hasattr(self, "_upload_url"):
             page = self.get("page-edit.php").text
@@ -294,7 +294,7 @@ class Admin:
             print("    warning: image upload endpoint not found")
             return None
         url = self.base + self._upload_url if self._upload_url.startswith("/") else self.url(self._upload_url)
-        r = self.s.post(url, files={"file": (path.name, path.read_bytes(), IMG_TYPES[path.suffix.lower()])}, timeout=120)
+        r = self.s.post(url, files={"file": (name or path.name, path.read_bytes(), IMG_TYPES[path.suffix.lower()])}, timeout=120)
         try:
             data = r.json()
         except ValueError:
@@ -317,7 +317,7 @@ class Admin:
             return None
         files = {}
         if thumb_path:
-            files["card_image"] = (thumb_path.name, thumb_path.read_bytes(), IMG_TYPES[thumb_path.suffix.lower()])
+            files["card_image"] = (f"{fields.get('slug', 'image')}{thumb_path.suffix.lower()}", thumb_path.read_bytes(), IMG_TYPES[thumb_path.suffix.lower()])
         r = self.s.post(self.url(path), data=data, files=files or None, timeout=120)
         r.raise_for_status()
         if "/admin/login.php" in r.url:
@@ -389,10 +389,13 @@ def article_html(a, cat, images):
     body = a["_html"]
     info = a.get("_info_path")
     if info and "{{infographic}}" in body:
-        iu, ih = images.url(info)
         spec = a.get("infographic", {})
+        iu, ih = images.url(info, seo_name(f'{spec.get("title") or a["slug"]} infographic', info))
+        sz = img_size(info)
+        dims = f' width="{sz[0]}" height="{sz[1]}"' if sz else ""
+        a["_info_url"] = iu
         fig = (f'<figure class="my-5 text-center"><img class="img-fluid rounded-3 border" src="{esc(iu)}" data-hash="{ih}" '
-               f'alt="{esc(spec.get("alt") or spec.get("title") or a["title"])}" loading="lazy">'
+               f'alt="{esc(spec.get("alt") or spec.get("title") or a["title"])}" title="{esc(spec.get("title", ""))}"{dims} loading="lazy">'
                f'<figcaption class="small text-muted mt-2">{esc(spec.get("title", ""))}</figcaption></figure>') if iu else ""
         body = body.replace("{{infographic}}", fig)
     else:
@@ -406,11 +409,59 @@ def article_html(a, cat, images):
              f'<i class="bi bi-eye" style="color:{color};"></i><span>Page views</span>'
              f'<img src="https://hits.sh/{esc(host)}/{esc(a["slug"])}.svg?label=views&amp;color={color.lstrip("#")}&amp;style=flat-square" '
              'alt="Page views" height="20" loading="eager" referrerpolicy="no-referrer"></div>')
-    return link_css + meta + share + "\n" + body + "\n" + views
+    return link_css + meta + share + "\n" + body + "\n" + views + article_schema(a, cat, url)
 
 
-def file_hash(path):
-    return hashlib.sha1(path.read_bytes()).hexdigest()[:12]
+def ld(obj):
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+
+
+def breadcrumbs(items):
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList",
+            "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u}
+                                for i, (n, u) in enumerate(items)]}
+
+
+def article_schema(a, cat, url):
+    org = {"@type": "Organization", "name": "SWME Control Systems", "url": SITE,
+           "logo": {"@type": "ImageObject", "url": f"{SITE}/uploads/brand/swme-logo.png"}}
+    art = {"@context": "https://schema.org", "@type": "TechArticle", "headline": a["title"][:110],
+           "description": a["meta_description"], "url": url, "mainEntityOfPage": url,
+           "author": {"@type": "Organization", "name": a.get("author", "SWME Technical Staff")},
+           "publisher": org, "inLanguage": "en", "articleSection": cat["title"],
+           "keywords": a.get("keyword", ""), "wordCount": a.get("_words", 0)}
+    if a.get("published"):
+        art["datePublished"] = art["dateModified"] = a["published"]
+    if a.get("updated"):
+        art["dateModified"] = a["updated"]
+    if a.get("_info_url"):
+        art["image"] = SITE + a["_info_url"] if a["_info_url"].startswith("/") else a["_info_url"]
+    out = [art, breadcrumbs([("Home", SITE + "/"), ("Educational", f"{SITE}/educational"),
+                             (cat["title"], f"{SITE}/{cat['slug']}"), (a["title"], url)])]
+    faqs = re.findall(r"<summary[^>]*>(.*?)</summary>\s*(.*?)</details>", a["_html"], re.S)
+    if faqs:
+        clean = lambda h: re.sub(r"\s+", " ", htmllib.unescape(re.sub(r"<[^>]+>", "", h))).strip()
+        out.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": clean(q), "acceptedAnswer": {"@type": "Answer", "text": clean(ans)}}
+            for q, ans in faqs]})
+    return "".join(ld(o) for o in out)
+
+
+def file_hash(path, name=""):
+    return hashlib.sha1(path.read_bytes() + name.encode()).hexdigest()[:12]
+
+
+def seo_name(stem, path):
+    return re.sub(r"[^a-z0-9]+", "-", stem.lower()).strip("-") + path.suffix.lower()
+
+
+def img_size(path):
+    try:
+        from PIL import Image
+        with Image.open(path) as im:
+            return im.size
+    except Exception:
+        return None
 
 
 class ImageCache:
@@ -425,12 +476,12 @@ class ImageCache:
         for src, h in re.findall(r'<img[^>]*?src="([^"]+)"[^>]*?data-hash="([0-9a-f]+)"', html or ""):
             self.map.setdefault(h, src)
 
-    def url(self, path):
+    def url(self, path, name=None):
         if not path:
             return None, None
-        h = file_hash(path)
+        h = file_hash(path, name or "")
         if h not in self.map:
-            self.map[h] = "#dry-run" if self.dry_run else self.admin.upload_image(path)
+            self.map[h] = "#dry-run" if self.dry_run else self.admin.upload_image(path, name)
             if self.map[h] and not self.dry_run:
                 print(f"    uploaded image {path.name}")
         return self.map[h], h
@@ -441,7 +492,7 @@ def esc(t):
 
 
 def card_html(href, title, summary, img, h, cta, badge=None, color="#f5a623", icon=None):
-    img_tag = (f'<img class="card-img-top" src="{esc(img)}" data-hash="{h}" alt="{esc(title)}" loading="lazy" '
+    img_tag = (f'<img class="card-img-top" src="{esc(img)}" data-hash="{h}" alt="{esc(title)}" width="800" height="500" loading="lazy" '
                f'style="aspect-ratio:16/10;object-fit:cover;">') if img else ""
     icon_tag = (f'<span class="d-inline-flex align-items-center justify-content-center rounded-circle me-2" '
                 f'style="width:36px;height:36px;background:{color};color:#fff;"><i class="bi {esc(icon)}"></i></span>') if icon else ""
@@ -576,11 +627,17 @@ def run(args):
                       key=lambda a: (a.get("sort_order", 0), a["title"]))
         cards = []
         for a in kids:
-            img, h = images.url(a.get("_thumb_path"))
+            img, h = images.url(a.get("_thumb_path"), seo_name(a["slug"], a["_thumb_path"]) if a.get("_thumb_path") else None)
             cards.append(card_html(f"/{a['slug']}", a["title"], a["summary"], img, h, "Read guide",
                                    color=c.get("color", "#f5a623"), icon=c.get("icon")))
         content = grid_html(c.get("intro", ""), c.get("grid_heading", "Guides in this section"), cards,
                             "New guides are coming soon.")
+        content += ld(breadcrumbs([("Home", SITE + "/"), ("Educational", f"{SITE}/educational"),
+                                   (c["title"], f"{SITE}/{c['slug']}")]))
+        if kids:
+            content += ld({"@context": "https://schema.org", "@type": "ItemList", "name": c["title"],
+                           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{SITE}/{k['slug']}",
+                                                "name": k["title"]} for i, k in enumerate(kids)]})
         do_save(c, parent_id, content, "listing")
 
     # 4. rebuild the Educational landing page
@@ -593,12 +650,13 @@ def run(args):
             if not visible(c, p_status):
                 continue
             n = len([a for a in all_articles if a["_category"] == c["slug"] and visible(a, c.get("status"))])
-            img, h = images.url(c.get("_thumb_path"))
+            img, h = images.url(c.get("_thumb_path"), seo_name(c["slug"], c["_thumb_path"]) if c.get("_thumb_path") else None)
             badge = f"{n} guide{'s' if n != 1 else ''}" if n else "Coming soon"
             cards.append(card_html(f"/{c['slug']}", c["title"], c["summary"], img, h, "Explore guides", badge,
                                    color=c.get("color", "#f5a623"), icon=c.get("icon")))
         content = grid_html(parent.get("intro", ""), parent.get("grid_heading", "Browse by topic"), cards,
                             "Topics are coming soon.")
+        content += ld(breadcrumbs([("Home", SITE + "/"), ("Educational", f"{SITE}/educational")]))
         do_save(parent, "", content, "landing")
 
     print(f"\nDone: {len(report)} ok, {failed} failed.")
