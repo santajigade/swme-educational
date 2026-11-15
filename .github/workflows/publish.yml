@@ -35,6 +35,9 @@ jobs:
   publish:
     needs: validate
     runs-on: self-hosted
+    defaults:
+      run:
+        shell: cmd
     env:
       SWME_BASE_URL: ${{ vars.SWME_BASE_URL || 'https://swme.ae' }}
       SWME_EMAIL: ${{ secrets.SWME_EMAIL }}
