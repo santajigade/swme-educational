@@ -13,7 +13,7 @@
   "author": "SWME Technical Staff",
   "published": "2026-11-15",
   "infographic": {
-    "title": "How a Pressure Transmitter Works",
+    "title": "From Pressure to Signal",
     "alt": "Infographic showing how a pressure transmitter works in four steps from diaphragm to 4 to 20 mA output",
     "steps": [
       [
@@ -32,6 +32,7 @@
         "Standard output",
         "The transmitter sends 4 to 20 mA, HART or fieldbus data to the PLC or DCS."
       ]
-    ]
+    ],
+    "layout": "flow"
   }
 }

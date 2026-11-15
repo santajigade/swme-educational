@@ -31,7 +31,8 @@
         "Check wake frequency",
         "Calculate per ASME PTC 19.3 TW to avoid vibration and fatigue failure."
       ]
-    ]
+    ],
+    "layout": "grid"
   },
   "slug": "what-is-a-thermowell"
 }

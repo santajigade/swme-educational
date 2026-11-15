@@ -12,7 +12,7 @@
   "sort_order": 1,
   "thumbnail": "thumbnail.webp",
   "infographic": {
-    "title": "Three Ways to Measure Pressure",
+    "title": "Gauge vs Absolute vs Differential",
     "alt": "Infographic comparing gauge, absolute and differential pressure reference points",
     "steps": [
       [
@@ -30,6 +30,36 @@
       [
         "Differential pressure",
         "The difference between two process points, independent of atmosphere."
+      ]
+    ],
+    "layout": "compare",
+    "columns": [
+      [
+        "Gauge",
+        [
+          "Zero = local atmosphere",
+          "Can read vacuum as negative",
+          "Unit: bar g, psig",
+          "Pumps, pipelines, vessels"
+        ]
+      ],
+      [
+        "Absolute",
+        [
+          "Zero = perfect vacuum",
+          "Never negative",
+          "Unit: bar a, psia",
+          "Vacuum and distillation"
+        ]
+      ],
+      [
+        "Differential",
+        [
+          "Zero = second process point",
+          "Two ports, H and L",
+          "Unit: bar d, psid",
+          "Flow, level, filters"
+        ]
       ]
     ]
   },

@@ -67,6 +67,18 @@ BODY = [
     ]),
     dyk("Thermowells are usually machined from solid bar stock, not made from welded tube. A solid bar has no seam, so it withstands much higher pressure and vibration. This is why a drilled thermowell looks heavy compared with the small sensor inside it."),
     h2("length", "Immersion Length and Response Time"),
+    svg(arrow_defs(T["c"]) +
+        '<rect x="40" y="120" width="720" height="200" fill="#f1f3f5" stroke="#495057" stroke-width="3"/>'
+        '<rect x="360" y="40" width="80" height="40" rx="4" fill="#868e96"/><rect x="370" y="80" width="60" height="40" fill="#adb5bd"/>'
+        f'<path d="M378 120 L378 270 Q400 292 422 270 L422 120 Z" fill="{T["c"]}" opacity="0.85"/>'
+        '<line x1="400" y1="60" x2="400" y2="262" stroke="#fff" stroke-width="5"/>'
+        + "".join(f'<line x1="{x}" y1="{y}" x2="{x+70}" y2="{y}" stroke="#4dabf7" stroke-width="2.5" marker-end="url(#ah)"/>' for x, y in ((80,170),(80,230),(80,290),(220,200),(220,260)))
+        + '<path d="M450 200 q20 -20 40 0 q20 20 40 0" fill="none" stroke="#f08c00" stroke-width="2.5"/><path d="M450 250 q20 20 40 0 q20 -20 40 0" fill="none" stroke="#f08c00" stroke-width="2.5"/>'
+        '<text x="560" y="230" font-size="14" fill="#e67700" font-weight="600">Vortex shedding</text>'
+        '<line x1="460" y1="122" x2="460" y2="282" stroke="#333"/><text x="470" y="150" font-size="14" fill="#333">U: immersion length</text>'
+        f'<text x="455" y="60" font-size="14" fill="{T["tx"]}" font-weight="600">Sensor inside thermowell</text>'
+        '<text x="90" y="150" font-size="14" fill="#1971c2">Process flow</text>',
+        "Thermowell in a pipe: immersion length and vortex shedding behind the stem", 340),
     p("The tip of the thermowell should sit in the centre third of the pipe, where the flow represents the true process temperature. If the well is too short, heat conducted along the stem from the colder pipe wall makes the reading low.",
       "However, a thicker or longer thermowell also slows the response. A bare sensor might respond in a few seconds, while the same sensor in a heavy thermowell may take a minute or more. Spring loaded sensors and a little heat transfer paste reduce this delay. You can estimate the effect with the " + ext("https://zentacalculator.com/engineering/sensor-response-time/", "sensor response time calculator") + "."),
     h2("wake", "Wake Frequency Calculation"),
@@ -93,3 +105,5 @@ BODY = [
         ("Can a thermowell be used with a temperature gauge?", "Yes. Bimetal and gas filled temperature gauges are commonly installed in thermowells so they can be removed safely."),
     ]),
 ]
+
+META["infographic"].update({"layout": "grid"})

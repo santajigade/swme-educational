@@ -31,7 +31,8 @@
         "Temperature output",
         "Resistance is converted to temperature and sent as 4 to 20 mA or HART."
       ]
-    ]
+    ],
+    "layout": "flow"
   },
   "slug": "how-an-rtd-works"
 }

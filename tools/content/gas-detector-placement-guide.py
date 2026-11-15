@@ -45,6 +45,17 @@ BODY = [
     ]),
     INFOGRAPHIC,
     h2("height", "Mounting Height by Gas"),
+    svg('<rect x="40" y="30" width="720" height="300" fill="#f8f9fa" stroke="#495057" stroke-width="3"/>'
+        '<line x1="40" y1="330" x2="760" y2="330" stroke="#495057" stroke-width="6"/>'
+        '<text x="50" y="350" font-size="13" fill="#555">Floor</text><text x="50" y="25" font-size="13" fill="#555">Ceiling</text>'
+        + "".join(f'<rect x="{x}" y="{y}" width="34" height="44" rx="6" fill="{c}"/><circle cx="{x+17}" cy="{y+17}" r="7" fill="#fff"/>'
+                  f'<text x="{x+50}" y="{y+18}" font-size="15" font-weight="600" fill="#333">{t1}</text><text x="{x+50}" y="{y+38}" font-size="13" fill="#555">{t2}</text>'
+                  for x, y, c, t1, t2 in ((100, 45, "#1971c2", "Light gases", "Methane, hydrogen, ammonia"),
+                                          (300, 165, T["c"], "Similar to air", "CO, O2 in breathing zone"),
+                                          (520, 270, "#e67700", "Heavy gases", "H2S, propane, chlorine")))
+        + '<g fill="none" stroke="#adb5bd" stroke-width="2"><circle cx="160" cy="130" r="10"/><circle cx="185" cy="105" r="7"/><circle cx="470" cy="305" r="12"/><circle cx="440" cy="315" r="8"/></g>'
+        '<text x="300" y="150" font-size="12" fill="#666">about 1.5 m</text><text x="520" y="262" font-size="12" fill="#666">0.3 to 0.5 m above floor</text>',
+        "Typical mounting heights for gas detectors in an enclosed room", 360),
     table(["Gas", "Relative density (air = 1)", "Mounting position"], [
         ["Hydrogen (H2)", "0.07", "High, near ceiling or roof apex"],
         ["Methane (CH4)", "0.55", "High, near ceiling"],
@@ -105,3 +116,8 @@ BODY = [
         ("Where should a hydrogen detector be mounted?", "Hydrogen is much lighter than air, so mount detectors at the highest point of the room, where the gas collects."),
     ]),
 ]
+
+META["infographic"].update({"layout": "levels", "title": "Gas Detector Mounting Heights", "top_label": "Ceiling", "bottom_label": "Floor",
+   "levels": [["Heavy gases", "H2S, propane, chlorine: 0.3 to 0.5 m above floor.", 0.08],
+              ["Breathing zone", "CO and oxygen: about 1.5 m above floor.", 0.45],
+              ["Light gases", "Methane, hydrogen, ammonia: near the ceiling.", 0.93]]})

@@ -41,6 +41,17 @@ BODY = [
     INFOGRAPHIC,
     h2("types", "Main Types of Flow Meters"),
     h3("Differential pressure"),
+    svg(arrow_defs(T["c"]) +
+        f'<rect x="40" y="140" width="720" height="90" fill="{T["bg"]}" stroke="{T["c"]}" stroke-width="2"/>'
+        '<rect x="392" y="120" width="16" height="45" fill="#495057"/><rect x="392" y="205" width="16" height="45" fill="#495057"/>'
+        + "".join(f'<line x1="{x}" y1="185" x2="{x+60}" y2="185" stroke="{T["c"]}" stroke-width="2.5" marker-end="url(#ah)"/>' for x in (80, 200, 520, 640))
+        + '<line x1="300" y1="140" x2="300" y2="80" stroke="#333" stroke-width="3"/><line x1="500" y1="140" x2="500" y2="80" stroke="#333" stroke-width="3"/>'
+        '<path d="M300 80 L300 50 L500 50 L500 80" fill="none" stroke="#333" stroke-width="3"/>'
+        f'<rect x="355" y="30" width="90" height="40" rx="8" fill="{T["c"]}"/><text x="400" y="56" text-anchor="middle" font-size="14" fill="#fff" font-weight="600">DP cell</text>'
+        '<text x="285" y="105" text-anchor="end" font-size="14" fill="#333" font-weight="600">H</text><text x="515" y="105" font-size="14" fill="#333" font-weight="600">L</text>'
+        '<text x="400" y="275" text-anchor="middle" font-size="14" fill="#333">Orifice plate creates a pressure drop that rises with the square of flow</text>'
+        f'<text x="60" y="130" font-size="13" fill="{T["tx"]}">Flow</text>',
+        "Differential pressure flow measurement across an orifice plate", 300),
     p("A restriction such as an " + link("/orifice-plates", "orifice plate") + ", venturi or nozzle creates a pressure drop that rises with the square of flow. A differential pressure transmitter measures this drop. It is a proven, low cost method for clean liquids, gases and steam. You can explore the relationship with the " + ext("https://zentacalculator.com/engineering/orifice-flow/", "orifice plate flow calculator") + "."),
     h3("Electromagnetic"),
     p("A magnetic field across the pipe induces a voltage in a conductive liquid. The voltage is proportional to velocity. There are no moving parts and no pressure loss, which makes these meters ideal for water, wastewater and slurries. Read " + link("/electromagnetic-flow-meter-working-principle", "how an electromagnetic flow meter works") + " for more detail."),
@@ -103,3 +114,8 @@ BODY = [
         ("Can one meter measure both liquid and gas?", "Coriolis and some ultrasonic meters can, but most installations use a technology optimised for one phase."),
     ]),
 ]
+
+META["infographic"].update({"layout": "compare", "title": "Which Flow Meter for Which Fluid?",
+   "columns": [["Clean liquids", ["Electromagnetic (conductive)", "Turbine", "Ultrasonic", "Coriolis for mass"]],
+               ["Gases and steam", ["Vortex", "Differential pressure", "Thermal mass", "Coriolis for gas"]],
+               ["Slurries and dirty liquids", ["Electromagnetic", "Clamp on ultrasonic", "Coriolis", "Avoid turbine meters"]]]})

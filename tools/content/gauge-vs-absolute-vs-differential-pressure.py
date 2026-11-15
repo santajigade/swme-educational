@@ -41,6 +41,23 @@ BODY = [
       "For example, a vacuum pump that removes all the air from a chamber would read about minus 1 bar on a gauge instrument, but close to 0 bar on an absolute instrument. Both readings are correct. They simply start from different zero points."),
     INFOGRAPHIC,
     h2("types", "The Three Pressure Types"),
+    svg(arrow_defs(T["c"]) +
+        '<line x1="120" y1="320" x2="120" y2="30" stroke="#999" stroke-width="2"/>'
+        '<line x1="100" y1="320" x2="600" y2="320" stroke="#333" stroke-width="2"/>'
+        '<text x="610" y="324" font-size="14" fill="#333">Perfect vacuum (0 bar a)</text>'
+        '<line x1="100" y1="200" x2="600" y2="200" stroke="#999" stroke-width="2" stroke-dasharray="8 6"/>'
+        '<text x="610" y="204" font-size="14" fill="#333">Atmosphere (1.013 bar a)</text>'
+        f'<circle cx="300" cy="80" r="9" fill="{T["c"]}"/><text x="315" y="75" font-size="14" font-weight="600" fill="{T["tx"]}">Process pressure</text>'
+        f'<line x1="250" y1="318" x2="250" y2="90" stroke="{T["c"]}" stroke-width="3" marker-end="url(#ah)"/>'
+        f'<text x="240" y="270" font-size="14" text-anchor="end" fill="{T["tx"]}" font-weight="600">Absolute</text>'
+        f'<line x1="350" y1="198" x2="350" y2="90" stroke="{T["c"]}" stroke-width="3" marker-end="url(#ah)"/>'
+        f'<text x="360" y="150" font-size="14" fill="{T["tx"]}" font-weight="600">Gauge</text>'
+        f'<circle cx="520" cy="110" r="9" fill="{T["c"]}"/><text x="535" y="105" font-size="13" fill="#333">Point H</text>'
+        f'<circle cx="520" cy="160" r="9" fill="#f08c00"/><text x="535" y="175" font-size="13" fill="#333">Point L</text>'
+        f'<line x1="500" y1="158" x2="500" y2="118" stroke="#f08c00" stroke-width="3" marker-end="url(#ah)"/>'
+        '<text x="490" y="140" font-size="14" text-anchor="end" fill="#d9480f" font-weight="600">Differential</text>'
+        f'<circle cx="300" cy="260" r="9" fill="#868e96"/><text x="315" y="264" font-size="13" fill="#555">Vacuum reading (negative gauge)</text>',
+        "Gauge, absolute and differential pressure measured from different reference points", 360),
     rows([
         ("Absolute pressure (bar a)", "measured relative to a perfect vacuum. It can never be negative, and it does not change with weather or altitude."),
         ("Gauge pressure (bar g)", "measured relative to the local atmosphere. It is the most common reading on pipelines, pumps, vessels and hydraulic systems."),
@@ -107,3 +124,8 @@ BODY = [
         ("Which is better for flow measurement?", "Differential pressure, because flow creates a pressure drop across a primary element such as an orifice plate."),
     ]),
 ]
+
+META["infographic"].update({"layout": "compare", "title": "Gauge vs Absolute vs Differential",
+   "columns": [["Gauge", ["Zero = local atmosphere", "Can read vacuum as negative", "Unit: bar g, psig", "Pumps, pipelines, vessels"]],
+               ["Absolute", ["Zero = perfect vacuum", "Never negative", "Unit: bar a, psia", "Vacuum and distillation"]],
+               ["Differential", ["Zero = second process point", "Two ports, H and L", "Unit: bar d, psid", "Flow, level, filters"]]]})

@@ -36,6 +36,19 @@ BODY = [
     toc([("principle", "How both technologies work"), ("ultrasonic", "Ultrasonic level measurement"), ("radar", "Radar level measurement"),
          ("compare", "Radar vs ultrasonic level compared"), ("choose", "How to choose"), ("mistakes", "Common mistakes"), ("faq", "FAQ")]),
     h2("principle", "How Both Technologies Work"),
+    svg(arrow_defs(T["c"]) +
+        '<rect x="200" y="60" width="300" height="280" fill="none" stroke="#495057" stroke-width="4"/>'
+        f'<rect x="202" y="200" width="296" height="138" fill="{T["bg"]}"/>'
+        f'<path d="M202 200 Q 260 190 320 200 T 440 200 T 498 200" fill="none" stroke="{T["c"]}" stroke-width="3"/>'
+        f'<rect x="330" y="30" width="40" height="36" rx="5" fill="{T["c"]}"/>'
+        f'<path d="M340 66 L300 198 L400 198 L360 66 Z" fill="{T["c"]}" opacity="0.12"/>'
+        f'<line x1="350" y1="72" x2="350" y2="192" stroke="{T["c"]}" stroke-width="2.5" marker-end="url(#ah)"/>'
+        '<line x1="530" y1="66" x2="530" y2="198" stroke="#333" stroke-width="1.5"/><text x="540" y="135" font-size="15" fill="#333" font-weight="600">D: measured distance</text>'
+        '<line x1="530" y1="200" x2="530" y2="338" stroke="#e67700" stroke-width="3"/><text x="540" y="275" font-size="15" fill="#e67700" font-weight="600">L: level</text>'
+        '<line x1="170" y1="66" x2="170" y2="338" stroke="#999" stroke-width="1.5"/><text x="160" y="205" font-size="15" fill="#555" text-anchor="end">H: tank height</text>'
+        f'<text x="380" y="52" font-size="13" fill="{T["tx"]}">Radar or ultrasonic sensor</text>'
+        f'<text x="560" y="320" font-size="16" fill="{T["c"]}" font-weight="700">L = H minus D</text>',
+        "Noncontact level measurement: the sensor measures distance D and calculates level L", 360),
     p("Both sensors mount on top of the tank and point down at the surface. They send a pulse, wait for the echo and measure the time of flight. Because the speed of the pulse is known, the sensor converts time into distance. The level is then the tank height minus that distance.",
       "The key difference is the type of pulse. Ultrasonic sensors send sound waves, while radar sensors send electromagnetic waves. Sound needs a medium to travel through and changes speed with temperature. Microwaves travel at the speed of light and are almost unaffected by the gas above the product."),
     INFOGRAPHIC,
@@ -94,3 +107,7 @@ BODY = [
         ("What is the difference between radar and guided wave radar?", "Free space radar sends the pulse through the air, while guided wave radar sends it along a probe, which helps with foam and low dielectric products."),
     ]),
 ]
+
+META["infographic"].update({"layout": "compare", "title": "Radar vs Ultrasonic Level",
+   "columns": [["Ultrasonic", ["Sound pulse, 10 to 70 kHz", "Affected by vapour, foam, dust", "Atmospheric tanks only", "Lower cost"]],
+               ["Radar", ["Microwave pulse, up to 80 GHz", "Little effect from vapour", "Pressure, vacuum and heat", "Accuracy 1 to 3 mm"]]]})

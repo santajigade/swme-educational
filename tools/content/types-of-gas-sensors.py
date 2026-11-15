@@ -46,6 +46,9 @@ BODY = [
     h3("Catalytic bead (pellistor)"),
     p("Two small heated beads form part of a bridge circuit. One bead is coated with a catalyst. Flammable gas burns on this bead, raises its temperature and changes its resistance. The sensor is simple and responds to most flammable gases. However, it needs oxygen to work, and silicones or lead compounds can poison the catalyst."),
     h3("Infrared (NDIR)"),
+    svg_chain(["IR source", "Gas|sample cell", "Optical|filter", "Detector", "Gas|reading"],
+              "How an infrared (NDIR) gas sensor works",
+              ["Emits light", "Gas absorbs IR", "Selects wavelength", "Measures light", "% LEL output"]),
     p("Hydrocarbon molecules absorb infrared light at specific wavelengths. An infrared sensor shines light through the gas and measures how much is absorbed. It cannot be poisoned, works without oxygen and is fail safe, because a fault in the light path is detected. It cannot detect hydrogen, which does not absorb infrared light."),
     h3("Electrochemical"),
     p("A small cell with electrodes and electrolyte produces a current when the target gas reacts. Each cell is designed for one gas, such as H2S, CO or oxygen. These gas sensors are sensitive at low ppm levels and use little power, but they have a limited life, typically 2 to 3 years, and can be affected by extreme heat and dryness."),
@@ -99,3 +102,5 @@ BODY = [
         ("What does LEL mean?", "LEL is the lower explosive limit, the lowest concentration of a gas in air that can ignite."),
     ]),
 ]
+
+META["infographic"].update({"layout": "grid"})

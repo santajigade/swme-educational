@@ -31,7 +31,8 @@
         "Solvents and VOCs",
         "Photoionisation detectors measure low ppm organic vapours."
       ]
-    ]
+    ],
+    "layout": "grid"
   },
   "slug": "types-of-gas-sensors"
 }

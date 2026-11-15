@@ -37,6 +37,19 @@ BODY = [
          ("materials", "Wetted parts and case"), ("protection", "Protecting the gauge"), ("checklist", "Checklist to select a pressure gauge"),
          ("mistakes", "Common mistakes"), ("faq", "FAQ")]),
     h2("how", "How a Bourdon Tube Gauge Works"),
+    svg(f'<circle cx="400" cy="185" r="150" fill="{T["bg"]}" stroke="{T["c"]}" stroke-width="3"/>'
+        + "".join(f'<line x1="{400+130*__import__("math").cos(__import__("math").radians(135+i*27)):.0f}" y1="{185+130*__import__("math").sin(__import__("math").radians(135+i*27)):.0f}" x2="{400+145*__import__("math").cos(__import__("math").radians(135+i*27)):.0f}" y2="{185+145*__import__("math").sin(__import__("math").radians(135+i*27)):.0f}" stroke="#555" stroke-width="2"/>' for i in range(11))
+        + f'<path d="M 330 300 A 95 95 0 1 1 470 250" fill="none" stroke="{T["c"]}" stroke-width="12" stroke-linecap="round"/>'
+        '<line x1="470" y1="250" x2="430" y2="215" stroke="#555" stroke-width="3"/>'
+        '<line x1="400" y1="185" x2="470" y2="95" stroke="#d9480f" stroke-width="4" stroke-linecap="round"/>'
+        '<circle cx="400" cy="185" r="9" fill="#333"/>'
+        '<rect x="372" y="335" width="56" height="20" fill="#868e96"/><rect x="385" y="355" width="30" height="5" fill="#868e96"/>'
+        f'<text x="560" y="300" font-size="14" fill="{T["tx"]}" font-weight="600">Bourdon tube</text><line x1="555" y1="296" x2="475" y2="268" stroke="#999"/>'
+        '<text x="560" y="230" font-size="14" fill="#333">Link and movement</text><line x1="555" y1="226" x2="445" y2="225" stroke="#999"/>'
+        '<text x="530" y="80" font-size="14" fill="#d9480f" font-weight="600">Pointer</text>'
+        '<text x="440" y="352" font-size="14" fill="#333">Pressure inlet</text>'
+        '<text x="20" y="120" font-size="13" fill="#555">Pressure enters the</text><text x="20" y="138" font-size="13" fill="#555">curved tube, which</text><text x="20" y="156" font-size="13" fill="#555">straightens slightly and</text><text x="20" y="174" font-size="13" fill="#555">turns the pointer.</text>',
+        "Inside a Bourdon tube pressure gauge", 370),
     p("Inside the case is a curved, flattened metal tube closed at one end. When pressure enters the tube, it tries to straighten. A linkage and gear movement convert this small movement into the rotation of the pointer across the dial.",
       "For low pressures, diaphragm or capsule elements replace the Bourdon tube, because they respond to smaller forces. In addition, diaphragm elements tolerate viscous or slightly dirty media better than a narrow tube."),
     INFOGRAPHIC,
@@ -109,3 +122,5 @@ BODY = [
         ("What is the difference between EN 837 and ASME B40.100?", "Both are pressure gauge standards. EN 837 is common in Europe and the Middle East, while ASME B40.100 is common in North American specifications."),
     ]),
 ]
+
+META["infographic"].update({"layout": "grid"})

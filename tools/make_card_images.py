@@ -231,15 +231,153 @@ def render_infographic(theme, spec, shown=None, active=None, needle=300):
     return img.resize((Wd//S * 2 // 3, Ht//S * 2 // 3), Image.LANCZOS)
 
 
+# ---------------------------------------------------------------- extra layouts
+def _regular(sz):
+    try:
+        return ImageFont.truetype(glob.glob("/usr/share/fonts/**/DejaVuSans.ttf", recursive=True)[0], sz)
+    except Exception:
+        return font(sz)
+
+
+def _canvas(theme, title, body_h, needle=300):
+    """Header band + white body + footer. Returns (img, draw, top_y, Wd, base, light)."""
+    base = hex2rgb(theme["color"]); light = mix(base, (255, 255, 255), 0.9)
+    Wd, head_h, foot_h = 1200 * S, 230 * S, 100 * S
+    Ht = head_h + body_h + foot_h
+    img = Image.new("RGB", (Wd, Ht), "white")
+    band = Image.new("RGBA", (Wd, head_h), base + (255,))
+    ov = Image.new("RGBA", (Wd, head_h), (0, 0, 0, 0)); background(ImageDraw.Draw(ov), theme["icon"], base)
+    img.paste(Image.alpha_composite(band, ov).convert("RGB"), (0, 0))
+    d = ImageDraw.Draw(img)
+    icon(d, theme["icon"], Wd - 160*S, head_h // 2, 70*S, (255, 255, 255), (255, 196, 64), needle)
+    tf = font(52*S); tl = wrap(d, title, tf, Wd - 400*S); y = head_h/2 - len(tl)*62*S/2
+    for ln in tl:
+        d.text((70*S, y), ln, font=tf, fill="white"); y += 62*S
+    d.rectangle((0, Ht - foot_h, Wd, Ht), fill=mix(base, (0, 0, 0), 0.3))
+    d.text((70*S, Ht - foot_h/2 - 14*S), "swme.ae  |  Educational Guides", font=font(24*S), fill="white")
+    return img, d, head_h, Wd, base, light
+
+
+def _text_block(d, x, y, w, label, text, base, lf=34, bf=26, color=(60, 60, 70), center=False):
+    lfnt, bfnt = font(lf*S), _regular(bf*S)
+    for ln in wrap(d, label, lfnt, w):
+        tx = x + (w - d.textlength(ln, font=lfnt))/2 if center else x
+        d.text((tx, y), ln, font=lfnt, fill=mix(base, (0, 0, 0), 0.35)); y += lf*1.3*S
+    y += 6*S
+    for ln in wrap(d, text, bfnt, w):
+        tx = x + (w - d.textlength(ln, font=bfnt))/2 if center else x
+        d.text((tx, y), ln, font=bfnt, fill=color); y += bf*1.45*S
+    return y
+
+
+def render_grid(theme, spec, shown=None, active=None, needle=300):
+    items = spec["steps"]; n = len(items); cols = 2; rows_ = (n + 1) // 2
+    cw, ch, gap = 520*S, 300*S, 40*S
+    img, d, top, Wd, base, light = _canvas(theme, spec["title"], 60*S + rows_*(ch + gap) + 20*S, needle)
+    shown = n if shown is None else shown
+    for i, (label, text) in enumerate(items):
+        r, c = divmod(i, cols); x = 60*S + c*(cw + gap); y = top + 60*S + r*(ch + gap)
+        if i >= shown:
+            d.rounded_rectangle((x, y, x + cw, y + ch), radius=28*S, outline=mix(base, (255, 255, 255), 0.85), width=3*S); continue
+        d.rounded_rectangle((x, y, x + cw, y + ch), radius=28*S, fill=mix(base, (255, 255, 255), 0.78) if i == active else light)
+        d.rounded_rectangle((x, y, x + cw, y + 14*S), radius=7*S, fill=base)
+        d.ellipse((x + 30*S, y + 40*S, x + 100*S, y + 110*S), fill=base)
+        num = str(i + 1); nf = font(36*S)
+        d.text((x + 65*S - d.textlength(num, font=nf)/2, y + 54*S), num, font=nf, fill="white")
+        _text_block(d, x + 30*S, y + 130*S, cw - 60*S, label, text, base, lf=30, bf=24)
+    return img.resize((Wd//S * 2 // 3, img.height//S * 2 // 3), Image.LANCZOS)
+
+
+def render_flow(theme, spec, shown=None, active=None, needle=300):
+    items = spec["steps"]; n = len(items)
+    bw, gap = (1080*S - (n - 1)*60*S) // n, 60*S
+    tmp = ImageDraw.Draw(Image.new("RGB", (10, 10)))
+    th_ = max(len(wrap(tmp, l, font(26*S), bw - 36*S))*34*S + 8*S + len(wrap(tmp, t, _regular(21*S), bw - 36*S))*31*S for l, t in items)
+    box_h = 140*S + th_ + 30*S
+    img, d, top, Wd, base, light = _canvas(theme, spec["title"], box_h + 120*S, needle)
+    shown = n if shown is None else shown
+    for i, (label, text) in enumerate(items):
+        x = 60*S + i*(bw + gap); y = top + 60*S
+        if i >= shown:
+            d.rounded_rectangle((x, y, x + bw, y + box_h), radius=24*S, outline=mix(base, (255, 255, 255), 0.85), width=3*S); continue
+        d.rounded_rectangle((x, y, x + bw, y + box_h), radius=24*S, fill=mix(base, (255, 255, 255), 0.78) if i == active else light)
+        d.rounded_rectangle((x, y, x + bw, y + 90*S), radius=24*S, fill=base)
+        d.rectangle((x, y + 60*S, x + bw, y + 90*S), fill=base)
+        nf = font(40*S); num = str(i + 1)
+        d.text((x + bw/2 - d.textlength(num, font=nf)/2, y + 22*S), num, font=nf, fill="white")
+        _text_block(d, x + 18*S, y + 115*S, bw - 36*S, label, text, base, lf=26, bf=21, center=True)
+        if i < shown - 1 and i < n - 1:
+            ax = x + bw + 8*S; ay = y + box_h/2
+            d.polygon([(ax, ay - 20*S), (ax + gap - 16*S, ay), (ax, ay + 20*S)], fill=base)
+    return img.resize((Wd//S * 2 // 3, img.height//S * 2 // 3), Image.LANCZOS)
+
+
+def render_compare(theme, spec, shown=None, active=None, needle=300):
+    colsd = spec["columns"]; n = len(colsd); gap = 40*S
+    cw = (1080*S - (n - 1)*gap) // n
+    tmp = ImageDraw.Draw(Image.new("RGB", (10, 10))); bf = _regular(24*S)
+    hmax = max(sum(len(wrap(tmp, ln, bf, cw - 70*S)) * 36*S + 18*S for ln in lines) for _, lines in colsd)
+    body = 60*S + 110*S + hmax + 60*S
+    img, d, top, Wd, base, light = _canvas(theme, spec["title"], body, needle)
+    shown = n if shown is None else shown
+    tints = [base, mix(base, (0, 0, 0), 0.35), mix(base, (255, 255, 255), 0.3)]
+    for i, (title, lines) in enumerate(colsd):
+        x = 60*S + i*(cw + gap); y = top + 60*S; h = 110*S + hmax + 30*S
+        if i >= shown:
+            d.rounded_rectangle((x, y, x + cw, y + h), radius=24*S, outline=mix(base, (255, 255, 255), 0.85), width=3*S); continue
+        d.rounded_rectangle((x, y, x + cw, y + h), radius=24*S, fill=light)
+        col = tints[i % len(tints)]
+        d.rounded_rectangle((x, y, x + cw, y + 100*S), radius=24*S, fill=col); d.rectangle((x, y + 70*S, x + cw, y + 100*S), fill=col)
+        tf = font(30*S); tl = wrap(d, title, tf, cw - 40*S)[:2]; ty = y + 50*S - len(tl)*19*S
+        for ln in tl:
+            d.text((x + cw/2 - d.textlength(ln, font=tf)/2, ty), ln, font=tf, fill="white"); ty += 38*S
+        ly = y + 130*S
+        for line in lines:
+            d.ellipse((x + 28*S, ly + 10*S, x + 44*S, ly + 26*S), fill=col)
+            for wl in wrap(d, line, bf, cw - 70*S):
+                d.text((x + 56*S, ly), wl, font=bf, fill=(60, 60, 70)); ly += 36*S
+            ly += 18*S
+    return img.resize((Wd//S * 2 // 3, img.height//S * 2 // 3), Image.LANCZOS)
+
+
+def render_levels(theme, spec, shown=None, active=None, needle=300):
+    items = spec["levels"]; n = len(items); H_ = 700*S
+    img, d, top, Wd, base, light = _canvas(theme, spec["title"], H_ + 120*S, needle)
+    shown = n if shown is None else shown
+    x0, y0, y1 = 220*S, top + 60*S, top + 60*S + H_
+    d.rounded_rectangle((x0 - 40*S, y0, x0 + 40*S, y1), radius=40*S, fill=light, outline=mix(base, (255, 255, 255), 0.6), width=3*S)
+    lf = _regular(22*S)
+    d.text((x0 - 60*S - d.textlength(spec.get("top_label", "High"), font=lf), y0), spec.get("top_label", "High"), font=lf, fill=(110, 110, 120))
+    d.text((x0 - 60*S - d.textlength(spec.get("bottom_label", "Low"), font=lf), y1 - 30*S), spec.get("bottom_label", "Low"), font=lf, fill=(110, 110, 120))
+    for i, (label, text, pos) in enumerate(items):
+        if i >= shown: continue
+        y = y1 - pos * H_
+        c = mix(base, (255, 196, 64), 0.6) if i == active else base
+        d.ellipse((x0 - 26*S, y - 26*S, x0 + 26*S, y + 26*S), fill=c)
+        d.line((x0 + 30*S, y, x0 + 130*S, y), fill=c, width=5*S)
+        bx = x0 + 140*S; bw = Wd - bx - 60*S
+        bfnt = _regular(24*S); tl = wrap(d, text, bfnt, bw - 40*S)
+        bh = 60*S + len(tl)*34*S
+        by = max(y0, min(y - bh/2, y1 - bh))
+        d.rounded_rectangle((bx, by, bx + bw, by + bh), radius=20*S, fill=mix(base, (255, 255, 255), 0.78) if i == active else light)
+        _text_block(d, bx + 20*S, by + 12*S, bw - 40*S, label, text, base, lf=28, bf=24)
+    return img.resize((Wd//S * 2 // 3, img.height//S * 2 // 3), Image.LANCZOS)
+
+
+RENDERERS = {"steps": None, "grid": render_grid, "flow": render_flow, "compare": render_compare, "levels": render_levels}
+
+
 def make_infographic(theme, spec, out):
     """Animated GIF: steps appear one by one, then the full graphic holds."""
-    n = len(spec["steps"])
+    layout = spec.get("layout", "steps")
+    render = RENDERERS.get(layout) or render_infographic
+    n = len(spec.get("steps") or spec.get("columns") or spec.get("levels"))
     frames, durations = [], []
-    frames.append(render_infographic(theme, spec, shown=0, needle=150)); durations.append(700)
+    frames.append(render(theme, spec, shown=0, needle=150)); durations.append(700)
     for k in range(1, n + 1):
-        frames.append(render_infographic(theme, spec, shown=k, active=k - 1, needle=150 + 150 * k / n))
-        durations.append(1100)
-    frames.append(render_infographic(theme, spec, shown=n, needle=300)); durations.append(3500)
+        frames.append(render(theme, spec, shown=k, active=k - 1, needle=150 + 150 * k / n))
+        durations.append(1300 if layout == "compare" else 1100)
+    frames.append(render(theme, spec, shown=n, needle=300)); durations.append(3500)
     pal = [f.convert("P", palette=Image.ADAPTIVE, colors=128) for f in frames]
     pal[0].save(out, save_all=True, append_images=pal[1:], duration=durations, loop=0, optimize=True, disposal=2)
 

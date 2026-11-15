@@ -137,6 +137,44 @@ def mod_category(src):
     raise SystemExit(f"{src}: META needs a category line")
 
 
+
+
+# ---------------------------------------------------------------- SVG diagrams
+def svg(inner, caption, h=360, alt=None):
+    """Wrap inline SVG in a responsive figure with caption (scales with column width)."""
+    import html as _h
+    label = _h.escape(alt or caption)
+    caption = _h.escape(caption)
+    return (f'<figure class="my-5 text-center"><div class="p-3 rounded-3 border" style="background:#fff;">'
+            f'<svg viewBox="0 0 800 {h}" width="100%" role="img" aria-label="{label}" '
+            f'style="max-width:800px;height:auto;font-family:Inter,Arial,sans-serif;" xmlns="http://www.w3.org/2000/svg">'
+            f'<title>{label}</title>{inner}</svg></div>'
+            f'<figcaption class="small text-muted mt-2">{caption}</figcaption></figure>')
+
+
+def arrow_defs(c):
+    return (f'<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">'
+            f'<path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker></defs>')
+
+
+def svg_chain(items, caption, sub=None):
+    """Horizontal block diagram: boxes joined by arrows."""
+    c, bg = T["c"], T["bg"]
+    n = len(items); gap = 34; bw = (760 - (n - 1) * gap) / n; out = [arrow_defs(c)]
+    for i, label in enumerate(items):
+        x = 20 + i * (bw + gap)
+        out.append(f'<rect x="{x:.0f}" y="40" width="{bw:.0f}" height="90" rx="12" fill="{bg}" stroke="{c}" stroke-width="2"/>')
+        lines = label.split("|")
+        for k, ln in enumerate(lines):
+            y = 85 + (k - (len(lines) - 1) / 2) * 20
+            out.append(f'<text x="{x + bw/2:.0f}" y="{y:.0f}" text-anchor="middle" font-size="15" font-weight="600" fill="{T["tx"]}">{ln}</text>')
+        if sub and i < len(sub) and sub[i]:
+            out.append(f'<text x="{x + bw/2:.0f}" y="160" text-anchor="middle" font-size="12" fill="#666">{sub[i]}</text>')
+        if i < n - 1:
+            out.append(f'<line x1="{x + bw + 3:.0f}" y1="85" x2="{x + bw + gap - 3:.0f}" y2="85" stroke="{c}" stroke-width="2.5" marker-end="url(#ah)"/>')
+    return svg("".join(out), caption, 190)
+
+
 if __name__ == "__main__":
     for s in sys.argv[1:]:
         build(s)

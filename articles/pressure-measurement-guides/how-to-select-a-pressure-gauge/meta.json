@@ -31,7 +31,8 @@
         "Protect the gauge",
         "Add liquid filling, snubbers, siphons or seals where needed."
       ]
-    ]
+    ],
+    "layout": "grid"
   },
   "slug": "how-to-select-a-pressure-gauge"
 }

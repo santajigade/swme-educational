@@ -57,6 +57,23 @@ BODY = [
     ]),
     p("Tolerance grows with temperature, so a class B sensor at 200 degrees Celsius may be off by about 1.3 degrees Celsius. In addition, the transmitter and installation add their own errors."),
     h2("wiring", "RTD Wiring: 2, 3 and 4 Wire"),
+    svg("".join(
+        f'<g transform="translate({x},0)">'
+        f'<text x="120" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="{T["tx"]}">{title}</text>'
+        f'<rect x="20" y="110" width="40" height="140" rx="6" fill="{T["bg"]}" stroke="{T["c"]}" stroke-width="2.5"/>'
+        f'<path d="M40 125 l10 8 l-20 10 l20 10 l-20 10 l20 10 l-20 10 l20 10 l-20 10 l20 10 l-10 8" fill="none" stroke="{T["c"]}" stroke-width="2"/>'
+        f'<text x="40" y="275" text-anchor="middle" font-size="12" fill="#333">Pt100</text>'
+        + "".join(f'<polyline points="60,{ty} {80+12*k},{ty} {80+12*k},{wy} 190,{wy}" fill="none" stroke="#495057" stroke-width="2"/>'
+                  f'<circle cx="60" cy="{ty}" r="3" fill="#495057"/>'
+                  for k, (ty, wy) in enumerate(wires))
+        + f'<rect x="190" y="70" width="44" height="220" rx="6" fill="{T["c"]}"/>'
+        f'<text x="212" y="185" text-anchor="middle" font-size="11" fill="#fff" transform="rotate(-90 212 180)">Transmitter</text>'
+        f'<text x="120" y="325" text-anchor="middle" font-size="13" fill="#555">{note}</text></g>'
+        for x, title, wires, note in (
+            (10, "2 wire", [(125, 125), (235, 235)], "Cable adds error"),
+            (275, "3 wire", [(125, 100), (125, 150), (235, 235)], "Cable resistance cancelled"),
+            (540, "4 wire", [(125, 95), (125, 140), (235, 215), (235, 260)], "Highest accuracy"))),
+        "RTD connection options from sensor (left) to transmitter (right)", 340),
     twocol([
         ("2 and 3 wire", "bi-diagram-2", [
             "2 wire: cable resistance adds directly to the reading.",
@@ -93,3 +110,5 @@ BODY = [
         ("How do I test an RTD?", "Disconnect it and measure the resistance with a multimeter, then compare it with the Pt100 table for the known temperature."),
     ]),
 ]
+
+META["infographic"].update({"layout": "flow"})

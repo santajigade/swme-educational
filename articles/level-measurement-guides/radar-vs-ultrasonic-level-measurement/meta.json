@@ -12,7 +12,7 @@
   "sort_order": 1,
   "thumbnail": "thumbnail.webp",
   "infographic": {
-    "title": "Noncontact Level Measurement",
+    "title": "Radar vs Ultrasonic Level",
     "alt": "Infographic showing how radar vs ultrasonic level measurement works using time of flight",
     "steps": [
       [
@@ -30,6 +30,27 @@
       [
         "Level output",
         "Tank height minus distance gives level, sent as 4 to 20 mA or HART."
+      ]
+    ],
+    "layout": "compare",
+    "columns": [
+      [
+        "Ultrasonic",
+        [
+          "Sound pulse, 10 to 70 kHz",
+          "Affected by vapour, foam, dust",
+          "Atmospheric tanks only",
+          "Lower cost"
+        ]
+      ],
+      [
+        "Radar",
+        [
+          "Microwave pulse, up to 80 GHz",
+          "Little effect from vapour",
+          "Pressure, vacuum and heat",
+          "Accuracy 1 to 3 mm"
+        ]
       ]
     ]
   },

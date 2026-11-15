@@ -36,6 +36,18 @@ BODY = [
     toc([("principle", "Working principle"), ("parts", "Main components"), ("addons", "Switches and transmitters"),
          ("compare", "Magnetic level gauge vs sight glass"), ("specify", "How to specify"), ("mistakes", "Common mistakes"), ("faq", "FAQ")]),
     h2("principle", "How a Magnetic Level Gauge Works"),
+    svg('<rect x="80" y="40" width="220" height="290" rx="18" fill="none" stroke="#495057" stroke-width="4"/>'
+        f'<rect x="83" y="170" width="214" height="157" rx="14" fill="{T["bg"]}"/>'
+        '<line x1="300" y1="80" x2="380" y2="80" stroke="#495057" stroke-width="10"/><line x1="300" y1="300" x2="380" y2="300" stroke="#495057" stroke-width="10"/>'
+        '<rect x="380" y="60" width="44" height="260" rx="10" fill="none" stroke="#495057" stroke-width="4"/>'
+        f'<rect x="383" y="170" width="38" height="147" fill="{T["bg"]}"/>'
+        f'<rect x="388" y="150" width="28" height="40" rx="8" fill="{T["c"]}"/><text x="402" y="175" text-anchor="middle" font-size="11" fill="#fff">N S</text>'
+        + "".join(f'<rect x="445" y="{64+i*16}" width="34" height="13" rx="2" fill="{"#e03131" if 64+i*16 >= 170 else "#f8f9fa"}" stroke="#ced4da"/>' for i in range(16))
+        + '<text x="500" y="110" font-size="14" fill="#333">White flags: above level</text>'
+        '<text x="500" y="250" font-size="14" fill="#e03131" font-weight="600">Red flags: liquid level</text>'
+        f'<text x="500" y="175" font-size="14" fill="{T["tx"]}" font-weight="600">Float with magnet</text><line x1="495" y1="171" x2="420" y2="170" stroke="#999"/>'
+        '<text x="190" y="30" text-anchor="middle" font-size="14" fill="#333">Vessel</text><text x="402" y="345" text-anchor="middle" font-size="13" fill="#333">Chamber</text><text x="462" y="345" text-anchor="middle" font-size="13" fill="#333">Indicator</text>',
+        "Magnetic level gauge: the float magnet flips external flags to show level", 360),
     p("The gauge is a vertical chamber connected to the vessel at top and bottom. Because of the principle of communicating vessels, the liquid in the chamber rises to the same level as in the vessel. Inside the chamber is a float with a ring of permanent magnets.",
       "Outside the chamber is an indicator rail with small flags or rollers. Each flag has a magnet and two coloured faces, usually red and white. As the float rises, its magnetic field flips the flags from white to red. The red column then shows the liquid level from a distance, even in poor light."),
     INFOGRAPHIC,
@@ -97,3 +109,5 @@ BODY = [
         ("How accurate is a magnetic level gauge?", "The visual indicator typically resolves to about 5 to 10 mm. Clamp on magnetostrictive transmitters can achieve 1 mm or better."),
     ]),
 ]
+
+META["infographic"].update({"layout": "flow"})

@@ -1,0 +1,38 @@
+{
+  "title": "Types of Industrial Valves Explained",
+  "keyword": "types of industrial valves",
+  "subtitle": "Gate, globe, ball, butterfly, check, safety relief and control valves",
+  "meta_title": "Types of Industrial Valves Explained: Functions and Uses",
+  "meta_description": "Learn the main types of industrial valves: gate, globe, ball, butterfly, check, safety relief and control valves, how they work and where to use them.",
+  "summary": "How gate, globe, ball, butterfly, check, relief and control valves work and where each fits.",
+  "card_title": "Types of Industrial Valves",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-15",
+  "status": "draft",
+  "sort_order": 1,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Four Jobs a Valve Can Do",
+    "alt": "Infographic showing the four main functions of the types of industrial valves",
+    "steps": [
+      [
+        "Isolation",
+        "Start or stop flow completely: gate, ball and butterfly valves."
+      ],
+      [
+        "Regulation",
+        "Throttle and control flow: globe and control valves."
+      ],
+      [
+        "Non return",
+        "Stop reverse flow automatically: check valves."
+      ],
+      [
+        "Protection",
+        "Relieve excess pressure: safety and relief valves."
+      ]
+    ]
+  },
+  "slug": "types-of-industrial-valves"
+}

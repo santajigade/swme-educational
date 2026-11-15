@@ -36,6 +36,20 @@ BODY = [
     toc([("principle", "The working principle"), ("parts", "Main components"), ("liners", "Liner and electrode selection"),
          ("sizing", "Sizing an electromagnetic flow meter"), ("install", "Installation and grounding"), ("mistakes", "Common mistakes"), ("faq", "FAQ")]),
     h2("principle", "The Working Principle"),
+    svg(f'<circle cx="300" cy="180" r="130" fill="{T["bg"]}" stroke="{T["c"]}" stroke-width="4"/>'
+        + "".join(f'<line x1="{x}" y1="40" x2="{x}" y2="320" stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="6 5"/>' for x in (220, 260, 300, 340, 380))
+        + '<rect x="250" y="20" width="100" height="22" rx="4" fill="#495057"/><rect x="250" y="318" width="100" height="22" rx="4" fill="#495057"/>'
+        '<text x="300" y="36" text-anchor="middle" font-size="12" fill="#fff">Coil</text><text x="300" y="334" text-anchor="middle" font-size="12" fill="#fff">Coil</text>'
+        '<circle cx="170" cy="180" r="12" fill="#f59f00"/><circle cx="430" cy="180" r="12" fill="#f59f00"/>'
+        '<text x="150" y="215" font-size="13" fill="#333">E1</text><text x="425" y="215" font-size="13" fill="#333">E2</text>'
+        + "".join(f'<circle cx="{x}" cy="{y}" r="9" fill="none" stroke="{T["c"]}" stroke-width="2"/><circle cx="{x}" cy="{y}" r="2.5" fill="{T["c"]}"/>' for x, y in ((260,140),(340,140),(300,200),(260,250),(340,250)))
+        + f'<text x="520" y="110" font-size="15" font-weight="600" fill="{T["tx"]}">B: magnetic field (dashed)</text>'
+        f'<text x="520" y="145" font-size="15" font-weight="600" fill="{T["tx"]}">v: flow out of the page</text>'
+        '<text x="520" y="180" font-size="15" font-weight="600" fill="#e67700">E1, E2: electrodes</text>'
+        '<text x="520" y="230" font-size="15" fill="#333">Induced voltage</text>'
+        f'<text x="520" y="260" font-size="18" font-weight="700" fill="{T["c"]}">U = k × B × D × v</text>'
+        '<text x="520" y="290" font-size="13" fill="#666">D = pipe inner diameter</text>',
+        "Faraday's law inside an electromagnetic flow meter: cross section of the meter tube", 360),
     p("In 1831, Michael Faraday showed that a conductor moving through a magnetic field produces a voltage. In an electromagnetic flow meter, the conductor is the liquid itself. Coils on the outside of the meter tube create a magnetic field across the pipe. As the liquid flows, a voltage appears between two electrodes mounted on opposite sides of the tube.",
       "The voltage is directly proportional to the average flow velocity. The transmitter multiplies this velocity by the pipe cross section to give volume flow. For example, a velocity of 2 metres per second in a 100 mm pipe gives about 56.5 cubic metres per hour."),
     INFOGRAPHIC,

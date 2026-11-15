@@ -31,7 +31,8 @@
         "Signals added",
         "Optional switches and transmitters read the same magnet for remote use."
       ]
-    ]
+    ],
+    "layout": "flow"
   },
   "slug": "how-a-magnetic-level-gauge-works"
 }

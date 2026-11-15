@@ -12,7 +12,7 @@
   "sort_order": 1,
   "thumbnail": "thumbnail.webp",
   "infographic": {
-    "title": "Choosing a Flow Meter",
+    "title": "Which Flow Meter for Which Fluid?",
     "alt": "Infographic showing four questions to choose between the main types of flow meters",
     "steps": [
       [
@@ -30,6 +30,36 @@
       [
         "Accuracy and cost",
         "Balance accuracy, pressure loss, maintenance and installed cost."
+      ]
+    ],
+    "layout": "compare",
+    "columns": [
+      [
+        "Clean liquids",
+        [
+          "Electromagnetic (conductive)",
+          "Turbine",
+          "Ultrasonic",
+          "Coriolis for mass"
+        ]
+      ],
+      [
+        "Gases and steam",
+        [
+          "Vortex",
+          "Differential pressure",
+          "Thermal mass",
+          "Coriolis for gas"
+        ]
+      ],
+      [
+        "Slurries and dirty liquids",
+        [
+          "Electromagnetic",
+          "Clamp on ultrasonic",
+          "Coriolis",
+          "Avoid turbine meters"
+        ]
       ]
     ]
   },

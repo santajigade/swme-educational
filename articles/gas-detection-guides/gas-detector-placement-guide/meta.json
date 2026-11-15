@@ -12,7 +12,7 @@
   "sort_order": 2,
   "thumbnail": "thumbnail.webp",
   "infographic": {
-    "title": "Where to Mount Gas Detectors",
+    "title": "Gas Detector Mounting Heights",
     "alt": "Infographic showing gas detector placement heights for heavy, light and air density gases",
     "steps": [
       [
@@ -30,6 +30,26 @@
       [
         "Near leak sources",
         "Place detectors close to pumps, valves, flanges and compressor seals."
+      ]
+    ],
+    "layout": "levels",
+    "top_label": "Ceiling",
+    "bottom_label": "Floor",
+    "levels": [
+      [
+        "Heavy gases",
+        "H2S, propane, chlorine: 0.3 to 0.5 m above floor.",
+        0.08
+      ],
+      [
+        "Breathing zone",
+        "CO and oxygen: about 1.5 m above floor.",
+        0.45
+      ],
+      [
+        "Light gases",
+        "Methane, hydrogen, ammonia: near the ceiling.",
+        0.93
       ]
     ]
   },
