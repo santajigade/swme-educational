@@ -3,7 +3,7 @@
 Approved on 15 November 2026 (sample: what-is-a-pressure-transmitter).
 
 ## Added automatically by the publisher
-1. Featured image: text only (card title on the category colour background).
+1. No featured image on the article page (title shows in the site banner). Card images on listings stay.
 2. Byline row: Written by SWME Technical Staff, reading time, Published on date.
 3. Share bar: LinkedIn, Facebook, X, WhatsApp, Email.
 4. Animated GIF infographic at `{{infographic}}` (steps from meta.json).
@@ -14,7 +14,7 @@ Approved on 15 November 2026 (sample: what-is-a-pressure-transmitter).
 * Key takeaways box (category light tint, left border in category colour).
 * Short intro, product link to the matching SWME product page.
 * "In this guide" table of contents with jump links.
-* Full width info rows (light tint, coloured left border, bold label) for
+* Full width info rows as <div> blocks, never <ul>/<li> (the site adds tick icons to list items): light tint, coloured left border, bold label, for
   "At a glance" figures, concept definitions and common mistakes (orange).
 * `{{infographic}}` inside the "How it works" section.
 * At least one "Did you know?" box (light yellow, bulb icon).

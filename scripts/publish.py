@@ -360,14 +360,11 @@ def nice_date(iso):
 
 
 def article_html(a, cat, images):
-    """Article body with header (featured image, byline, share bar) and infographic."""
+    """Article body with header (byline, share bar) and infographic."""
     color = cat.get("color", "#5f3dc4")
     url = f"{SITE}/{a['slug']}"
     from urllib.parse import quote
     u, t = quote(url, safe=""), quote(a["title"], safe="")
-    feat, fh = images.url(a.get("_thumb_path"))
-    feat_tag = (f'<img class="img-fluid rounded-3 w-100 mb-3" src="{esc(feat)}" data-hash="{fh}" '
-                f'alt="{esc(a["title"])}" style="aspect-ratio:16/10;object-fit:cover;">') if feat else ""
     mins = max(1, round(a.get("_words", 0) / 200))
     meta = (
         '<div class="d-flex flex-wrap align-items-center gap-3 small text-muted mb-3">'
@@ -400,7 +397,7 @@ def article_html(a, cat, images):
         body = body.replace("{{infographic}}", fig)
     else:
         body = body.replace("{{infographic}}", "")
-    return feat_tag + meta + share + "\n" + body
+    return meta + share + "\n" + body
 
 
 def file_hash(path):
@@ -453,9 +450,13 @@ def card_html(href, title, summary, img, h, cta, badge=None, color="#f5a623", ic
     )
 
 
+HIDE_SITE_LIST = ('<style>article.prose:has(.edu-marker) + .row.g-4.mt-2{display:none !important;}'
+                  '.prose .edu-grid .card-title{margin-top:0;}</style>')
+
+
 def grid_html(intro, heading, cards, empty_text):
-    body = ('<div class="row g-4">' + "".join(cards) + "</div>") if cards else f'<p class="text-muted">{esc(empty_text)}</p>'
-    return f'{intro}\n<h2 class="mt-5 mb-4">{esc(heading)}</h2>\n{body}'
+    body = ('<div class="row g-4 edu-grid">' + "".join(cards) + "</div>") if cards else f'<p class="text-muted">{esc(empty_text)}</p>'
+    return f'{HIDE_SITE_LIST}<div class="edu-marker" data-edu="listing"></div>{intro}\n<h2 class="mt-5 mb-4">{esc(heading)}</h2>\n{body}'
 
 
 def visible(child, parent_status):
