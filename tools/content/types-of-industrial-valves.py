@@ -9,7 +9,7 @@ META = {
     "card_title": "Types of Industrial Valves",
     "author": "SWME Technical Staff",
     "published": "2026-11-15",
-    "status": "draft",
+    "status": "published",
     "sort_order": 1,
     "thumbnail": "thumbnail.webp",
     "infographic": {
