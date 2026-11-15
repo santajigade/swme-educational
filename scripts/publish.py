@@ -401,7 +401,12 @@ def article_html(a, cat, images):
                 '{color:#0d6efd !important;text-decoration:underline;text-underline-offset:2px;}'
                 'article.prose:has(.edu-article) a:not([title^="Share"]):not(.card):hover{color:#0a58ca !important;}</style>'
                 '<div class="edu-article"></div>')
-    return link_css + meta + share + "\n" + body
+    host = SITE.split("://", 1)[-1]
+    views = ('<div class="d-flex align-items-center gap-2 mt-5 pt-3 border-top small text-muted">'
+             f'<i class="bi bi-eye" style="color:{color};"></i><span>Page views</span>'
+             f'<img src="https://hits.sh/{esc(host)}/{esc(a["slug"])}.svg?label=views&amp;color={color.lstrip("#")}&amp;style=flat-square" '
+             'alt="Page views" height="20" loading="eager" referrerpolicy="no-referrer"></div>')
+    return link_css + meta + share + "\n" + body + "\n" + views
 
 
 def file_hash(path):
