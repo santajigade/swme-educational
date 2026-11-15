@@ -610,6 +610,7 @@ def run(args):
             do_save(c, parent_id)
 
     images = ImageCache(admin, args.dry_run)
+    seeded = set()
 
     # 2. articles
     for a in articles:
@@ -618,8 +619,10 @@ def run(args):
             print(f"  ! {a['slug']}: category page '{a['_category']}' missing, skipped")
             failed += 1
             continue
-        if pages.get(a["slug"], {}).get("id"):
-            images.seed(admin.page_content(pages[a["slug"]]["id"]))
+        for seed_slug in (a["slug"], a["_category"]):
+            if pages.get(seed_slug, {}).get("id") and seed_slug not in seeded:
+                images.seed(admin.page_content(pages[seed_slug]["id"]))
+                seeded.add(seed_slug)
         do_save(a, cat["id"], article_html(a, all_cats[a["_category"]], images))
 
     # 3. rebuild category listing pages
