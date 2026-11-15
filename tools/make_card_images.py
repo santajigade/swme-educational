@@ -116,7 +116,7 @@ def wrap(d, text, fnt, maxw):
     lines.append(cur)
     return lines
 
-def make(theme, title, out):
+def make(theme, title, out, text_only=False):
     base = hex2rgb(theme["color"])
     img = Image.new("RGB", (W*S, H*S), base)
     grad = Image.new("RGB", (W*S, H*S), mix(base, (0, 0, 0), 0.35))
@@ -125,6 +125,22 @@ def make(theme, title, out):
     ov = Image.new("RGBA", img.size, (0, 0, 0, 0))
     background(ImageDraw.Draw(ov), theme["icon"], base)
     img = Image.alpha_composite(img.convert("RGBA"), ov)
+    if text_only:
+        d = ImageDraw.Draw(img)
+        maxw, size = W*S*0.84, 64
+        while True:
+            fnt = font(size*S)
+            lines = wrap(d, title, fnt, maxw)
+            if (len(lines) <= 3 and all(d.textlength(l, font=fnt) <= maxw for l in lines)) or size <= 30:
+                break
+            size -= 2
+        lh = fnt.size*1.2
+        y = H*S/2 - lh*len(lines)/2 - 10*S
+        for ln in lines:
+            d.text(((W*S - d.textlength(ln, font=fnt))/2, y), ln, font=fnt, fill="white"); y += lh
+        d.rectangle((W*S/2 - 50*S, y + 22*S, W*S/2 + 50*S, y + 30*S), fill=(255, 196, 64))
+        img.convert("RGB").resize((W, H), Image.LANCZOS).save(out, "WEBP", quality=85)
+        return
     if title:
         cx, cy, r = int(W*S*0.76), int(H*S*0.5), int(H*S*0.25)
     else:
@@ -222,7 +238,8 @@ def main():
             t = meta.parent / m.get("thumbnail", "thumbnail.webp")
             if only_missing and t.exists() and (not m.get("infographic") or (meta.parent / "infographic.webp").exists()):
                 continue
-            make(th, None, t); print("article ", t.parent.name)
+            short = m.get("card_title") or m["title"].split("?")[0].split(":")[0]
+            make(th, short, t, text_only=True); print("article ", t.parent.name)
             if m.get("infographic"):
                 make_infographic(th, m["infographic"], meta.parent / "infographic.webp")
                 print("infographic", t.parent.name)
