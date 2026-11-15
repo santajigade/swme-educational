@@ -349,6 +349,8 @@ def run(args):
                 pages = admin.pages()
                 if slug not in pages:
                     raise PublishError("saved but page not found in list (slug may have been changed by the admin)")
+            elif not existing:
+                pages[slug] = {"id": 0, "title": item["title"], "status": "planned"}
             report.append(f"  {action:6} {item['_kind']:8} /{slug} [{item.get('status', 'draft')}]")
             print(report[-1] + (" (dry run)" if args.dry_run else ""))
         except Exception as e:
