@@ -125,12 +125,18 @@ def make(theme, title, out):
     ov = Image.new("RGBA", img.size, (0, 0, 0, 0))
     background(ImageDraw.Draw(ov), theme["icon"], base)
     img = Image.alpha_composite(img.convert("RGBA"), ov)
-    cx, cy, r = int(W*S*0.76), int(H*S*0.5), int(H*S*0.25)
+    if title:
+        cx, cy, r = int(W*S*0.76), int(H*S*0.5), int(H*S*0.25)
+    else:
+        cx, cy, r = int(W*S*0.5), int(H*S*0.5), int(H*S*0.3)
     halo = Image.new("RGBA", img.size, (0, 0, 0, 0))
     ImageDraw.Draw(halo).ellipse((cx-r*1.6, cy-r*1.6, cx+r*1.6, cy+r*1.6), fill=(255, 255, 255, 34))
     img = Image.alpha_composite(img, halo)
     d = ImageDraw.Draw(img)
     icon(d, theme["icon"], cx, cy, r, (255, 255, 255), (255, 196, 64))
+    if not title:
+        img.convert("RGB").resize((W, H), Image.LANCZOS).save(out, "WEBP", quality=85)
+        return
     maxw = W*S*0.46
     size = 58
     while True:
@@ -216,8 +222,7 @@ def main():
             t = meta.parent / m.get("thumbnail", "thumbnail.webp")
             if only_missing and t.exists() and (not m.get("infographic") or (meta.parent / "infographic.webp").exists()):
                 continue
-            short = m.get("card_title") or m["title"].split("?")[0].split(":")[0]
-            make(th, short, t); print("article ", t.parent.name)
+            make(th, None, t); print("article ", t.parent.name)
             if m.get("infographic"):
                 make_infographic(th, m["infographic"], meta.parent / "infographic.webp")
                 print("infographic", t.parent.name)
