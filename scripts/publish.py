@@ -386,6 +386,8 @@ def article_html(a, cat, images):
                        f'href="{esc(h)}" target="_blank" rel="noopener" title="Share on {n}" aria-label="Share on {n}" '
                        f'style="width:34px;height:34px;background:{c};"><i class="bi {i}"></i></a>' for n, i, c, h in shares)
              + '</div>')
+    if a.get("_thumb_path"):
+        a["_thumb_url"], _ = images.url(a["_thumb_path"], seo_name(a["slug"], a["_thumb_path"]))
     body = a["_html"]
     info = a.get("_info_path")
     if info and "{{infographic}}" in body:
@@ -427,15 +429,18 @@ def article_schema(a, cat, url):
            "logo": {"@type": "ImageObject", "url": f"{SITE}/uploads/brand/swme-logo.png"}}
     art = {"@context": "https://schema.org", "@type": "TechArticle", "headline": a["title"][:110],
            "description": a["meta_description"], "url": url, "mainEntityOfPage": url,
-           "author": {"@type": "Organization", "name": a.get("author", "SWME Technical Staff")},
+           "author": {"@type": "Organization", "name": a.get("author", "SWME Technical Staff"),
+                      "url": f"{SITE}/about-us"},
            "publisher": org, "inLanguage": "en", "articleSection": cat["title"],
            "keywords": a.get("keyword", ""), "wordCount": a.get("_words", 0)}
     if a.get("published"):
         art["datePublished"] = art["dateModified"] = a["published"]
     if a.get("updated"):
         art["dateModified"] = a["updated"]
-    if a.get("_info_url"):
-        art["image"] = SITE + a["_info_url"] if a["_info_url"].startswith("/") else a["_info_url"]
+    full = lambda u: SITE + u if u.startswith("/") else u
+    imgs = [full(u) for u in (a.get("_thumb_url"), a.get("_info_url")) if u and not u.startswith("#")]
+    if imgs:
+        art["image"] = imgs
     out = [art, breadcrumbs([("Home", SITE + "/"), ("Educational", f"{SITE}/educational"),
                              (cat["title"], f"{SITE}/{cat['slug']}"), (a["title"], url)])]
     faqs = re.findall(r"<summary[^>]*>(.*?)</summary>\s*(.*?)</details>", a["_html"], re.S)
