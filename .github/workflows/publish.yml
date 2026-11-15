@@ -1,5 +1,8 @@
 name: Publish to swme.ae Educational
 
+# Validation runs on GitHub. Publishing runs on the self-hosted runner
+# (your PC), because swme.ae blocks GitHub's servers.
+
 on:
   push:
     branches: [main]
@@ -7,10 +10,6 @@ on:
       - "articles/**"
       - "config/**"
       - "assets/**"
-  pull_request:
-    paths:
-      - "articles/**"
-      - "config/**"
   workflow_dispatch:
     inputs:
       mode:
@@ -24,52 +23,47 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  validate:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/publish.py --validate
+
+  publish:
+    needs: validate
+    runs-on: self-hosted
+    env:
+      SWME_BASE_URL: ${{ vars.SWME_BASE_URL || 'https://swme.ae' }}
+      SWME_EMAIL: ${{ secrets.SWME_EMAIL }}
+      SWME_PASSWORD: ${{ secrets.SWME_PASSWORD }}
+      PYTHONIOENCODING: utf-8
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: python -m pip install --quiet -r requirements.txt
 
-      - name: Validate articles
-        run: python scripts/publish.py --validate
-
-      - name: List changed files
+      - name: List changed files (push)
         if: github.event_name == 'push'
-        run: |
-          BEFORE="${{ github.event.before }}"
-          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
-            git ls-files > changed.txt
-          else
-            git diff --name-only "$BEFORE" "${{ github.sha }}" > changed.txt
-          fi
-          cat changed.txt
+        run: python scripts/changed.py ${{ github.event.before }} ${{ github.sha }}
 
-      - name: Publish (push)
-        if: github.event_name == 'push'
-        env:
-          SWME_BASE_URL: ${{ vars.SWME_BASE_URL || 'https://swme.ae' }}
-          SWME_EMAIL: ${{ secrets.SWME_EMAIL }}
-          SWME_PASSWORD: ${{ secrets.SWME_PASSWORD }}
+      - name: List changed files (manual)
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'changed'
+        run: python scripts/changed.py HEAD~1 HEAD
+
+      - name: Publish changed
+        if: github.event_name == 'push' || inputs.mode == 'changed'
         run: python scripts/publish.py --changed changed.txt
 
-      - name: Publish (manual)
-        if: github.event_name == 'workflow_dispatch'
-        env:
-          SWME_BASE_URL: ${{ vars.SWME_BASE_URL || 'https://swme.ae' }}
-          SWME_EMAIL: ${{ secrets.SWME_EMAIL }}
-          SWME_PASSWORD: ${{ secrets.SWME_PASSWORD }}
-        run: |
-          case "${{ inputs.mode }}" in
-            all)     python scripts/publish.py ;;
-            dry-run) python scripts/publish.py --dry-run ;;
-            *)       git diff --name-only HEAD~1 HEAD > changed.txt || git ls-files > changed.txt
-                     python scripts/publish.py --changed changed.txt ;;
-          esac
+      - name: Publish all
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'all'
+        run: python scripts/publish.py
+
+      - name: Dry run
+        if: github.event_name == 'workflow_dispatch' && inputs.mode == 'dry-run'
+        run: python scripts/publish.py --dry-run

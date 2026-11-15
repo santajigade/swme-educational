@@ -53,6 +53,12 @@ Page tree on the website:
 
 ## One time setup
 
+swme.ae blocks GitHub's servers, so publishing runs on a self-hosted runner
+(a Windows PC that can open swme.ae). Validation still runs on GitHub.
+
+0. On the PC: install Python 3.12 for all users with "Add to PATH" ticked, and
+   Git for Windows. Then repo Settings > Actions > Runners > New self-hosted
+   runner > Windows, run the commands shown, and answer Y to "run as service".
 1. In swme.ae admin, Users: create a dedicated user for the publisher.
 2. In this repo, Settings > Secrets and variables > Actions, add:
    * `SWME_EMAIL`
