@@ -16,11 +16,15 @@ scripts/publish.py                  Publisher
 .github/workflows/publish.yml       Runs on every push to main
 ```
 
+All pages use the Standard template. The script builds the card grids itself:
+/educational lists the category cards, each category lists its article cards.
+Grids are rebuilt on every publish. Images are uploaded once and reused.
+
 Page tree on the website:
 
 ```
-/educational                         (Category template, created once in admin)
-  /pressure-measurement-guides       (Category template, from config)
+/educational                         (landing page, intro and grid from config)
+  /pressure-measurement-guides       (category listing, from config)
     /what-is-a-pressure-transmitter  (Standard page, from articles/)
 ```
 

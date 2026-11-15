@@ -19,6 +19,8 @@ Environment:
   SWME_PASSWORD   admin user password (GitHub Secret)
 """
 import argparse
+import hashlib
+import html as htmllib
 import json
 import os
 import re
@@ -63,10 +65,21 @@ def check_text(label, value, errors, max_len=None, required=True):
 
 
 def load_plan():
-    """Read config and article folders. Returns (parent_slug, categories, articles, errors)."""
+    """Read config and article folders. Returns (parent_slug, parent, categories, articles, errors)."""
     errors = []
     cfg = load_json(CONFIG)
     parent_slug = cfg.get("parent_slug", "educational")
+    parent = cfg.get("parent")
+    if parent:
+        parent["slug"] = parent_slug
+        check_text("parent title", parent.get("title"), errors)
+        check_text("parent meta_title", parent.get("meta_title"), errors, 60)
+        check_text("parent meta_description", parent.get("meta_description"), errors, 160)
+        check_text("parent summary", parent.get("summary"), errors, 200, required=False)
+        check_text("parent intro", parent.get("intro"), errors, required=False)
+        if parent.get("status", "draft") not in STATUSES:
+            errors.append("parent: status must be published or draft")
+        parent["_kind"] = "parent"
     categories = []
     cat_slugs = set()
     for c in cfg.get("categories", []):
@@ -144,7 +157,7 @@ def load_plan():
             errors.append(f"{item['slug']}: thumbnail must be webp, jpg or png")
         if p and p.stat().st_size > 10 * 1024 * 1024:
             errors.append(f"{item['slug']}: thumbnail over 10 MB")
-    return parent_slug, categories, articles, errors
+    return parent_slug, parent, categories, articles, errors
 
 
 # ----------------------------------------------------------------- admin client
@@ -234,6 +247,30 @@ class Admin:
                 values[name] = el.get("value", "")
         return values
 
+    def upload_image(self, path):
+        """Upload an image through the editor's upload endpoint, return its URL or None."""
+        if not hasattr(self, "_upload_url"):
+            page = self.get("page-edit.php").text
+            m = re.search(r'images_upload_url:"([^"]+)"', page)
+            self._upload_url = m.group(1).replace("\\/", "/") if m else None
+        if not self._upload_url:
+            print("    warning: image upload endpoint not found")
+            return None
+        url = self.base + self._upload_url if self._upload_url.startswith("/") else self.url(self._upload_url)
+        r = self.s.post(url, files={"file": (path.name, path.read_bytes(), IMG_TYPES[path.suffix.lower()])}, timeout=120)
+        try:
+            data = r.json()
+        except ValueError:
+            print(f"    warning: image upload failed for {path.name} (HTTP {r.status_code})")
+            return None
+        loc = data.get("location") or data.get("url") or data.get("path")
+        if not loc:
+            print(f"    warning: image upload returned no URL for {path.name}: {str(data)[:120]}")
+        return loc
+
+    def page_content(self, page_id):
+        return self.current_form(f"page-edit.php?id={page_id}").get("content", "")
+
     def save(self, page_id, parent_id, fields, thumb_path, dry_run=False):
         path = f"page-edit.php?id={page_id}" if page_id else f"page-edit.php?parent_id={parent_id}"
         data = self.current_form(path)
@@ -257,11 +294,9 @@ class Admin:
 
 # ----------------------------------------------------------------- sync
 
-def fields_for(item):
-    if item["_kind"] == "category":
-        content, template = item.get("intro", ""), "category"
-    else:
-        content, template = item["_html"], "default"
+def fields_for(item, content=None):
+    if content is None:
+        content = item["_html"] if item["_kind"] == "article" else item.get("intro", "")
     return {
         "title": item["title"],
         "slug": item["slug"],
@@ -269,11 +304,66 @@ def fields_for(item):
         "content": content,
         "meta_title": item["meta_title"],
         "meta_description": item["meta_description"],
-        "excerpt": item["summary"],
+        "excerpt": item.get("summary", ""),
         "status": item.get("status", "draft"),
-        "template": template,
+        "template": "default",
         "sort_order": item.get("sort_order", 0),
     }
+
+
+def file_hash(path):
+    return hashlib.sha1(path.read_bytes()).hexdigest()[:12]
+
+
+class ImageCache:
+    """Maps image hash -> uploaded URL, seeded from data-hash attributes already on the site."""
+
+    def __init__(self, admin, dry_run):
+        self.admin, self.dry_run, self.map = admin, dry_run, {}
+
+    def seed(self, html):
+        for h, src in re.findall(r'<img[^>]*?data-hash="([0-9a-f]+)"[^>]*?src="([^"]+)"', html or ""):
+            self.map.setdefault(h, src)
+        for src, h in re.findall(r'<img[^>]*?src="([^"]+)"[^>]*?data-hash="([0-9a-f]+)"', html or ""):
+            self.map.setdefault(h, src)
+
+    def url(self, path):
+        if not path:
+            return None, None
+        h = file_hash(path)
+        if h not in self.map:
+            self.map[h] = "#dry-run" if self.dry_run else self.admin.upload_image(path)
+            if self.map[h] and not self.dry_run:
+                print(f"    uploaded image {path.name}")
+        return self.map[h], h
+
+
+def esc(t):
+    return htmllib.escape(t or "", quote=True)
+
+
+def card_html(href, title, summary, img, h, cta, badge=None):
+    img_tag = (f'<img class="card-img-top" src="{esc(img)}" data-hash="{h}" alt="{esc(title)}" loading="lazy" '
+               f'style="aspect-ratio:16/10;object-fit:cover;">') if img else ""
+    badge_tag = f'<span class="badge rounded-pill text-bg-light mb-2">{esc(badge)}</span>' if badge else ""
+    return (
+        '<div class="col-sm-6 col-lg-4">'
+        f'<a class="card h-100 border-0 shadow-sm text-decoration-none overflow-hidden" href="{esc(href)}">'
+        f'{img_tag}<div class="card-body p-4">{badge_tag}'
+        f'<h3 class="h5 card-title text-dark mb-2">{esc(title)}</h3>'
+        f'<p class="card-text text-muted small mb-3">{esc(summary)}</p>'
+        f'<span class="fw-semibold" style="color:#f5a623;">{esc(cta)} <i class="bi bi-arrow-right"></i></span>'
+        '</div></a></div>'
+    )
+
+
+def grid_html(intro, heading, cards, empty_text):
+    body = ('<div class="row g-4">' + "".join(cards) + "</div>") if cards else f'<p class="text-muted">{esc(empty_text)}</p>'
+    return f'{intro}\n<h2 class="mt-5 mb-4">{esc(heading)}</h2>\n{body}'
+
+
+def visible(child, parent_status):
+    return child.get("status", "draft") == "published" or parent_status == "draft"
 
 
 def changed_filter(changed_file):
@@ -291,7 +381,7 @@ def changed_filter(changed_file):
 
 
 def run(args):
-    parent_slug, categories, articles, errors = load_plan()
+    parent_slug, parent, categories, articles, errors = load_plan()
     print(f"Found {len(categories)} categories and {len(articles)} articles.")
     if errors:
         print("\nValidation errors:")
@@ -326,23 +416,16 @@ def run(args):
     parent_id = pages[parent_slug]["id"]
 
     report, failed = [], 0
-    for item in categories + articles:
+    all_cats = {c["slug"]: c for c in load_plan()[2]}
+    all_articles = load_plan()[3]
+
+    def do_save(item, p_id, content=None, label=None):
+        nonlocal pages, failed
         slug = item["slug"]
-        if item["_kind"] == "category":
-            p_id = parent_id
-        else:
-            cat = pages.get(item["_category"])
-            if not cat:
-                print(f"  ! {slug}: category page '{item['_category']}' missing, skipped")
-                failed += 1
-                continue
-            p_id = cat["id"]
         existing = pages.get(slug)
-        if existing and item.get("_only_if_missing"):
-            continue
         action = "update" if existing else "create"
         try:
-            admin.save(existing["id"] if existing else None, p_id, fields_for(item),
+            admin.save(existing["id"] if existing else None, p_id, fields_for(item, content),
                        item.get("_thumb_path"), dry_run=args.dry_run)
             if not args.dry_run:
                 time.sleep(1)
@@ -351,11 +434,61 @@ def run(args):
                     raise PublishError("saved but page not found in list (slug may have been changed by the admin)")
             elif not existing:
                 pages[slug] = {"id": 0, "title": item["title"], "status": "planned"}
-            report.append(f"  {action:6} {item['_kind']:8} /{slug} [{item.get('status', 'draft')}]")
+            report.append(f"  {action:6} {label or item['_kind']:8} /{slug} [{item.get('status', 'draft')}]")
             print(report[-1] + (" (dry run)" if args.dry_run else ""))
+            return True
         except Exception as e:
             failed += 1
             print(f"  ! {slug}: {e}")
+            return False
+
+    # 1. make sure category pages exist
+    for c in categories:
+        if c["slug"] not in pages:
+            do_save(c, parent_id)
+
+    # 2. articles
+    for a in articles:
+        cat = pages.get(a["_category"])
+        if not cat:
+            print(f"  ! {a['slug']}: category page '{a['_category']}' missing, skipped")
+            failed += 1
+            continue
+        do_save(a, cat["id"])
+
+    # 3. rebuild category listing pages
+    images = ImageCache(admin, args.dry_run)
+    touched = {c["slug"] for c in categories} | {a["_category"] for a in articles}
+    for slug in sorted(touched, key=lambda s: all_cats[s].get("sort_order", 0)):
+        c = all_cats[slug]
+        if pages.get(slug, {}).get("id"):
+            images.seed(admin.page_content(pages[slug]["id"]))
+        kids = sorted([a for a in all_articles if a["_category"] == slug and visible(a, c.get("status"))],
+                      key=lambda a: (a.get("sort_order", 0), a["title"]))
+        cards = []
+        for a in kids:
+            img, h = images.url(a.get("_thumb_path"))
+            cards.append(card_html(f"/{a['slug']}", a["title"], a["summary"], img, h, "Read guide"))
+        content = grid_html(c.get("intro", ""), c.get("grid_heading", "Guides in this section"), cards,
+                            "New guides are coming soon.")
+        do_save(c, parent_id, content, "listing")
+
+    # 4. rebuild the Educational landing page
+    if parent and (touched or filt is None):
+        p_status = parent.get("status", "draft")
+        if pages.get(parent_slug, {}).get("id"):
+            images.seed(admin.page_content(pages[parent_slug]["id"]))
+        cards = []
+        for c in sorted(all_cats.values(), key=lambda c: c.get("sort_order", 0)):
+            if not visible(c, p_status):
+                continue
+            n = len([a for a in all_articles if a["_category"] == c["slug"] and visible(a, c.get("status"))])
+            img, h = images.url(c.get("_thumb_path"))
+            badge = f"{n} guide{'s' if n != 1 else ''}" if n else "Coming soon"
+            cards.append(card_html(f"/{c['slug']}", c["title"], c["summary"], img, h, "Explore guides", badge))
+        content = grid_html(parent.get("intro", ""), parent.get("grid_heading", "Browse by topic"), cards,
+                            "Topics are coming soon.")
+        do_save(parent, "", content, "landing")
 
     print(f"\nDone: {len(report)} ok, {failed} failed.")
     return 1 if failed else 0

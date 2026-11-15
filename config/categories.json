@@ -1,5 +1,15 @@
 {
   "parent_slug": "educational",
+  "parent": {
+    "title": "Educational",
+    "subtitle": "Engineering guides, basics and how-tos for process instrumentation",
+    "meta_title": "Educational Guides for Process Instrumentation",
+    "meta_description": "Learn the basics of pressure, temperature, level and flow measurement, gas detection and industrial valves with practical guides from SWME engineers.",
+    "summary": "Practical guides on instrumentation basics, selection, installation and maintenance from SWME engineers.",
+    "intro": "<p>Welcome to the SWME Educational section, a free learning resource for engineers, technicians and buyers in the Oil and Gas, Petrochemical, Water and Utilities industries. Here you will find clear, practical guides on how instruments work, how to select the right device for your process, and how to install, calibrate and maintain it for reliable performance.</p>\n<p>Our articles cover pressure, temperature, level and flow measurement, gas detection and industrial valves, written by the engineering team that has supported projects across the GCC since 2004.</p>",
+    "grid_heading": "Browse by topic",
+    "status": "draft"
+  },
   "categories": [
     {
       "slug": "flow-measurement-guides",
