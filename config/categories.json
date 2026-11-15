@@ -1,0 +1,77 @@
+{
+  "parent_slug": "educational",
+  "categories": [
+    {
+      "slug": "flow-measurement-guides",
+      "title": "Flow Measurement Guides",
+      "subtitle": "How flow meters work, how to select them and how to keep them accurate",
+      "meta_title": "Flow Measurement Guides and Basics",
+      "meta_description": "Practical guides on flow measurement: electromagnetic, Coriolis, vortex, turbine, ultrasonic and variable area flow meters, selection and installation tips.",
+      "summary": "Flow meter principles, selection, installation and troubleshooting.",
+      "intro": "<p>Explore practical guides on flow measurement for liquids, gases and steam. Learn how each flow meter technology works, where it fits best and how to install and maintain it for accurate readings.</p>",
+      "thumbnail": "assets/categories/flow.webp",
+      "sort_order": 10,
+      "status": "draft"
+    },
+    {
+      "slug": "pressure-measurement-guides",
+      "title": "Pressure Measurement Guides",
+      "subtitle": "Gauges, transmitters, switches and differential pressure explained",
+      "meta_title": "Pressure Measurement Guides and Basics",
+      "meta_description": "Learn pressure measurement basics: gauge, absolute and differential pressure, pressure gauges, transmitters, switches, diaphragm seals and calibration.",
+      "summary": "Pressure gauges, transmitters, switches and seals explained.",
+      "intro": "<p>Understand gauge, absolute and differential pressure, and learn how to choose the right gauge, transmitter, switch or diaphragm seal for your process conditions.</p>",
+      "thumbnail": "assets/categories/pressure.webp",
+      "sort_order": 20,
+      "status": "draft"
+    },
+    {
+      "slug": "level-measurement-guides",
+      "title": "Level Measurement Guides",
+      "subtitle": "Radar, ultrasonic, float, hydrostatic and point level technologies",
+      "meta_title": "Level Measurement Guides and Basics",
+      "meta_description": "Guides on level measurement: radar, guided wave radar, ultrasonic, hydrostatic, float and magnetic level gauges, point level switches and selection tips.",
+      "summary": "Continuous and point level technologies and how to select them.",
+      "intro": "<p>Learn how continuous and point level instruments work in tanks, silos and vessels, and how to select the right technology for liquids, slurries and bulk solids.</p>",
+      "thumbnail": "assets/categories/level.webp",
+      "sort_order": 30,
+      "status": "draft"
+    },
+    {
+      "slug": "temperature-measurement-guides",
+      "title": "Temperature Measurement Guides",
+      "subtitle": "RTDs, thermocouples, thermowells and temperature transmitters",
+      "meta_title": "Temperature Measurement Guides and Basics",
+      "meta_description": "Temperature measurement basics: RTD vs thermocouple, thermowell design, bimetal thermometers, temperature transmitters, accuracy classes and calibration.",
+      "summary": "RTDs, thermocouples, thermowells and transmitters explained.",
+      "intro": "<p>Get clear explanations of RTDs, thermocouples, thermowells and transmitters, with practical advice on accuracy, response time and installation.</p>",
+      "thumbnail": "assets/categories/temperature.webp",
+      "sort_order": 40,
+      "status": "draft"
+    },
+    {
+      "slug": "gas-detection-guides",
+      "title": "Gas Detection Guides",
+      "subtitle": "Fixed and portable gas detectors for safe plant operation",
+      "meta_title": "Gas Detection Guides and Basics",
+      "meta_description": "Learn gas detection basics: catalytic, infrared, electrochemical and PID sensors, fixed and portable detectors, placement, calibration and bump testing.",
+      "summary": "Gas sensor technologies, detector placement and calibration.",
+      "intro": "<p>Learn how gas sensors work, where to place fixed detectors and how to calibrate and bump test portable units to keep your people and plant safe.</p>",
+      "thumbnail": "assets/categories/gas-detection.webp",
+      "sort_order": 50,
+      "status": "draft"
+    },
+    {
+      "slug": "industrial-valve-guides",
+      "title": "Industrial Valve Guides",
+      "subtitle": "Gate, globe, ball, butterfly, check and control valves explained",
+      "meta_title": "Industrial Valve Guides and Basics",
+      "meta_description": "Industrial valve guides: gate, globe, ball, butterfly, check, safety relief and control valves, API standards, materials, sizing and selection tips.",
+      "summary": "Valve types, standards, materials and selection basics.",
+      "intro": "<p>Compare valve types, understand API and ASME standards, and learn how to choose materials, pressure classes and end connections for demanding service.</p>",
+      "thumbnail": "assets/categories/valves.webp",
+      "sort_order": 60,
+      "status": "draft"
+    }
+  ]
+}
