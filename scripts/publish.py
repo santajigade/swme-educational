@@ -342,17 +342,21 @@ def esc(t):
     return htmllib.escape(t or "", quote=True)
 
 
-def card_html(href, title, summary, img, h, cta, badge=None):
+def card_html(href, title, summary, img, h, cta, badge=None, color="#f5a623", icon=None):
     img_tag = (f'<img class="card-img-top" src="{esc(img)}" data-hash="{h}" alt="{esc(title)}" loading="lazy" '
                f'style="aspect-ratio:16/10;object-fit:cover;">') if img else ""
-    badge_tag = f'<span class="badge rounded-pill text-bg-light mb-2">{esc(badge)}</span>' if badge else ""
+    icon_tag = (f'<span class="d-inline-flex align-items-center justify-content-center rounded-circle me-2" '
+                f'style="width:36px;height:36px;background:{color};color:#fff;"><i class="bi {esc(icon)}"></i></span>') if icon else ""
+    badge_tag = (f'<span class="small fw-semibold" style="color:{color};">{esc(badge)}</span>') if badge else ""
+    head = (f'<div class="d-flex align-items-center mb-3">{icon_tag}{badge_tag}</div>') if (icon_tag or badge_tag) else ""
     return (
         '<div class="col-sm-6 col-lg-4">'
-        f'<a class="card h-100 border-0 shadow-sm text-decoration-none overflow-hidden" href="{esc(href)}">'
-        f'{img_tag}<div class="card-body p-4">{badge_tag}'
+        f'<a class="card h-100 border-0 shadow-sm text-decoration-none overflow-hidden" href="{esc(href)}" '
+        f'style="border-top:4px solid {color} !important;">'
+        f'{img_tag}<div class="card-body p-4">{head}'
         f'<h3 class="h5 card-title text-dark mb-2">{esc(title)}</h3>'
         f'<p class="card-text text-muted small mb-3">{esc(summary)}</p>'
-        f'<span class="fw-semibold" style="color:#f5a623;">{esc(cta)} <i class="bi bi-arrow-right"></i></span>'
+        f'<span class="fw-semibold" style="color:{color};">{esc(cta)} <i class="bi bi-arrow-right"></i></span>'
         '</div></a></div>'
     )
 
@@ -468,7 +472,8 @@ def run(args):
         cards = []
         for a in kids:
             img, h = images.url(a.get("_thumb_path"))
-            cards.append(card_html(f"/{a['slug']}", a["title"], a["summary"], img, h, "Read guide"))
+            cards.append(card_html(f"/{a['slug']}", a["title"], a["summary"], img, h, "Read guide",
+                                   color=c.get("color", "#f5a623"), icon=c.get("icon")))
         content = grid_html(c.get("intro", ""), c.get("grid_heading", "Guides in this section"), cards,
                             "New guides are coming soon.")
         do_save(c, parent_id, content, "listing")
@@ -485,7 +490,8 @@ def run(args):
             n = len([a for a in all_articles if a["_category"] == c["slug"] and visible(a, c.get("status"))])
             img, h = images.url(c.get("_thumb_path"))
             badge = f"{n} guide{'s' if n != 1 else ''}" if n else "Coming soon"
-            cards.append(card_html(f"/{c['slug']}", c["title"], c["summary"], img, h, "Explore guides", badge))
+            cards.append(card_html(f"/{c['slug']}", c["title"], c["summary"], img, h, "Explore guides", badge,
+                                   color=c.get("color", "#f5a623"), icon=c.get("icon")))
         content = grid_html(parent.get("intro", ""), parent.get("grid_heading", "Browse by topic"), cards,
                             "Topics are coming soon.")
         do_save(parent, "", content, "landing")

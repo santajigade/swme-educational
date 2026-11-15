@@ -76,6 +76,12 @@ swme.ae blocks GitHub's servers, so publishing runs on a self-hosted runner
 * Run the workflow manually with `all` for a full resync.
 * Updating an existing slug updates that page instead of creating a duplicate.
 
+## Card images
+
+`python tools/make_card_images.py` regenerates category and article card images
+(category colour, icon, themed background). Use `--missing` to only create new ones.
+Colours and icons for the HTML cards are set per category in config/categories.json.
+
 ## Local commands
 
 ```
