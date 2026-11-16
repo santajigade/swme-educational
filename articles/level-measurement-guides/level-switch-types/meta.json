@@ -1,0 +1,38 @@
+{
+  "title": "Level Switch Types Explained: Float, Fork, Conductive and More",
+  "keyword": "level switch",
+  "subtitle": "How float, vibrating fork, conductive, capacitive, paddle and optical switches work",
+  "meta_title": "Level Switch Types Explained: Float, Fork and More",
+  "meta_description": "Learn how each level switch type works: float, vibrating fork, conductive, capacitive, rotary paddle and optical, with media, limits and selection tips.",
+  "summary": "How the main point level switch technologies work, which media they suit and how to choose one.",
+  "card_title": "Level Switch Types Explained",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-16",
+  "status": "published",
+  "sort_order": 3,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Four Common Level Switch Types",
+    "alt": "Infographic showing four common level switch types: float, vibrating fork, conductive and capacitive",
+    "steps": [
+      [
+        "Float",
+        "A float rides on the liquid and moves a magnet that operates a reed switch."
+      ],
+      [
+        "Vibrating fork",
+        "A fork vibrates at resonance; product contact changes the vibration."
+      ],
+      [
+        "Conductive",
+        "Conductive liquid bridges two electrodes and current flows."
+      ],
+      [
+        "Capacitive",
+        "Product changes the capacitance between the probe and the tank wall."
+      ]
+    ]
+  },
+  "slug": "level-switch-types"
+}

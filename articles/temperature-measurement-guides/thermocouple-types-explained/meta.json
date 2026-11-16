@@ -1,0 +1,44 @@
+{
+  "title": "Thermocouple Types Explained: J, K, T, N, R and S",
+  "keyword": "thermocouple types",
+  "subtitle": "Materials, temperature ranges, atmospheres, colour codes and how to choose",
+  "meta_title": "Thermocouple Types Explained: J, K, T, N, R and S",
+  "meta_description": "Thermocouple types J, K, T, N, R and S compared: leg materials, temperature ranges, atmospheres, IEC colour codes and tips for choosing the right one.",
+  "summary": "How the common thermocouple types differ in materials, range, atmosphere and colour code, and how to choose one.",
+  "card_title": "Thermocouple Types Explained",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-16",
+  "status": "published",
+  "sort_order": 3,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Which Thermocouple for Which Temperature?",
+    "alt": "Infographic ranking thermocouple types T, J, K, N, R and S by recommended upper temperature",
+    "top_label": "Hotter",
+    "bottom_label": "Colder",
+    "levels": [
+      [
+        "Type T",
+        "Minus 200 to 350 degrees C; best choice for cryogenics and moist service.",
+        0.12
+      ],
+      [
+        "Type J",
+        "0 to 750 degrees C; suits reducing, inert and vacuum service.",
+        0.38
+      ],
+      [
+        "Types K and N",
+        "Up to 1,250 (K) and 1,300 (N) degrees C; N is more stable when hot.",
+        0.64
+      ],
+      [
+        "Types R and S",
+        "Platinum types up to 1,450 (R) and 1,400 (S) degrees C.",
+        0.9
+      ]
+    ]
+  },
+  "slug": "thermocouple-types-explained"
+}

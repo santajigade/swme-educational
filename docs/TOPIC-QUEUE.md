@@ -27,7 +27,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Straight Pipe Run Requirements for Flow Meters
 
 ## Level (level-measurement-guides)
-- [ ] Level Switch Types Explained
 - [ ] DP Level Measurement in Closed Tanks
 - [ ] Guided Wave Radar Level Measurement Basics
 - [ ] Capacitance Level Measurement Explained
@@ -37,7 +36,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
 ## Temperature (temperature-measurement-guides)
-- [ ] Thermocouple Types Explained: J, K, T, N, R and S
 - [ ] Bimetal Thermometer Working Principle
 - [ ] Temperature Transmitter Basics
 - [ ] Temperature Switches Explained
@@ -47,7 +45,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Surface Temperature Measurement on Pipes and Vessels
 
 ## Gas detection (gas-detection-guides)
-- [ ] LEL and UEL Explained
 - [ ] Bump Test vs Calibration for Gas Detectors
 - [ ] H2S Gas Detection Basics
 - [ ] Portable vs Fixed Gas Detectors
@@ -57,7 +54,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Gas Detection in Confined Spaces
 
 ## Valves (industrial-valve-guides)
-- [ ] Gate Valve vs Globe Valve
 - [ ] Floating vs Trunnion Mounted Ball Valves
 - [ ] Butterfly Valve Types Explained
 - [ ] Check Valve Types Explained
@@ -71,3 +67,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   how-to-select-a-pressure-gauge, types-of-flow-meters, electromagnetic-flow-meter-working-principle,
   radar-vs-ultrasonic-level-measurement, how-a-magnetic-level-gauge-works, how-an-rtd-works,
   what-is-a-thermowell, types-of-gas-sensors, gas-detector-placement-guide, types-of-industrial-valves
+- 2026-11-16: gate-valve-vs-globe-valve, lel-and-uel-explained, thermocouple-types-explained,
+  level-switch-types

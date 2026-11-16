@@ -1,0 +1,38 @@
+{
+  "title": "LEL and UEL Explained: Flammable Limits and %LEL Readings",
+  "keyword": "LEL and UEL",
+  "subtitle": "Lower and upper explosive limits, flammable range, %LEL vs %vol and alarm levels",
+  "meta_title": "LEL and UEL Explained: Flammable Limits and %LEL",
+  "meta_description": "LEL and UEL explained: what lower and upper explosive limits mean, values for common gases, %LEL vs %vol and how gas detectors use them for alarms.",
+  "summary": "What the lower and upper explosive limits mean, how %LEL relates to %vol and how detectors use LEL for alarms.",
+  "card_title": "LEL and UEL Explained",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-16",
+  "status": "published",
+  "sort_order": 3,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "From %LEL Reading to Action",
+    "alt": "Infographic showing how a gas detector measures percent LEL and raises a first and second alarm",
+    "steps": [
+      [
+        "Sensor reads the gas",
+        "A catalytic or infrared sensor measures flammable gas as a percentage of its LEL."
+      ],
+      [
+        "Signal to the control system",
+        "0 to 100 percent LEL is sent as a 4 to 20 mA signal."
+      ],
+      [
+        "First alarm",
+        "A common first alarm is 10 percent LEL: warn people and start ventilation."
+      ],
+      [
+        "Second alarm",
+        "A second alarm, often 20 percent LEL, triggers shutdown, isolation or evacuation."
+      ]
+    ]
+  },
+  "slug": "lel-and-uel-explained"
+}

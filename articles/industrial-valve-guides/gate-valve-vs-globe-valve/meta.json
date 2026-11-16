@@ -1,0 +1,42 @@
+{
+  "title": "Gate Valve vs Globe Valve: Key Differences and When to Use Each",
+  "keyword": "gate valve vs globe valve",
+  "subtitle": "Design, flow path, pressure drop, throttling, standards and typical services",
+  "meta_title": "Gate Valve vs Globe Valve: Key Differences Explained",
+  "meta_description": "Gate valve vs globe valve: compare design, flow path, pressure drop, throttling, sealing, standards and typical services to choose the right valve.",
+  "summary": "How gate and globe valves differ in design, pressure drop, throttling and sealing, and where each one fits.",
+  "card_title": "Gate Valve vs Globe Valve",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-16",
+  "status": "published",
+  "sort_order": 2,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "compare",
+    "title": "Gate Valve vs Globe Valve",
+    "alt": "Infographic comparing gate valve vs globe valve function, flow path, pressure drop and typical use",
+    "columns": [
+      [
+        "Gate valve",
+        [
+          "Fully open or fully closed",
+          "Straight through bore",
+          "Very low pressure drop",
+          "Flow in both directions",
+          "Mainline isolation"
+        ]
+      ],
+      [
+        "Globe valve",
+        [
+          "Throttles at any position",
+          "S shaped flow path",
+          "Higher pressure drop",
+          "One flow direction, arrow on body",
+          "Bypass, cooling water, dosing"
+        ]
+      ]
+    ]
+  },
+  "slug": "gate-valve-vs-globe-valve"
+}
