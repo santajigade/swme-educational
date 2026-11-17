@@ -1,0 +1,38 @@
+{
+  "title": "What Is a Pressure Switch and How Does It Work?",
+  "keyword": "pressure switch",
+  "subtitle": "Sensing elements, contacts, setpoint and deadband explained in plain terms",
+  "meta_title": "What Is a Pressure Switch? How It Works Explained",
+  "meta_description": "Learn how a pressure switch works: diaphragm, piston and bourdon sensing elements, NO and NC contacts, setpoint, deadband and practical selection tips.",
+  "summary": "How a pressure switch senses pressure and changes an electrical contact, with setpoint, deadband and selection tips.",
+  "card_title": "What Is a Pressure Switch?",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-17",
+  "status": "published",
+  "sort_order": 3,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "How a Pressure Switch Works",
+    "alt": "Infographic showing four steps of pressure switch operation: pressure acts, spring opposes, element moves, contact changes",
+    "steps": [
+      [
+        "Pressure acts",
+        "Process pressure pushes on a diaphragm, piston or bourdon tube."
+      ],
+      [
+        "Spring opposes",
+        "An adjustable range spring resists the force and sets the trip point."
+      ],
+      [
+        "Element moves",
+        "When pressure beats the spring force, the element moves a push rod."
+      ],
+      [
+        "Contact changes",
+        "The rod snaps a microswitch: NO contacts close and NC contacts open."
+      ]
+    ]
+  },
+  "slug": "what-is-a-pressure-switch"
+}

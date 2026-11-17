@@ -1,0 +1,38 @@
+{
+  "title": "Vortex Flow Meter Working Principle Explained",
+  "keyword": "vortex flow meter",
+  "subtitle": "How a bluff body, shedding frequency and the Strouhal number give you volumetric flow",
+  "meta_title": "Vortex Flow Meter Working Principle Explained",
+  "meta_description": "How a vortex flow meter works: bluff body, Karman vortex street, Strouhal number, sensors, Reynolds number limits, applications and installation tips.",
+  "summary": "How vortex shedding behind a bluff body is turned into a flow reading, where vortex meters fit and where they do not.",
+  "card_title": "Vortex Flow Meter Working Principle",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-17",
+  "status": "published",
+  "sort_order": 3,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Four Parts of a Vortex Flow Meter",
+    "alt": "Infographic showing the four parts of a vortex flow meter: bluff body, vortex street, sensor and transmitter",
+    "steps": [
+      [
+        "Bluff body",
+        "A shedder bar across the pipe forces the flow to split around it."
+      ],
+      [
+        "Vortex street",
+        "Vortices form alternately on each side, at a rate set by velocity."
+      ],
+      [
+        "Sensor",
+        "Piezoelectric or capacitive sensors pick up the alternating forces."
+      ],
+      [
+        "Transmitter",
+        "Electronics turn the shedding frequency into volumetric flow."
+      ]
+    ]
+  },
+  "slug": "vortex-flow-meter-working-principle"
+}

@@ -7,7 +7,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 (see "Existing content" in docs/LINKS.md).
 
 ## Pressure (pressure-measurement-guides)
-- [ ] What Is a Pressure Switch and How Does It Work
 - [ ] Diaphragm Seals Explained
 - [ ] Differential Pressure Gauges and Their Applications
 - [ ] Pressure Gauge Accessories: Snubbers, Siphons and Gauge Valves
@@ -17,7 +16,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Protecting Instruments from Overpressure and Water Hammer
 
 ## Flow (flow-measurement-guides)
-- [ ] Vortex Flow Meter Working Principle
 - [ ] Coriolis Mass Flow Meter Explained
 - [ ] Orifice Plate Flow Measurement Basics
 - [ ] How a Rotameter Works
@@ -27,7 +25,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Straight Pipe Run Requirements for Flow Meters
 
 ## Level (level-measurement-guides)
-- [ ] DP Level Measurement in Closed Tanks
 - [ ] Guided Wave Radar Level Measurement Basics
 - [ ] Capacitance Level Measurement Explained
 - [ ] Float Level Switches: How They Work
@@ -54,7 +51,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Gas Detection in Confined Spaces
 
 ## Valves (industrial-valve-guides)
-- [ ] Floating vs Trunnion Mounted Ball Valves
 - [ ] Butterfly Valve Types Explained
 - [ ] Check Valve Types Explained
 - [ ] Safety Relief Valve Basics
@@ -69,3 +65,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   what-is-a-thermowell, types-of-gas-sensors, gas-detector-placement-guide, types-of-industrial-valves
 - 2026-11-16: gate-valve-vs-globe-valve, lel-and-uel-explained, thermocouple-types-explained,
   level-switch-types
+- 2026-11-17: what-is-a-pressure-switch, vortex-flow-meter-working-principle,
+  dp-level-measurement-in-closed-tanks, floating-vs-trunnion-ball-valves

@@ -1,0 +1,62 @@
+{
+  "title": "DP Level Measurement in Closed Tanks: Dry Leg and Wet Leg",
+  "keyword": "dp level measurement",
+  "subtitle": "How a differential pressure transmitter cancels vessel pressure, with worked dry leg and wet leg examples",
+  "meta_title": "DP Level Measurement in Closed Tanks: Dry and Wet Leg",
+  "meta_description": "How DP level measurement works in closed tanks: HP and LP connections, dry leg vs wet leg, LRV and URV formulas with worked examples, and remote seals.",
+  "summary": "How a DP transmitter measures level in a pressurised tank, when to use a dry or wet leg, and how to calculate the range.",
+  "card_title": "DP Level Measurement in Closed Tanks",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-17",
+  "status": "published",
+  "sort_order": 4,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Key Heights in a Closed Tank",
+    "alt": "Infographic showing the key heights for DP level measurement in a closed tank: HP tap, zero level, maximum level and LP tap",
+    "top_label": "Tank top",
+    "bottom_label": "Tank bottom",
+    "steps": [
+      [
+        "HP tap",
+        "Bottom connection senses liquid head plus vessel pressure."
+      ],
+      [
+        "Zero level",
+        "Lowest level to measure; sets the LRV."
+      ],
+      [
+        "Maximum level",
+        "Highest level to measure; sets the URV."
+      ],
+      [
+        "LP tap",
+        "Top connection senses vessel pressure only."
+      ]
+    ],
+    "levels": [
+      [
+        "LP tap in vapour space",
+        "Senses only the vessel pressure, which cancels out.",
+        0.93
+      ],
+      [
+        "Maximum level (URV, 20 mA)",
+        "Top of the measured span, H1 above the zero level.",
+        0.68
+      ],
+      [
+        "Zero level (LRV, 4 mA)",
+        "Bottom of the span, H2 above the HP tap.",
+        0.3
+      ],
+      [
+        "HP tap and transmitter",
+        "Liquid head plus vessel pressure acts here.",
+        0.06
+      ]
+    ]
+  },
+  "slug": "dp-level-measurement-in-closed-tanks"
+}

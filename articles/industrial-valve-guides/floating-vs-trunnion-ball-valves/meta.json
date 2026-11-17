@@ -1,0 +1,38 @@
+{
+  "title": "Floating vs Trunnion Mounted Ball Valves: Key Differences",
+  "keyword": "floating vs trunnion ball valve",
+  "subtitle": "How each design holds the ball, seals, and where each one makes sense",
+  "meta_title": "Floating vs Trunnion Ball Valve: Key Differences",
+  "meta_description": "Floating vs trunnion ball valve explained: ball support, seat sealing, size and pressure class, torque, double block and bleed, cost and typical applications.",
+  "summary": "How floating and trunnion mounted ball valves differ in ball support, sealing, torque, size, cost and typical service.",
+  "card_title": "Floating vs Trunnion Ball Valves",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-17",
+  "status": "published",
+  "sort_order": 3,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "flow",
+    "title": "Choosing a Ball Valve Design",
+    "alt": "Infographic showing four steps to choose between a floating and a trunnion mounted ball valve",
+    "steps": [
+      [
+        "Size and class",
+        "Small bore and low to medium class point to floating."
+      ],
+      [
+        "Isolation",
+        "Double block and bleed needs a trunnion design."
+      ],
+      [
+        "Torque",
+        "High pressure raises floating torque; trunnion stays steadier."
+      ],
+      [
+        "Cost",
+        "Floating costs less; trunnion pays back in severe service."
+      ]
+    ]
+  },
+  "slug": "floating-vs-trunnion-ball-valves"
+}
