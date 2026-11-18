@@ -1,0 +1,38 @@
+{
+  "title": "Bimetal Thermometer Working Principle Explained",
+  "keyword": "bimetal thermometer",
+  "subtitle": "How two bonded metals, a helical coil and a pointer shaft turn temperature into a dial reading with no power",
+  "meta_title": "Bimetal Thermometer Working Principle Explained",
+  "meta_description": "How a bimetal thermometer works: bonded metals, helical coil, accuracy classes to EN 13190, ranges, stem immersion, mounting options and calibration tips.",
+  "summary": "How a bimetal thermometer converts thermal expansion into pointer movement, with accuracy classes, ranges and installation tips.",
+  "card_title": "Bimetal Thermometer Working Principle",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-18",
+  "status": "published",
+  "sort_order": 4,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "How a Bimetal Thermometer Works",
+    "alt": "Infographic showing four steps of the bimetal thermometer working principle from temperature change to dial reading",
+    "steps": [
+      [
+        "Temperature change",
+        "Heat from the process reaches the sensing end of the stem."
+      ],
+      [
+        "Unequal expansion",
+        "Two bonded metals expand by different amounts, so the strip bends."
+      ],
+      [
+        "Coil rotates",
+        "The helical coil winds or unwinds and turns the pointer shaft."
+      ],
+      [
+        "Dial reading",
+        "The pointer shows temperature on the dial with no power needed."
+      ]
+    ]
+  },
+  "slug": "bimetal-thermometer-working-principle"
+}

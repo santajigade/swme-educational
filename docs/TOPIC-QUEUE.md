@@ -7,7 +7,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 (see "Existing content" in docs/LINKS.md).
 
 ## Pressure (pressure-measurement-guides)
-- [ ] Diaphragm Seals Explained
 - [ ] Differential Pressure Gauges and Their Applications
 - [ ] Pressure Gauge Accessories: Snubbers, Siphons and Gauge Valves
 - [ ] Digital vs Analog Pressure Gauges
@@ -16,7 +15,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Protecting Instruments from Overpressure and Water Hammer
 
 ## Flow (flow-measurement-guides)
-- [ ] Coriolis Mass Flow Meter Explained
 - [ ] Orifice Plate Flow Measurement Basics
 - [ ] How a Rotameter Works
 - [ ] Turbine Flow Meter Basics
@@ -33,7 +31,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
 ## Temperature (temperature-measurement-guides)
-- [ ] Bimetal Thermometer Working Principle
 - [ ] Temperature Transmitter Basics
 - [ ] Temperature Switches Explained
 - [ ] Gas Filled vs Bimetal Thermometers
@@ -42,7 +39,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Surface Temperature Measurement on Pipes and Vessels
 
 ## Gas detection (gas-detection-guides)
-- [ ] Bump Test vs Calibration for Gas Detectors
 - [ ] H2S Gas Detection Basics
 - [ ] Portable vs Fixed Gas Detectors
 - [ ] Oxygen Deficiency Monitoring
@@ -67,3 +63,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   level-switch-types
 - 2026-11-17: what-is-a-pressure-switch, vortex-flow-meter-working-principle,
   dp-level-measurement-in-closed-tanks, floating-vs-trunnion-ball-valves
+- 2026-11-18: diaphragm-seals-explained, coriolis-mass-flow-meter-explained,
+  bimetal-thermometer-working-principle, bump-test-vs-calibration-gas-detectors

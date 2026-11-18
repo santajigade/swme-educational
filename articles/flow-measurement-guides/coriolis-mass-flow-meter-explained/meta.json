@@ -1,0 +1,38 @@
+{
+  "title": "Coriolis Mass Flow Meter Explained",
+  "keyword": "coriolis mass flow meter",
+  "subtitle": "How vibrating tubes, a tiny time delay and resonant frequency give direct mass flow and density",
+  "meta_title": "Coriolis Mass Flow Meter Explained: Principle and Use",
+  "meta_description": "How a Coriolis mass flow meter works: vibrating tubes, phase shift, density from frequency, accuracy, turndown, limits and installation orientation tips.",
+  "summary": "How a Coriolis meter measures mass flow and density directly, where it fits and how to install it for a stable zero.",
+  "card_title": "Coriolis Mass Flow Meter Explained",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-18",
+  "status": "published",
+  "sort_order": 4,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "flow",
+    "title": "How a Coriolis Meter Measures Mass Flow",
+    "alt": "Infographic showing four steps of Coriolis mass flow measurement: drive, twist, time delay and output",
+    "steps": [
+      [
+        "Drive",
+        "A drive coil vibrates the flow tubes at their natural frequency."
+      ],
+      [
+        "Twist",
+        "Moving fluid creates Coriolis forces that twist the tubes."
+      ],
+      [
+        "Delta T",
+        "Pickoffs at inlet and outlet see a time delay between their signals."
+      ],
+      [
+        "Output",
+        "Delta T gives mass flow; tube frequency gives density."
+      ]
+    ]
+  },
+  "slug": "coriolis-mass-flow-meter-explained"
+}

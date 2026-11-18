@@ -1,0 +1,39 @@
+{
+  "title": "Diaphragm Seals Explained: How They Protect Pressure Instruments",
+  "keyword": "diaphragm seal",
+  "subtitle": "How a flexible diaphragm and a fill fluid keep corrosive, viscous and hot media away from gauges, switches and transmitters",
+  "meta_title": "Diaphragm Seals Explained: How They Work and When to Use",
+  "meta_description": "How a diaphragm seal works, when to use one, fill fluid choice, capillary effects, temperature error and the selection points that keep readings accurate.",
+  "summary": "How a diaphragm seal isolates a pressure instrument from the process, which fill fluid to choose and how to limit temperature error.",
+  "card_title": "Diaphragm Seals Explained",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-18",
+  "status": "published",
+  "sort_order": 4,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Fill Fluid Thermal Expansion",
+    "alt": "Infographic ranking diaphragm seal fill fluids glycerin, halocarbon and silicone by thermal expansion coefficient",
+    "top_label": "Higher",
+    "bottom_label": "Lower",
+    "levels": [
+      [
+        "Glycerin",
+        "Expansion of 0.00062 ml per ml per degree C, the lowest of the three, so the smallest temperature error.",
+        0.15
+      ],
+      [
+        "Halocarbon",
+        "Expansion of 0.00080 ml per ml per degree C; an inert fill used for oxidizing media.",
+        0.5
+      ],
+      [
+        "Silicone",
+        "Expansion of 0.00096 ml per ml per degree C, the highest, but its low viscosity gives a fast response.",
+        0.85
+      ]
+    ]
+  },
+  "slug": "diaphragm-seals-explained"
+}

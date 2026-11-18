@@ -1,0 +1,50 @@
+{
+  "title": "Bump Test vs Calibration for Gas Detectors",
+  "keyword": "bump test",
+  "subtitle": "What a bump test proves, what a calibration adjusts and how often each one is needed",
+  "meta_title": "Bump Test vs Calibration for Gas Detectors Explained",
+  "meta_description": "Bump test vs calibration for gas detectors: definitions, daily checks, intervals, pass limits, what to do after a failure and common mistakes to avoid.",
+  "summary": "The difference between a bump test, a calibration check and a full calibration, and how often each is needed.",
+  "card_title": "Bump Test vs Calibration",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-18",
+  "status": "published",
+  "sort_order": 4,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "compare",
+    "title": "Bump Test vs Calibration",
+    "alt": "Infographic comparing a gas detector bump test with a full calibration",
+    "steps": [
+      [
+        "Bump test",
+        "Short exposure to test gas that proves sensors respond and alarms work."
+      ],
+      [
+        "Full calibration",
+        "Adjusts the sensor reading to match a known, traceable gas concentration."
+      ]
+    ],
+    "columns": [
+      [
+        "Bump test",
+        [
+          "Qualitative function check",
+          "Proves sensors and alarms respond",
+          "No adjustment is made",
+          "Takes a few minutes"
+        ]
+      ],
+      [
+        "Full calibration",
+        [
+          "Quantitative adjustment",
+          "Matches reading to known gas",
+          "Done to the maker's method",
+          "Needed after a failed bump test"
+        ]
+      ]
+    ]
+  },
+  "slug": "bump-test-vs-calibration-gas-detectors"
+}
