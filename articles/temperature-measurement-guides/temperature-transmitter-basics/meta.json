@@ -1,0 +1,46 @@
+{
+  "title": "Temperature Transmitter Basics",
+  "keyword": "temperature transmitter",
+  "subtitle": "What a temperature transmitter does, mounting styles, 4 to 20 mA and HART, failure signals and selection",
+  "meta_title": "Temperature Transmitter Basics: How They Work",
+  "meta_description": "Temperature transmitter basics: why convert RTD and thermocouple signals, head, rail and field mounting, 4 to 20 mA, HART, NAMUR NE43 and selection tips.",
+  "summary": "What a temperature transmitter does, how head, rail and field mounting compare, and how to choose one for an RTD or thermocouple.",
+  "card_title": "Temperature Transmitter Basics",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-19",
+  "status": "published",
+  "sort_order": 5,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "compare",
+    "title": "Head vs Rail vs Field Mount",
+    "alt": "Infographic comparing head mount, rail mount and field mount temperature transmitters",
+    "columns": [
+      [
+        "Head mount",
+        [
+          "Fits inside the sensor connection head",
+          "Shortest sensor wiring",
+          "Copper pair to the control room"
+        ]
+      ],
+      [
+        "Rail mount",
+        [
+          "Clips onto a DIN rail in a cabinet",
+          "Sensor wired back to the panel",
+          "Spring clips for quick fitting"
+        ]
+      ],
+      [
+        "Field mount",
+        [
+          "Own housing on the equipment",
+          "Mounted outdoors at the process",
+          "Choose an enclosure rating to suit"
+        ]
+      ]
+    ]
+  },
+  "slug": "temperature-transmitter-basics"
+}

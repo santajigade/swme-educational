@@ -1,0 +1,39 @@
+{
+  "title": "Butterfly Valve Types Explained",
+  "keyword": "butterfly valve types",
+  "subtitle": "Concentric, double offset and triple offset designs, body styles, seats and how to choose",
+  "meta_title": "Butterfly Valve Types Explained: Offsets and Bodies",
+  "meta_description": "Butterfly valve types explained: concentric, double offset and triple offset designs, wafer, lug and flanged bodies, seats, API 609 and selection tips.",
+  "summary": "How concentric, double offset and triple offset butterfly valves differ, plus wafer, lug and flanged bodies and how to choose.",
+  "card_title": "Butterfly Valve Types",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-19",
+  "status": "published",
+  "sort_order": 4,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Butterfly Valve Types by Duty",
+    "alt": "Infographic ranking concentric, double offset and triple offset butterfly valves from utility duty to severe duty",
+    "top_label": "Severe duty",
+    "bottom_label": "Utility duty",
+    "levels": [
+      [
+        "Concentric (zero offset)",
+        "Resilient seat; water, HVAC, fire protection and low pressure utility service.",
+        0.15
+      ],
+      [
+        "Double offset",
+        "Cam action cuts seat rubbing; cooling water, process water and moderate pressure process lines.",
+        0.5
+      ],
+      [
+        "Triple offset",
+        "Conical metal seat touches only at closure; hydrocarbon, steam and high temperature service.",
+        0.85
+      ]
+    ]
+  },
+  "slug": "butterfly-valve-types-explained"
+}

@@ -23,7 +23,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Straight Pipe Run Requirements for Flow Meters
 
 ## Level (level-measurement-guides)
-- [ ] Guided Wave Radar Level Measurement Basics
 - [ ] Capacitance Level Measurement Explained
 - [ ] Float Level Switches: How They Work
 - [ ] Interface Level Measurement Basics
@@ -31,7 +30,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
 ## Temperature (temperature-measurement-guides)
-- [ ] Temperature Transmitter Basics
 - [ ] Temperature Switches Explained
 - [ ] Gas Filled vs Bimetal Thermometers
 - [ ] Infrared Temperature Measurement Basics
@@ -39,7 +37,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Surface Temperature Measurement on Pipes and Vessels
 
 ## Gas detection (gas-detection-guides)
-- [ ] H2S Gas Detection Basics
 - [ ] Portable vs Fixed Gas Detectors
 - [ ] Oxygen Deficiency Monitoring
 - [ ] Open Path Gas Detection Explained
@@ -47,7 +44,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Gas Detection in Confined Spaces
 
 ## Valves (industrial-valve-guides)
-- [ ] Butterfly Valve Types Explained
 - [ ] Check Valve Types Explained
 - [ ] Safety Relief Valve Basics
 - [ ] Control Valve Basics: Body, Trim and Actuator
@@ -65,3 +61,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   dp-level-measurement-in-closed-tanks, floating-vs-trunnion-ball-valves
 - 2026-11-18: diaphragm-seals-explained, coriolis-mass-flow-meter-explained,
   bimetal-thermometer-working-principle, bump-test-vs-calibration-gas-detectors
+- 2026-11-19: guided-wave-radar-level-measurement, butterfly-valve-types-explained,
+  temperature-transmitter-basics, h2s-gas-detection-basics

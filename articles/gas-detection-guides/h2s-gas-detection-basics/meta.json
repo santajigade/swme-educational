@@ -1,0 +1,38 @@
+{
+  "title": "H2S Gas Detection Basics",
+  "keyword": "H2S gas detection",
+  "subtitle": "Why hydrogen sulfide is so dangerous, exposure limits, sensor types and where to place detectors",
+  "meta_title": "H2S Gas Detection Basics: Limits, Sensors, Placement",
+  "meta_description": "H2S gas detection basics: hydrogen sulfide hazards by ppm, OSHA and NIOSH limits, electrochemical and MOS sensors, detector placement and common mistakes.",
+  "summary": "Why hydrogen sulfide needs instrument detection, the key exposure limits, which sensor to use and where to mount detectors.",
+  "card_title": "H2S Gas Detection Basics",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-19",
+  "status": "published",
+  "sort_order": 5,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "flow",
+    "title": "From H2S Release to Alarm",
+    "alt": "Infographic showing four stages from an H2S release to a detector alarm and response",
+    "steps": [
+      [
+        "Release",
+        "H2S escapes from a process, well or drain."
+      ],
+      [
+        "Sinks low",
+        "Heavier than air, it collects in low lying areas."
+      ],
+      [
+        "Detected",
+        "A sensor mounted low measures the ppm level."
+      ],
+      [
+        "Alarm",
+        "Set points trigger alarms so people can respond."
+      ]
+    ]
+  },
+  "slug": "h2s-gas-detection-basics"
+}

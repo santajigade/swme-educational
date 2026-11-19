@@ -1,0 +1,38 @@
+{
+  "title": "Guided Wave Radar Level Measurement Basics",
+  "keyword": "guided wave radar",
+  "subtitle": "How a probe guided radar pulse measures level and interface, which probe to choose and how to install it",
+  "meta_title": "Guided Wave Radar Level Measurement Basics",
+  "meta_description": "Guided wave radar level measurement explained: how the pulse and probe work, dielectric constant, interface, probe types, installation tips and mistakes.",
+  "summary": "How guided wave radar measures level and interface, how to choose a probe and how to install it for a reliable reading.",
+  "card_title": "Guided Wave Radar Basics",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-19",
+  "status": "published",
+  "sort_order": 5,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "How Guided Wave Radar Works",
+    "alt": "Infographic showing four steps of guided wave radar level measurement from pulse to level output",
+    "steps": [
+      [
+        "Pulse sent",
+        "The transmitter sends a low power radar pulse down the probe."
+      ],
+      [
+        "Guided by the probe",
+        "The probe acts as a waveguide and keeps the pulse focused."
+      ],
+      [
+        "Echo at the surface",
+        "Part of the pulse reflects where the dielectric constant changes."
+      ],
+      [
+        "Level calculated",
+        "Time of flight gives the distance, and the distance gives the level."
+      ]
+    ]
+  },
+  "slug": "guided-wave-radar-level-measurement"
+}
