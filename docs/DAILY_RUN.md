@@ -33,6 +33,12 @@ publish something wrong.
      keyword in an H2, plain professional tone, no em or en dashes and no hyphenated words in
      visible text (also inside SVG text), use "&amp;" for "&".
    * Link each new guide to 1 or 2 related existing guides (URL = /<slug>).
+   * **Humanize the writing** (Santaji's instruction, 19 November 2026, applies from 20 November 2026):
+     after drafting each guide, invoke the Skill tool with `humanize-writing:humanize-writing` and run
+     every piece of visible prose through it (intro, paragraphs, rows, table cells, Did you know,
+     checklist, mistakes, FAQ, infographic text). Keep every fact, number, source attribution, link,
+     focus keyword and template component unchanged, and keep all writing rules above (no em or en
+     dashes, no hyphenated words, keyword count). Then rebuild and validate again in step 4.
 4. **Build and check**
    * `python tools/build_article.py <slug> ...`
    * `python tools/make_card_images.py --missing`
