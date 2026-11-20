@@ -1,0 +1,38 @@
+{
+  "title": "Differential Pressure Gauges and Their Applications",
+  "keyword": "differential pressure gauge",
+  "subtitle": "How piston, diaphragm, bellows and Bourdon designs read the difference between two pressures, and where plants use them",
+  "meta_title": "Differential Pressure Gauges and Their Applications",
+  "meta_description": "Differential pressure gauge guide: piston, diaphragm, bellows and Bourdon designs, working pressure, filter, flow and level uses, selection and mistakes.",
+  "summary": "How a differential pressure gauge works, which sensing design suits your fluid, and how plants use DP gauges on filters, flow and level.",
+  "card_title": "Differential Pressure Gauges",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-20",
+  "status": "published",
+  "sort_order": 5,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "flow",
+    "title": "How a DP Gauge Reads a Filter",
+    "alt": "Infographic showing how a differential pressure gauge reads the pressure drop across a filter from high port to pointer",
+    "steps": [
+      [
+        "High port",
+        "Upstream pressure enters the high side of the gauge."
+      ],
+      [
+        "Low port",
+        "Downstream pressure enters the low side."
+      ],
+      [
+        "Sensing element",
+        "A piston, diaphragm, bellows or Bourdon element moves with the difference."
+      ],
+      [
+        "Pointer",
+        "A magnet or linkage turns the pointer to show P1 minus P2."
+      ]
+    ]
+  },
+  "slug": "differential-pressure-gauges-explained"
+}

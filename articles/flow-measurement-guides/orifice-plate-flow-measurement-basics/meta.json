@@ -1,0 +1,39 @@
+{
+  "title": "Orifice Plate Flow Measurement Basics",
+  "keyword": "orifice plate",
+  "subtitle": "How an orifice plate turns flow into differential pressure, how to choose the beta ratio and taps, and how to install it",
+  "meta_title": "Orifice Plate Flow Measurement Basics",
+  "meta_description": "Orifice plate flow measurement explained: square root law, beta ratio, pressure loss, plate and tap types, straight run, turndown and common mistakes.",
+  "summary": "How an orifice plate measures flow through differential pressure, how beta ratio affects pressure loss, and what a good installation needs.",
+  "card_title": "Orifice Plate Basics",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-20",
+  "status": "published",
+  "sort_order": 5,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Pressure Along an Orifice Run",
+    "alt": "Infographic showing line pressure upstream of an orifice plate, the low pressure just downstream and the partly recovered pressure further down the pipe",
+    "top_label": "High",
+    "bottom_label": "Low",
+    "levels": [
+      [
+        "Upstream tap",
+        "Full line pressure before the plate. This is the high side of the DP.",
+        0.85
+      ],
+      [
+        "Recovered pressure",
+        "Pressure partly recovers downstream. What is not recovered, often 40 to 80% of the DP, is lost.",
+        0.5
+      ],
+      [
+        "Downstream tap",
+        "Pressure is lowest just after the bore. This is the low side of the DP.",
+        0.15
+      ]
+    ]
+  },
+  "slug": "orifice-plate-flow-measurement-basics"
+}

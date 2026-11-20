@@ -7,7 +7,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 (see "Existing content" in docs/LINKS.md).
 
 ## Pressure (pressure-measurement-guides)
-- [ ] Differential Pressure Gauges and Their Applications
 - [ ] Pressure Gauge Accessories: Snubbers, Siphons and Gauge Valves
 - [ ] Digital vs Analog Pressure Gauges
 - [ ] Pressure Units and Conversions Explained
@@ -15,7 +14,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Protecting Instruments from Overpressure and Water Hammer
 
 ## Flow (flow-measurement-guides)
-- [ ] Orifice Plate Flow Measurement Basics
 - [ ] How a Rotameter Works
 - [ ] Turbine Flow Meter Basics
 - [ ] Flow Switches Explained
@@ -25,7 +23,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 ## Level (level-measurement-guides)
 - [ ] Capacitance Level Measurement Explained
 - [ ] Float Level Switches: How They Work
-- [ ] Interface Level Measurement Basics
 - [ ] Point Level vs Continuous Level Measurement
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
@@ -44,7 +41,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Gas Detection in Confined Spaces
 
 ## Valves (industrial-valve-guides)
-- [ ] Check Valve Types Explained
 - [ ] Safety Relief Valve Basics
 - [ ] Control Valve Basics: Body, Trim and Actuator
 - [ ] Valve Pressure Classes Explained
@@ -63,3 +59,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   bimetal-thermometer-working-principle, bump-test-vs-calibration-gas-detectors
 - 2026-11-19: guided-wave-radar-level-measurement, butterfly-valve-types-explained,
   temperature-transmitter-basics, h2s-gas-detection-basics
+- 2026-11-20: differential-pressure-gauges-explained, orifice-plate-flow-measurement-basics,
+  interface-level-measurement-basics, check-valve-types-explained

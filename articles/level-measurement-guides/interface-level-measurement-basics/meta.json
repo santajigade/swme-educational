@@ -1,0 +1,49 @@
+{
+  "title": "Interface Level Measurement Basics",
+  "keyword": "interface level measurement",
+  "subtitle": "How plants measure the boundary between oil and water, which technologies cope with emulsion, and how to choose one",
+  "meta_title": "Interface Level Measurement Basics",
+  "meta_description": "Interface level measurement explained: emulsion and rag layers, DP, displacer, guided wave radar, capacitance and nuclear methods, selection and mistakes.",
+  "summary": "What an interface is, how DP, displacer, guided wave radar, capacitance and nuclear gauges measure it, and how emulsion changes the choice.",
+  "card_title": "Interface Level Basics",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-20",
+  "status": "published",
+  "sort_order": 6,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "compare",
+    "title": "Three Ways to Find the Interface",
+    "alt": "Infographic comparing density based, guided wave radar and capacitance interface level measurement",
+    "columns": [
+      [
+        "Density based",
+        [
+          "DP or displacer",
+          "Needs a density difference",
+          "Small DP limits accuracy",
+          "Weak with thick emulsion"
+        ]
+      ],
+      [
+        "Guided wave radar",
+        [
+          "Level and interface together",
+          "Upper liquid dielectric below 10",
+          "Dielectric difference above 10",
+          "Emulsion under 50 mm"
+        ]
+      ],
+      [
+        "Capacitance",
+        [
+          "Probe and tank form a capacitor",
+          "Lower liquid dielectric higher",
+          "Stable reading in emulsion",
+          "No density effect"
+        ]
+      ]
+    ]
+  },
+  "slug": "interface-level-measurement-basics"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Check Valve Types Explained",
+  "keyword": "check valve",
+  "subtitle": "How swing, lift, ball, dual plate, tilting disc and silent check valves stop backflow, and how to pick and install one",
+  "meta_title": "Check Valve Types Explained",
+  "meta_description": "Check valve types explained: swing, lift, ball, dual plate, tilting disc and silent checks, cracking pressure, slam, standards, orientation and mistakes.",
+  "summary": "How each check valve type stops reverse flow, which ones resist slam and water hammer, and how orientation and sizing affect the choice.",
+  "card_title": "Check Valve Types",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-20",
+  "status": "published",
+  "sort_order": 5,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "How a Check Valve Works",
+    "alt": "Infographic showing four steps of check valve operation from cracking open to closing before reverse flow",
+    "steps": [
+      [
+        "Cracking open",
+        "Upstream pressure reaches the cracking pressure and lifts the disc off its seat."
+      ],
+      [
+        "Forward flow",
+        "Flow holds the disc open; the valve does not regulate the flow."
+      ],
+      [
+        "Flow slows",
+        "As the pump stops, flow falls and the disc starts to return."
+      ],
+      [
+        "Closed in time",
+        "The disc must seat before line flow reaches zero to avoid slam."
+      ]
+    ]
+  },
+  "slug": "check-valve-types-explained"
+}
