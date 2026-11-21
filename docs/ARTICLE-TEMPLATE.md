@@ -30,6 +30,7 @@ Approved on 15 November 2026 (sample: what-is-a-pressure-transmitter).
   zentacalculator.com and zentaengineering.com, then official sites.
 * Each link sits in the section it supports and its sentence says why the reader would click.
   No paragraphs made only of links. Never write "Instrumentation Blog" in visible text; describe the topic.
+* Optional: one embedded zentacalculator.com calculator (iframe) when it matches the topic 100%, with a text link below it.
 * Focus keyword in at least one H2 to H4 and used naturally throughout.
 * Plain, professional whitepaper tone with "For example," and "In addition,".
 * About 800 to 1,300 words, concise and scannable.
