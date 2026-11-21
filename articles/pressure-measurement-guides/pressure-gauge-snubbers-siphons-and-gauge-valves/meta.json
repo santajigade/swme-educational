@@ -1,0 +1,63 @@
+{
+  "title": "Pressure Gauge Accessories: Snubbers, Siphons and Gauge Valves",
+  "keyword": "pressure gauge accessories",
+  "subtitle": "What snubbers, siphons, throttle screws and gauge valves protect against, and how to fit them on pulsating or hot service",
+  "meta_title": "Pressure Gauge Snubbers, Siphons and Gauge Valves",
+  "meta_description": "Pressure gauge accessories explained: snubber types, steam siphons, throttle screws, gauge valves and block and bleed, with ratings and installation tips.",
+  "summary": "Which pressure gauge accessory to fit for pulsation, steam or isolation, how each one works and the ratings that matter.",
+  "card_title": "Snubbers, Siphons and Gauge Valves",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-21",
+  "status": "published",
+  "sort_order": 6,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "compare",
+    "title": "Snubber vs Siphon vs Gauge Valve",
+    "alt": "Infographic comparing a pressure gauge snubber, a steam siphon and a gauge valve by what each protects against",
+    "steps": [
+      [
+        "Snubber",
+        "Damps pulses and pressure peaks from pumps and compressors."
+      ],
+      [
+        "Siphon",
+        "Holds condensate so steam never reaches the gauge."
+      ],
+      [
+        "Gauge valve",
+        "Isolates the gauge for protection or removal."
+      ]
+    ],
+    "columns": [
+      [
+        "Snubber",
+        [
+          "Fights pulsation and spikes",
+          "Porous disc, piston or adjustable",
+          "Pumps, compressors, hydraulics",
+          "Does not change process pressure"
+        ]
+      ],
+      [
+        "Siphon",
+        [
+          "Fights live steam and heat",
+          "Pigtail, coil or compact",
+          "Fill with water before fitting",
+          "Refinery and power plant steam"
+        ]
+      ],
+      [
+        "Gauge valve",
+        [
+          "Isolates the instrument",
+          "Needle valve or block and bleed",
+          "Lets you remove the gauge",
+          "Mounts directly to the gauge"
+        ]
+      ]
+    ]
+  },
+  "slug": "pressure-gauge-snubbers-siphons-and-gauge-valves"
+}

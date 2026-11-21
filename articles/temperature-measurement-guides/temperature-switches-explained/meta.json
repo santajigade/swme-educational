@@ -1,0 +1,38 @@
+{
+  "title": "Temperature Switches Explained: Types, Setpoint and Deadband",
+  "keyword": "temperature switch",
+  "subtitle": "How bimetal, filled system and electronic temperature switches work, what setpoint and deadband mean, and how to install them",
+  "meta_title": "Temperature Switches Explained: Types and Deadband",
+  "meta_description": "Temperature switch guide: bimetal, filled bulb and electronic types, setpoint and deadband, SPDT contacts, limiters and installation tips for process plants.",
+  "summary": "How a temperature switch opens or closes a contact at a set temperature, the main types, setpoint and deadband, and how to install one.",
+  "card_title": "Temperature Switches Explained",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-21",
+  "status": "published",
+  "sort_order": 6,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "flow",
+    "title": "How a Filled Temperature Switch Trips",
+    "alt": "Infographic showing how a filled bulb temperature switch turns a temperature rise into a contact change",
+    "steps": [
+      [
+        "Bulb heats",
+        "Process heat raises the pressure of the fill inside the bulb."
+      ],
+      [
+        "Capillary",
+        "The pressure travels through a fine capillary to the switch housing."
+      ],
+      [
+        "Membrane moves",
+        "A membrane or diaphragm expands against the range spring."
+      ],
+      [
+        "Contact changes",
+        "At the setpoint a snap action switch changes over its contacts."
+      ]
+    ]
+  },
+  "slug": "temperature-switches-explained"
+}

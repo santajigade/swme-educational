@@ -1,0 +1,38 @@
+{
+  "title": "Portable vs Fixed Gas Detectors: Which One Do You Need?",
+  "keyword": "fixed gas detector",
+  "subtitle": "What personal and fixed gas detection each protect, how they alarm and connect, and how they work together",
+  "meta_title": "Portable vs Fixed Gas Detectors: Which Do You Need?",
+  "meta_description": "Portable vs fixed gas detectors: what each protects, alarms, sensors, power, bump testing, links to PLC and shutdown, confined space use and using both.",
+  "summary": "How a fixed gas detector protects an area and a portable monitor protects a worker, and how to decide which your site needs.",
+  "card_title": "Portable vs Fixed Gas Detectors",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-21",
+  "status": "published",
+  "sort_order": 6,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Choosing Portable or Fixed Gas Detection",
+    "alt": "Infographic with four questions that decide between portable and fixed gas detectors",
+    "steps": [
+      [
+        "Who or what to protect",
+        "Fixed detectors protect the facility; portable monitors protect the person wearing them."
+      ],
+      [
+        "Where the gas is",
+        "Fixed suits known leak points; portable follows the worker into new or confined spaces."
+      ],
+      [
+        "What must happen on alarm",
+        "Fixed systems can start ventilation or shut a process down; portable alarms rely on the worker."
+      ],
+      [
+        "How it is maintained",
+        "Both need gas tests; portable units are often bump tested in a docking station."
+      ]
+    ]
+  },
+  "slug": "portable-vs-fixed-gas-detectors"
+}

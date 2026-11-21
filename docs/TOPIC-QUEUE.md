@@ -7,14 +7,12 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 (see "Existing content" in docs/LINKS.md).
 
 ## Pressure (pressure-measurement-guides)
-- [ ] Pressure Gauge Accessories: Snubbers, Siphons and Gauge Valves
 - [ ] Digital vs Analog Pressure Gauges
 - [ ] Pressure Units and Conversions Explained
 - [ ] How to Calibrate a Pressure Gauge
 - [ ] Protecting Instruments from Overpressure and Water Hammer
 
 ## Flow (flow-measurement-guides)
-- [ ] How a Rotameter Works
 - [ ] Turbine Flow Meter Basics
 - [ ] Flow Switches Explained
 - [ ] Clamp On Ultrasonic Flow Meter Basics
@@ -27,14 +25,12 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
 ## Temperature (temperature-measurement-guides)
-- [ ] Temperature Switches Explained
 - [ ] Gas Filled vs Bimetal Thermometers
 - [ ] Infrared Temperature Measurement Basics
 - [ ] Response Time of Temperature Sensors
 - [ ] Surface Temperature Measurement on Pipes and Vessels
 
 ## Gas detection (gas-detection-guides)
-- [ ] Portable vs Fixed Gas Detectors
 - [ ] Oxygen Deficiency Monitoring
 - [ ] Open Path Gas Detection Explained
 - [ ] Catalytic Bead Sensor Poisoning and How to Avoid It
@@ -61,3 +57,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   temperature-transmitter-basics, h2s-gas-detection-basics
 - 2026-11-20: differential-pressure-gauges-explained, orifice-plate-flow-measurement-basics,
   interface-level-measurement-basics, check-valve-types-explained
+- 2026-11-21: pressure-gauge-snubbers-siphons-and-gauge-valves, how-a-rotameter-works,
+  temperature-switches-explained, portable-vs-fixed-gas-detectors

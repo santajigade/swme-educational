@@ -1,0 +1,38 @@
+{
+  "title": "How a Rotameter Works: Variable Area Flow Measurement",
+  "keyword": "rotameter",
+  "subtitle": "The tapered tube and float principle, glass and metal tube designs, accuracy, mounting rules and fluid corrections",
+  "meta_title": "How a Rotameter Works: Variable Area Flow Meters",
+  "meta_description": "How a rotameter works: float and tapered tube principle, glass, plastic and metal tubes, accuracy and turndown, vertical mounting and fluid corrections.",
+  "summary": "The float and tapered tube principle behind the rotameter, which tube suits your service, typical accuracy and the mounting rules that matter.",
+  "card_title": "How a Rotameter Works",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-21",
+  "status": "published",
+  "sort_order": 6,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "How a Rotameter Measures Flow",
+    "alt": "Infographic showing how a rotameter float rises in a tapered tube until the forces balance and the flow is read on the scale",
+    "steps": [
+      [
+        "Flow enters at the bottom",
+        "Fluid moves up through a tube that widens toward the top."
+      ],
+      [
+        "The float lifts",
+        "Drag and buoyancy push the float up against its weight."
+      ],
+      [
+        "The gap opens",
+        "As the float rises, the annular area around it gets larger."
+      ],
+      [
+        "Forces balance",
+        "The float settles where the open area passes the flow, and you read the scale."
+      ]
+    ]
+  },
+  "slug": "how-a-rotameter-works"
+}
