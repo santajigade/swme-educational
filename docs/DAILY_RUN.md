@@ -39,15 +39,17 @@ publish something wrong.
      test the switch with a resistance simulator."). Never name "Instrumentation Blog" (or the site
      name of any external source) in visible text: the anchor describes the topic instead (for
      example "temperature gauge calibration steps").
-   * **Embedded Zenta calculator** (Santaji's instruction, 21 November 2026): when a zentacalculator.com
-     calculator matches the guide's topic 100% (for example rotameter-correction in a rotameter guide,
-     pt100-resistance in a Pt100 guide), embed it in the section it supports. At most one embed per
-     guide; if the match is only partial, use a normal text link instead. Add it to BODY as raw HTML:
-     `'<div class="my-4"><p class="fw-semibold mb-2">Rotameter correction calculator</p>'`
-     `'<iframe src="https://zentacalculator.com/engineering/rotameter-correction/" title="Rotameter correction calculator" loading="lazy" style="width:100%;height:620px;border:1px solid #dee2e6;border-radius:12px;"></iframe>'`
-     `'<p class="mt-2">Work out the correction factor above, or ' + ext(url, "open the rotameter correction calculator") + ' in a new tab.</p></div>'`
-     The sentence before or after says what the reader works out with it. The text link stays (it counts
-     toward the 10 links; the iframe does not). Never use iframe srcdoc.
+   * **Embedded Zenta calculator** (Santaji's instruction, 21 November 2026; zentacalculator.com is free
+     to embed): when a zentacalculator.com calculator matches the guide's topic 100% (for example
+     rotameter-correction in a rotameter guide, pt100-resistance in a Pt100 guide), embed it in the
+     section it supports. At most one embed per guide; if the match is only partial, use a normal text
+     link instead. Use the site's own embed format (iframe src = /embed/<category>/<slug>/), but leave
+     out its auto resize <script>: the swme.ae editor strips scripts and publish.py rejects them.
+     Add it to BODY as raw HTML, for example:
+     `'<div class="my-4"><iframe src="https://zentacalculator.com/embed/engineering/rotameter-correction/" title="Rotameter Correction Calculator" width="100%" height="640" loading="lazy" style="border:1px solid #e2e5ee;border-radius:12px;max-width:720px;"></iframe>'`
+     `'<p>' + ext("https://zentacalculator.com/engineering/rotameter-correction/", "Rotameter Correction Calculator") + ' by ' + ext("https://zentacalculator.com/", "Zenta Calculator") + '</p></div>'`
+     Copy the calculator's exact title from its page. The sentence before the embed says what the reader
+     works out with it. The links count toward the 10 links; the iframe does not. Never use iframe srcdoc.
    * Link each new guide to 1 or 2 related existing guides (URL = /<slug>).
    * **Humanize the writing** (Santaji's instruction, 19 November 2026, applies from 20 November 2026):
      after drafting each guide, invoke the Skill tool with `humanize-writing:humanize-writing` and run
