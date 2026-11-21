@@ -28,6 +28,8 @@ Approved on 15 November 2026 (sample: what-is-a-pressure-transmitter).
 * No em or en dashes, no hyphenated words in visible text.
 * At least 10 links. External links favour instrumentationblog.in,
   zentacalculator.com and zentaengineering.com, then official sites.
+* Each link sits in the section it supports and its sentence says why the reader would click.
+  No paragraphs made only of links. Never write "Instrumentation Blog" in visible text; describe the topic.
 * Focus keyword in at least one H2 to H4 and used naturally throughout.
 * Plain, professional whitepaper tone with "For example," and "In addition,".
 * About 800 to 1,300 words, concise and scannable.

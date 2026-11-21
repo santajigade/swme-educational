@@ -32,6 +32,13 @@ publish something wrong.
      then instrumentationblog.in, zentacalculator.com, zentaengineering.com from docs/LINKS.md),
      keyword in an H2, plain professional tone, no em or en dashes and no hyphenated words in
      visible text (also inside SVG text), use "&amp;" for "&".
+   * **Link wording** (Santaji's instruction, 21 November 2026): no paragraph that only lists links.
+     Put each link in the section it supports, in a sentence that says what the reader gets from it
+     in the article's own terms. Calculator links say what you work out with them (for example
+     "The Pt100 resistance calculator shows the resistance at your setpoint, which helps when you
+     test the switch with a resistance simulator."). Never name "Instrumentation Blog" (or the site
+     name of any external source) in visible text: the anchor describes the topic instead (for
+     example "temperature gauge calibration steps").
    * Link each new guide to 1 or 2 related existing guides (URL = /<slug>).
    * **Humanize the writing** (Santaji's instruction, 19 November 2026, applies from 20 November 2026):
      after drafting each guide, invoke the Skill tool with `humanize-writing:humanize-writing` and run
