@@ -19,25 +19,21 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Straight Pipe Run Requirements for Flow Meters
 
 ## Level (level-measurement-guides)
-- [ ] Capacitance Level Measurement Explained
 - [ ] Float Level Switches: How They Work
 - [ ] Point Level vs Continuous Level Measurement
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
 ## Temperature (temperature-measurement-guides)
-- [ ] Gas Filled vs Bimetal Thermometers
 - [ ] Infrared Temperature Measurement Basics
 - [ ] Response Time of Temperature Sensors
 - [ ] Surface Temperature Measurement on Pipes and Vessels
 
 ## Gas detection (gas-detection-guides)
-- [ ] Oxygen Deficiency Monitoring
 - [ ] Open Path Gas Detection Explained
 - [ ] Catalytic Bead Sensor Poisoning and How to Avoid It
 - [ ] Gas Detection in Confined Spaces
 
 ## Valves (industrial-valve-guides)
-- [ ] Safety Relief Valve Basics
 - [ ] Control Valve Basics: Body, Trim and Actuator
 - [ ] Valve Pressure Classes Explained
 - [ ] Y Strainer vs Basket Strainer
@@ -59,3 +55,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   interface-level-measurement-basics, check-valve-types-explained
 - 2026-11-21: pressure-gauge-snubbers-siphons-and-gauge-valves, how-a-rotameter-works,
   temperature-switches-explained, portable-vs-fixed-gas-detectors
+- 2026-11-22: capacitance-level-measurement-explained, safety-relief-valve-basics,
+  gas-filled-vs-bimetal-thermometers, oxygen-deficiency-monitoring

@@ -1,0 +1,38 @@
+{
+  "title": "Safety Relief Valve Basics: Set Pressure, Accumulation and Blowdown",
+  "keyword": "safety relief valve",
+  "subtitle": "How a spring loaded safety relief valve opens and reseats, the key pressure terms, valve types and installation rules",
+  "meta_title": "Safety Relief Valve Basics: How They Work",
+  "meta_description": "Safety relief valve basics: safety vs relief valves, set pressure, overpressure, accumulation and blowdown, bellows and pilot valves, installation tips.",
+  "summary": "How a safety relief valve protects a vessel, what set pressure, accumulation and blowdown mean, and how to install one correctly.",
+  "card_title": "Safety Relief Valve Basics",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-22",
+  "status": "published",
+  "sort_order": 6,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Four Pressure Terms for Relief Valves",
+    "alt": "Infographic explaining set pressure, overpressure, accumulation and blowdown for a safety relief valve",
+    "steps": [
+      [
+        "Set pressure",
+        "The gauge pressure at which the valve starts to lift."
+      ],
+      [
+        "Overpressure",
+        "The pressure rise above set pressure while the valve relieves."
+      ],
+      [
+        "Accumulation",
+        "The pressure rise above the MAWP of the protected system."
+      ],
+      [
+        "Blowdown",
+        "The difference between the popping pressure and the reseat pressure."
+      ]
+    ]
+  },
+  "slug": "safety-relief-valve-basics"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Capacitance Level Measurement Explained",
+  "keyword": "capacitance level measurement",
+  "subtitle": "How a probe and tank wall form a capacitor, why dielectric constant and conductivity matter, and how to calibrate and avoid build up errors",
+  "meta_title": "Capacitance Level Measurement Explained",
+  "meta_description": "Capacitance level measurement: probe and tank wall as a capacitor, dielectric constants, insulated probes for conductive liquids, calibration and build up.",
+  "summary": "How capacitance level probes work, why the dielectric constant and conductivity of the liquid matter, and how to calibrate and install them.",
+  "card_title": "Capacitance Level Measurement",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-22",
+  "status": "published",
+  "sort_order": 7,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "flow",
+    "title": "How a Capacitance Level Probe Works",
+    "alt": "Infographic showing how a capacitance probe turns a rising liquid level into a 4 to 20 mA signal",
+    "steps": [
+      [
+        "Two plates",
+        "The probe rod is one plate and the tank wall or a reference tube is the other."
+      ],
+      [
+        "Level rises",
+        "Liquid with a higher dielectric constant than air replaces the vapour around the probe."
+      ],
+      [
+        "Capacitance rises",
+        "An empty tank gives a low capacitance and a full tank a high one."
+      ],
+      [
+        "Signal out",
+        "The electronics give a relay change or a scaled 4 to 20 mA output."
+      ]
+    ]
+  },
+  "slug": "capacitance-level-measurement-explained"
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Gas Filled vs Bimetal Thermometers: Which to Choose",
+  "keyword": "gas filled vs bimetal thermometer",
+  "subtitle": "How gas actuated and bimetal dial thermometers work, how they compare on range, response, remote mounting and cost, and how to choose",
+  "meta_title": "Gas Filled vs Bimetal Thermometers Compared",
+  "meta_description": "Gas filled vs bimetal thermometer: working principle, ranges, accuracy class, response time, capillary remote mounting, immersion and selection tips.",
+  "summary": "How gas filled and bimetal dial thermometers work and how they compare on range, response time, remote mounting, vibration and cost.",
+  "card_title": "Gas Filled vs Bimetal Thermometers",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-22",
+  "status": "published",
+  "sort_order": 7,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "compare",
+    "title": "Gas Filled vs Bimetal Thermometer",
+    "alt": "Infographic comparing gas filled and bimetal dial thermometers on principle, range, response and mounting",
+    "columns": [
+      [
+        "Bimetal",
+        [
+          "Helical bimetal coil turns the pointer",
+          "WIKA range minus 70 to 600 °C",
+          "About 90 s to settle in WIKA's test",
+          "Direct mounting on the process"
+        ]
+      ],
+      [
+        "Gas filled",
+        [
+          "Inert gas pressure moves a Bourdon tube",
+          "WIKA range minus 200 to 700 °C",
+          "About 30 s to settle in WIKA's test",
+          "Remote mounting with a capillary"
+        ]
+      ]
+    ]
+  },
+  "slug": "gas-filled-vs-bimetal-thermometers"
+}

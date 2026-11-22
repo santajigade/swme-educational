@@ -1,0 +1,49 @@
+{
+  "title": "Oxygen Deficiency Monitoring: Limits, Sensors and Placement",
+  "keyword": "oxygen deficiency monitoring",
+  "subtitle": "Why oxygen levels fall, the 19.5% and 23.5% limits, how oxygen sensors work, where to mount them and how to keep them calibrated",
+  "meta_title": "Oxygen Deficiency Monitoring: Limits and Sensors",
+  "meta_description": "Oxygen deficiency monitoring: OSHA 19.5% and 23.5% limits, effects of low oxygen, causes, electrochemical sensors, placement and calibration tips.",
+  "summary": "Why oxygen levels drop in plants and labs, the alarm limits, how oxygen sensors work and where to mount them.",
+  "card_title": "Oxygen Deficiency Monitoring",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-22",
+  "status": "published",
+  "sort_order": 7,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Oxygen Levels and What They Mean",
+    "alt": "Infographic showing oxygen levels from enriched air above 23.5% down to dangerous levels below 10%",
+    "top_label": "More O2",
+    "bottom_label": "Less O2",
+    "levels": [
+      [
+        "Above 23.5%",
+        "OSHA: oxygen enriched atmosphere.",
+        0.93
+      ],
+      [
+        "20.9%",
+        "Normal air at sea level.",
+        0.73
+      ],
+      [
+        "Below 19.5%",
+        "OSHA: oxygen deficient atmosphere.",
+        0.55
+      ],
+      [
+        "Below 16%",
+        "Dizziness, slower reactions, fatigue.",
+        0.37
+      ],
+      [
+        "Below 10%",
+        "Inability to move, unconsciousness.",
+        0.12
+      ]
+    ]
+  },
+  "slug": "oxygen-deficiency-monitoring"
+}
