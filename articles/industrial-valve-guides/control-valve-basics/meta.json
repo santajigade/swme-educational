@@ -1,0 +1,38 @@
+{
+  "title": "Control Valve Basics: Body, Trim and Actuator",
+  "keyword": "control valve",
+  "subtitle": "How a control valve fits the loop, what the body, trim, actuator and positioner each do, flow characteristics, Cv and Kv, leakage classes and sizing",
+  "meta_title": "Control Valve Basics: Body, Trim and Actuator",
+  "meta_description": "Control valve basics: sliding stem and rotary bodies, trim and flow characteristics, actuators and fail action, positioners, Cv and Kv, leakage classes.",
+  "summary": "What each part of a control valve does, how trim shapes the flow, how actuators fail safe, and the Cv, leakage and sizing figures buyers need.",
+  "card_title": "Control Valve Basics",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-23",
+  "status": "published",
+  "sort_order": 7,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "How a Control Valve Follows the Controller",
+    "alt": "Infographic showing the signal path from controller output through the positioner and actuator to the valve trim",
+    "steps": [
+      [
+        "Controller output",
+        "The controller sends a 4 to 20 mA signal for the valve position it wants."
+      ],
+      [
+        "I/P and positioner",
+        "The current becomes a 3 to 15 psi air signal, and the positioner holds the stem where asked."
+      ],
+      [
+        "Actuator moves the stem",
+        "Air on the diaphragm or piston works against the spring to move the stem."
+      ],
+      [
+        "Trim varies the flow",
+        "The plug moves against the seat ring and changes the size of the flow passage."
+      ]
+    ]
+  },
+  "slug": "control-valve-basics"
+}

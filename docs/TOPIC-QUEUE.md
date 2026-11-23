@@ -7,20 +7,17 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 (see "Existing content" in docs/LINKS.md).
 
 ## Pressure (pressure-measurement-guides)
-- [ ] Digital vs Analog Pressure Gauges
 - [ ] Pressure Units and Conversions Explained
 - [ ] How to Calibrate a Pressure Gauge
 - [ ] Protecting Instruments from Overpressure and Water Hammer
 
 ## Flow (flow-measurement-guides)
-- [ ] Turbine Flow Meter Basics
 - [ ] Flow Switches Explained
 - [ ] Clamp On Ultrasonic Flow Meter Basics
 - [ ] Straight Pipe Run Requirements for Flow Meters
 
 ## Level (level-measurement-guides)
 - [ ] Float Level Switches: How They Work
-- [ ] Point Level vs Continuous Level Measurement
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
 ## Temperature (temperature-measurement-guides)
@@ -34,7 +31,6 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Gas Detection in Confined Spaces
 
 ## Valves (industrial-valve-guides)
-- [ ] Control Valve Basics: Body, Trim and Actuator
 - [ ] Valve Pressure Classes Explained
 - [ ] Y Strainer vs Basket Strainer
 
@@ -57,3 +53,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   temperature-switches-explained, portable-vs-fixed-gas-detectors
 - 2026-11-22: capacitance-level-measurement-explained, safety-relief-valve-basics,
   gas-filled-vs-bimetal-thermometers, oxygen-deficiency-monitoring
+- 2026-11-23: digital-vs-analog-pressure-gauges, turbine-flow-meter-basics,
+  point-level-vs-continuous-level-measurement, control-valve-basics

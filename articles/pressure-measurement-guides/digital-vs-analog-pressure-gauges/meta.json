@@ -1,0 +1,44 @@
+{
+  "title": "Digital vs Analog Pressure Gauges: How to Choose",
+  "keyword": "digital vs analog pressure gauges",
+  "subtitle": "How Bourdon tube and piezoresistive gauges measure, what the accuracy grades mean, and how power, vibration and hazardous areas affect the choice",
+  "meta_title": "Digital vs Analog Pressure Gauges: How to Choose",
+  "meta_description": "Digital vs analog pressure gauges: how Bourdon tube and piezoresistive gauges work, ASME and EN 837 accuracy, battery life, vibration and hazardous areas.",
+  "summary": "How analog and digital pressure gauges measure, how their accuracy compares, and what power, vibration and hazardous areas mean for the choice.",
+  "card_title": "Digital vs Analog Pressure Gauges",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-23",
+  "status": "published",
+  "sort_order": 7,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Pressure Gauge Accuracy Ladder",
+    "alt": "Infographic ranking pressure gauge accuracy from ASME Grade B up to a 0.05% digital reference gauge",
+    "top_label": "Tighter",
+    "bottom_label": "Looser",
+    "levels": [
+      [
+        "ASME Grade B",
+        "±3% of span in the lower and upper quarter, ±2% in the middle half.",
+        0.1
+      ],
+      [
+        "ASME Grade 1A",
+        "±1% of span over the whole scale. Ashcroft puts ±0.5 to 1% in process work.",
+        0.37
+      ],
+      [
+        "ASME Grade 3A",
+        "±0.25% of span, which Ashcroft places in test and measurement work.",
+        0.63
+      ],
+      [
+        "Digital reference gauge",
+        "The Fluke 700G is rated at 0.05% of full scale.",
+        0.9
+      ]
+    ]
+  },
+  "slug": "digital-vs-analog-pressure-gauges"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Turbine Flow Meter Basics: Principle, K Factor and Installation",
+  "keyword": "turbine flow meter",
+  "subtitle": "How the rotor and pickup make a pulse signal, what the K factor means, how viscosity affects accuracy and how much straight pipe the meter needs",
+  "meta_title": "Turbine Flow Meter Basics: Principle and K Factor",
+  "meta_description": "Turbine flow meter basics: rotor and pickup principle, K factor and flow formula, accuracy and turndown, viscosity effects, straight run and strainers.",
+  "summary": "How a turbine flow meter turns rotor speed into pulses, how to use the K factor, and the viscosity and installation rules that decide its accuracy.",
+  "card_title": "Turbine Flow Meter Basics",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-23",
+  "status": "published",
+  "sort_order": 7,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "flow",
+    "title": "From Rotor Speed to Flow Rate",
+    "alt": "Infographic showing how a turbine flow meter turns rotor speed into pulses and then into a flow rate using the K factor",
+    "steps": [
+      [
+        "Flow turns the rotor",
+        "Fluid on the angled blades spins the rotor in proportion to its velocity."
+      ],
+      [
+        "Pickup makes pulses",
+        "A pickup senses the passing blades; each pulse stands for a small volume."
+      ],
+      [
+        "Pulses form a frequency",
+        "The pickoff frequency is proportional to the flow rate."
+      ],
+      [
+        "K factor gives flow",
+        "Divide frequency by the K factor for flow, or count pulses for the total."
+      ]
+    ]
+  },
+  "slug": "turbine-flow-meter-basics"
+}

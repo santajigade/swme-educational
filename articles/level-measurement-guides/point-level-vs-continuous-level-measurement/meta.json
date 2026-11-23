@@ -1,0 +1,38 @@
+{
+  "title": "Point Level vs Continuous Level Measurement",
+  "keyword": "point level vs continuous level",
+  "subtitle": "What a level switch and a level transmitter each tell you, which technologies do each job, and why overfill protection keeps them separate",
+  "meta_title": "Point Level vs Continuous Level Measurement",
+  "meta_description": "Point level vs continuous level measurement: switches and transmitters compared, technologies for each, API 2350 overfill rules and when to install both.",
+  "summary": "The difference between point level switches and continuous level transmitters, the technologies behind each, and why safety duties often need both.",
+  "card_title": "Point Level vs Continuous Level",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-23",
+  "status": "published",
+  "sort_order": 8,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Point Level vs Continuous Level",
+    "alt": "Infographic comparing point level switches and continuous level transmitters by output and typical use",
+    "steps": [
+      [
+        "Point level switch",
+        "Detects material at one set height and sends an on or off signal."
+      ],
+      [
+        "Continuous transmitter",
+        "Measures the level across a span, often as 4 to 20 mA with HART."
+      ],
+      [
+        "Typical point uses",
+        "High and low alarms, pump control and overfill protection."
+      ],
+      [
+        "Typical continuous uses",
+        "Process control, inventory and volume."
+      ]
+    ]
+  },
+  "slug": "point-level-vs-continuous-level-measurement"
+}
