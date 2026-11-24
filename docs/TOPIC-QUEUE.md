@@ -7,12 +7,10 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 (see "Existing content" in docs/LINKS.md).
 
 ## Pressure (pressure-measurement-guides)
-- [ ] Pressure Units and Conversions Explained
 - [ ] How to Calibrate a Pressure Gauge
 - [ ] Protecting Instruments from Overpressure and Water Hammer
 
 ## Flow (flow-measurement-guides)
-- [ ] Flow Switches Explained
 - [ ] Clamp On Ultrasonic Flow Meter Basics
 - [ ] Straight Pipe Run Requirements for Flow Meters
 
@@ -21,12 +19,10 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
 ## Temperature (temperature-measurement-guides)
-- [ ] Infrared Temperature Measurement Basics
 - [ ] Response Time of Temperature Sensors
 - [ ] Surface Temperature Measurement on Pipes and Vessels
 
 ## Gas detection (gas-detection-guides)
-- [ ] Open Path Gas Detection Explained
 - [ ] Catalytic Bead Sensor Poisoning and How to Avoid It
 - [ ] Gas Detection in Confined Spaces
 
@@ -55,3 +51,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   gas-filled-vs-bimetal-thermometers, oxygen-deficiency-monitoring
 - 2026-11-23: digital-vs-analog-pressure-gauges, turbine-flow-meter-basics,
   point-level-vs-continuous-level-measurement, control-valve-basics
+- 2026-11-24: pressure-units-and-conversions, flow-switches-explained,
+  infrared-temperature-measurement-basics, open-path-gas-detection-explained

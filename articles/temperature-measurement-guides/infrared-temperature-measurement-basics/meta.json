@@ -1,0 +1,49 @@
+{
+  "title": "Infrared Temperature Measurement Basics: Emissivity and Spot Size",
+  "keyword": "infrared thermometer",
+  "subtitle": "How an infrared thermometer reads temperature without contact, why emissivity and distance to spot ratio decide its accuracy, and what steam, glass and shiny metal do to the reading",
+  "meta_title": "Infrared Temperature Measurement: Emissivity and Spot",
+  "meta_description": "Infrared temperature measurement basics: how an infrared thermometer works, emissivity settings, distance to spot ratio, shiny surfaces, glass and steam.",
+  "summary": "How an infrared thermometer works, how emissivity and the distance to spot ratio affect the reading, and the practical checks that give a reading you can trust.",
+  "card_title": "Infrared Temperature Measurement",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-24",
+  "status": "published",
+  "sort_order": 8,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Emissivity: How Well a Surface Radiates",
+    "alt": "Infographic ranking surfaces by emissivity from a blackbody at 1.0 down to shiny metals that emit little and reflect a lot",
+    "top_label": "Emits more",
+    "bottom_label": "Emits less",
+    "levels": [
+      [
+        "Blackbody, 1.0",
+        "The ideal emitter. Dull black paint comes close to 1.0.",
+        0.92
+      ],
+      [
+        "Masking tape, 0.95",
+        "DwyerOmega's value for tape stuck on the target.",
+        0.72
+      ],
+      [
+        "High setting",
+        "Fluke: wood, paint and plastic.",
+        0.5
+      ],
+      [
+        "Low setting",
+        "Fluke: shiny metals.",
+        0.28
+      ],
+      [
+        "Polished metal",
+        "Low emissivity, high reflectivity. Readings may not be possible.",
+        0.08
+      ]
+    ]
+  },
+  "slug": "infrared-temperature-measurement-basics"
+}

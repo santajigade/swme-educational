@@ -1,0 +1,38 @@
+{
+  "title": "Flow Switches Explained: Types, Setpoint and Deadband",
+  "keyword": "flow switch",
+  "subtitle": "How paddle, piston, shuttle and thermal flow switches detect flow, how to set the trip point and deadband, and where they protect pumps, boilers and chillers",
+  "meta_title": "Flow Switches Explained: Types, Setpoint and Deadband",
+  "meta_description": "Flow switches explained: paddle, piston, shuttle and thermal types, how to choose the setpoint, deadband on rising and falling flow, and installation tips.",
+  "summary": "How a flow switch trips at a set flow rate, the main sensing types and their limits, and how to pick a setpoint that avoids nuisance trips.",
+  "card_title": "Flow Switches Explained",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-24",
+  "status": "published",
+  "sort_order": 8,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "How a Flow Switch Trips and Resets",
+    "alt": "Infographic showing a flow switch in its normal state, tripping at the setpoint on rising flow, resetting at a lower flow and sending a signal",
+    "steps": [
+      [
+        "Normal state",
+        "Below the trip point the contacts sit in their normal position."
+      ],
+      [
+        "Flow rises to setpoint",
+        "The paddle or sensor responds and the contacts change state."
+      ],
+      [
+        "Flow falls back",
+        "The switch resets at a lower flow rate. The gap is the deadband."
+      ],
+      [
+        "Signal acts",
+        "The contact stops a pump, trips a boiler or raises an alarm."
+      ]
+    ]
+  },
+  "slug": "flow-switches-explained"
+}

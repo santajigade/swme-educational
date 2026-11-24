@@ -1,0 +1,38 @@
+{
+  "title": "Pressure Units and Conversions Explained: Pa, bar, psi and More",
+  "keyword": "pressure units",
+  "subtitle": "What the pascal, bar, psi, atmosphere, torr and water column units mean, which conversion factors are exact, and how to convert between them without mistakes",
+  "meta_title": "Pressure Units and Conversions: Pa, bar, psi Explained",
+  "meta_description": "Pressure units explained: pascal, bar, psi, atm, torr, inches of water and kgf/cm2, with NIST conversion factors, worked examples and common mistakes.",
+  "summary": "The pressure units you meet on gauges and datasheets, the NIST factors that convert them to pascals, and a simple method for converting any unit to any other.",
+  "card_title": "Pressure Units and Conversions",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-24",
+  "status": "published",
+  "sort_order": 8,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Four Pressure Units to Know",
+    "alt": "Infographic showing the pascal, bar, psi and standard atmosphere with their values in pascals",
+    "steps": [
+      [
+        "Pascal (Pa)",
+        "One newton per square metre. The SI unit of pressure."
+      ],
+      [
+        "bar",
+        "Exactly 100 000 Pa, the same as 100 kPa or 0.1 MPa."
+      ],
+      [
+        "psi",
+        "One pound force per square inch, 6894.757 Pa in NIST's table."
+      ],
+      [
+        "Standard atmosphere",
+        "Exactly 101 325 Pa, about 14.70 psi."
+      ]
+    ]
+  },
+  "slug": "pressure-units-and-conversions"
+}

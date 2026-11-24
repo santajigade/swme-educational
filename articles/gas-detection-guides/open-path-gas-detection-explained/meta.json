@@ -1,0 +1,40 @@
+{
+  "title": "Open Path Gas Detection Explained: LEL.m, Range and Alarms",
+  "keyword": "open path gas detection",
+  "subtitle": "How an infrared beam detects flammable gas anywhere along its path, what an LEL.m reading means, and when open path detectors beat a row of point detectors",
+  "meta_title": "Open Path Gas Detection Explained: LEL.m and Alarms",
+  "meta_description": "Open path gas detection explained: infrared beam principle, LEL.m readings, path lengths, alarm settings, fault signals and how it compares with point sensors.",
+  "summary": "How open path infrared detectors work, what LEL.m means, typical ranges and alarm levels, and where they fit compared with point gas detectors.",
+  "card_title": "Open Path Gas Detection",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-24",
+  "status": "published",
+  "sort_order": 8,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "compare",
+    "title": "Point Detector vs Open Path Detector",
+    "alt": "Infographic comparing point gas detectors and open path gas detectors on what they measure, units, coverage and strengths",
+    "columns": [
+      [
+        "Point detector",
+        [
+          "Measures gas at one spot",
+          "Reads in ppm or %LEL",
+          "Gives a precise location",
+          "Outdoors needs a weather shield, which slows response"
+        ]
+      ],
+      [
+        "Open path detector",
+        [
+          "Measures gas along a beam",
+          "Reads in LEL.m or ppm.m",
+          "Covers a line a few metres to hundreds of metres long",
+          "Indicates the size of the gas cloud"
+        ]
+      ]
+    ]
+  },
+  "slug": "open-path-gas-detection-explained"
+}
