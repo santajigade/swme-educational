@@ -1,0 +1,39 @@
+{
+  "title": "Float Level Switches: How They Work",
+  "keyword": "float level switch",
+  "subtitle": "How a float, a magnet and a reed contact turn a liquid level into a switch signal, how vertical and side mounted switches differ, and what stops a float switch working",
+  "meta_title": "Float Level Switches: How They Work",
+  "meta_description": "How a float level switch works: float, magnet and reed contact, normally open or closed, vertical and side mounting, hysteresis for pumps, and buildup risks.",
+  "summary": "How a float level switch uses a magnet and a reed contact to switch at a set level, how to choose the contact and mounting, and what makes floats stick.",
+  "card_title": "Float Level Switches",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-25",
+  "status": "published",
+  "sort_order": 9,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Two Stage Float Switch on a Sump",
+    "alt": "Infographic of a two stage float switch on a sump: the pump starts at the first stage, the second stage alarms or shuts off the source, and the pump stops at a lower point",
+    "top_label": "High",
+    "bottom_label": "Low",
+    "levels": [
+      [
+        "Second stage",
+        "If the level keeps rising, it shuts off the source or raises an alarm.",
+        0.88
+      ],
+      [
+        "First stage: pump on",
+        "The switch energises the pump.",
+        0.6
+      ],
+      [
+        "Pump off",
+        "The shut off point can sit much lower than the turn on point, so the pump cycles less.",
+        0.2
+      ]
+    ]
+  },
+  "slug": "float-level-switches-explained"
+}

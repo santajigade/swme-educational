@@ -15,19 +15,15 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 - [ ] Straight Pipe Run Requirements for Flow Meters
 
 ## Level (level-measurement-guides)
-- [ ] Float Level Switches: How They Work
 - [ ] Tank Level to Volume: Strapping Tables Explained
 
 ## Temperature (temperature-measurement-guides)
-- [ ] Response Time of Temperature Sensors
 - [ ] Surface Temperature Measurement on Pipes and Vessels
 
 ## Gas detection (gas-detection-guides)
-- [ ] Catalytic Bead Sensor Poisoning and How to Avoid It
 - [ ] Gas Detection in Confined Spaces
 
 ## Valves (industrial-valve-guides)
-- [ ] Valve Pressure Classes Explained
 - [ ] Y Strainer vs Basket Strainer
 
 ## Published
@@ -53,3 +49,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   point-level-vs-continuous-level-measurement, control-valve-basics
 - 2026-11-24: pressure-units-and-conversions, flow-switches-explained,
   infrared-temperature-measurement-basics, open-path-gas-detection-explained
+- 2026-11-25: float-level-switches-explained, valve-pressure-classes-explained,
+  temperature-sensor-response-time, catalytic-bead-sensor-poisoning

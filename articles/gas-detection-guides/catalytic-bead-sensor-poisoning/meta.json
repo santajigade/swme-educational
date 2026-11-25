@@ -1,0 +1,38 @@
+{
+  "title": "Catalytic Bead Sensor Poisoning and How to Avoid It",
+  "keyword": "catalytic bead sensor",
+  "subtitle": "How silicones, lead, sulfur compounds and halogenated solvents poison or inhibit an LEL sensor, how the two differ, and the filter, handling and test habits that keep a catalytic bead sensor reading correctly",
+  "meta_title": "Catalytic Bead Sensor Poisoning: Causes and Prevention",
+  "meta_description": "How a catalytic bead sensor is poisoned or inhibited by silicones, lead, H2S and halogenated solvents, the difference between the two, and how to prevent it.",
+  "summary": "How silicones, lead, sulfur compounds and halogenated solvents poison or inhibit a catalytic bead LEL sensor, and the habits that prevent it.",
+  "card_title": "Catalytic Bead Sensor Poisoning",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-25",
+  "status": "published",
+  "sort_order": 9,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "Keeping an LEL Sensor Free of Poisons",
+    "alt": "Infographic with four steps to protect a catalytic bead LEL sensor: use the recommended filter, keep silicones away, test before use and service after exposure",
+    "steps": [
+      [
+        "Fit the recommended filter",
+        "Change it weekly, or straight after exposure to a poison."
+      ],
+      [
+        "Keep silicones away",
+        "No silicone lubricants, polishes, sealants or hand creams near the instrument."
+      ],
+      [
+        "Test before use",
+        "Always test the monitor before you rely on it."
+      ],
+      [
+        "Service after exposure",
+        "Clean the pump and replace the tubing, filter and gasket."
+      ]
+    ]
+  },
+  "slug": "catalytic-bead-sensor-poisoning"
+}

@@ -1,0 +1,48 @@
+{
+  "title": "Valve Pressure Classes Explained: ASME B16.34 Ratings",
+  "keyword": "valve pressure class",
+  "subtitle": "What Class 150, 300 and 600 really mean, why the allowed pressure falls as temperature rises, how material groups change the rating, and where Class 800 and PN ratings fit",
+  "meta_title": "Valve Pressure Classes Explained: ASME B16.34",
+  "meta_description": "Valve pressure class explained: what Class 150, 300 and 600 mean under ASME B16.34, how ratings fall with temperature, material groups, Class 800 and PN.",
+  "summary": "What a valve pressure class means under ASME B16.34, how the allowed pressure falls with temperature and material, and where Class 800 and PN ratings fit.",
+  "card_title": "Valve Pressure Classes",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-25",
+  "status": "published",
+  "sort_order": 8,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "compare",
+    "title": "Group 1.1 Carbon Steel: Class 150 vs 300",
+    "alt": "Infographic comparing the ASME B16.34 pressure ratings of Class 150 and Class 300 carbon steel valves at ambient, 250 °C and 425 °C",
+    "steps": [
+      [
+        "Class 150",
+        "19.6 bar at ambient, 12.1 bar at 250 °C, 5.5 bar at 425 °C."
+      ],
+      [
+        "Class 300",
+        "51.1 bar at ambient, 41.9 bar at 250 °C, 28.8 bar at 425 °C."
+      ]
+    ],
+    "columns": [
+      [
+        "Class 150",
+        [
+          "19.6 bar at minus 29 to 38 °C",
+          "12.1 bar at 250 °C",
+          "5.5 bar at 425 °C"
+        ]
+      ],
+      [
+        "Class 300",
+        [
+          "51.1 bar at minus 29 to 38 °C",
+          "41.9 bar at 250 °C",
+          "28.8 bar at 425 °C"
+        ]
+      ]
+    ]
+  },
+  "slug": "valve-pressure-classes-explained"
+}

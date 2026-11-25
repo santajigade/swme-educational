@@ -1,0 +1,38 @@
+{
+  "title": "Response Time of Temperature Sensors: t50, t63 and t90",
+  "keyword": "response time",
+  "subtitle": "What the time constant of a temperature sensor means, how t50, t63 and t90 are measured, and why thermowells, junction type and the process fluid change the response time you see in the plant",
+  "meta_title": "Temperature Sensor Response Time: t50, t63 and t90",
+  "meta_description": "Temperature sensor response time explained: the 63.2% time constant, t50 and t90, test methods, and how thermowells, junction type and the fluid slow a sensor.",
+  "summary": "What the time constant and the t50, t63 and t90 values of a temperature sensor mean, how they are tested, and what slows a sensor down in service.",
+  "card_title": "Temperature Sensor Response Time",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-25",
+  "status": "published",
+  "sort_order": 9,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Four Ways to Quote Response Time",
+    "alt": "Infographic with four cards: t50, t63 time constant, t90 and five time constants, with the share of a step change each one represents",
+    "steps": [
+      [
+        "t50",
+        "Time to reach 50% of a step change: 0.693 time constants."
+      ],
+      [
+        "t63, the time constant",
+        "Time to reach 63.2% of a step change."
+      ],
+      [
+        "t90",
+        "Time to reach 90% of a step change: 2.303 time constants."
+      ],
+      [
+        "5 time constants",
+        "Roughly the fully stabilised value, 99.3% of the step."
+      ]
+    ]
+  },
+  "slug": "temperature-sensor-response-time"
+}
