@@ -28,7 +28,7 @@ publish something wrong.
    * BODY: takeaways, intro (bold keyword, SWME product link), toc, sections with
      INFOGRAPHIC, at least one SVG diagram (svg() or svg_chain()) that is technically correct,
      rows or table, dyk (Did you know), twocol or checklist, mistakes, faq (3 questions).
-   * 800 to 1,300 words, 10 or more links (SWME product pages, existing guides and blog posts,
+   * 1,000 to 1,625 words (Santaji, 25 November 2026: 1.25x longer from 26 November 2026; add depth from sources, never padding), 10 or more links (SWME product pages, existing guides and blog posts,
      then instrumentationblog.in, zentacalculator.com, zentaengineering.com from docs/LINKS.md),
      keyword in an H2, plain professional tone, no em or en dashes and no hyphenated words in
      visible text (also inside SVG text), use "&amp;" for "&".
