@@ -7,24 +7,32 @@ Never write a topic that duplicates an existing guide or an SWME blog post
 (see "Existing content" in docs/LINKS.md).
 
 ## Pressure (pressure-measurement-guides)
-- [ ] How to Calibrate a Pressure Gauge
 - [ ] Protecting Instruments from Overpressure and Water Hammer
+- [ ] Pressure Gauge Accuracy Classes Explained (EN 837 and ASME B40.100)
+- [ ] Liquid Filled vs Dry Pressure Gauges
 
 ## Flow (flow-measurement-guides)
-- [ ] Clamp On Ultrasonic Flow Meter Basics
-- [ ] Straight Pipe Run Requirements for Flow Meters
+- [ ] Clamp On Ultrasonic Flow Meter Basics (check overlap with /blog/xft-clamp-on-ultrasonic-flow-meter-uae; keep it generic)
+- [ ] How Positive Displacement Flow Meters Work
+- [ ] Flow Meter Accuracy: Percent of Reading vs Percent of Full Scale
 
 ## Level (level-measurement-guides)
-- [ ] Tank Level to Volume: Strapping Tables Explained
+- [ ] How Submersible Hydrostatic Level Transmitters Work
+- [ ] Reflex vs Transparent Level Gauges
 
 ## Temperature (temperature-measurement-guides)
 - [ ] Surface Temperature Measurement on Pipes and Vessels
+- [ ] Thermocouple Extension Wire vs Compensating Cable
+- [ ] How to Calibrate a Temperature Sensor with a Dry Block Calibrator
 
 ## Gas detection (gas-detection-guides)
 - [ ] Gas Detection in Confined Spaces
+- [ ] Hazardous Area Zones 0, 1 and 2 and Gas Detector Selection
+- [ ] Ammonia Gas Detection in Refrigeration Plants
 
 ## Valves (industrial-valve-guides)
-- [ ] Y Strainer vs Basket Strainer
+- [ ] Pneumatic vs Electric Valve Actuators
+- [ ] Needle Valve vs Ball Valve
 
 ## Published
 - 2026-11-15: what-is-a-pressure-transmitter, gauge-vs-absolute-vs-differential-pressure,
@@ -51,3 +59,5 @@ Never write a topic that duplicates an existing guide or an SWME blog post
   infrared-temperature-measurement-basics, open-path-gas-detection-explained
 - 2026-11-25: float-level-switches-explained, valve-pressure-classes-explained,
   temperature-sensor-response-time, catalytic-bead-sensor-poisoning
+- 2026-11-26: how-to-calibrate-a-pressure-gauge, straight-pipe-run-requirements-for-flow-meters,
+  tank-strapping-tables-explained, y-strainer-vs-basket-strainer

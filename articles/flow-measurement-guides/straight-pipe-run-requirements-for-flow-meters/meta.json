@@ -1,0 +1,46 @@
+{
+  "title": "Straight Pipe Run Requirements for Flow Meters",
+  "keyword": "straight pipe run",
+  "subtitle": "Why bends, valves and pumps upset a flow meter, how many pipe diameters each meter type needs upstream and downstream, what flow conditioners save, and how to spot a short run",
+  "meta_title": "Straight Pipe Run Requirements for Flow Meters",
+  "meta_description": "Straight pipe run for flow meters: why swirl causes errors, upstream and downstream diameters by meter type, flow conditioners and a worked example.",
+  "summary": "How many pipe diameters of straight pipe run each flow meter needs, why bends and valves cause errors, and what flow conditioners and good layout can save.",
+  "card_title": "Straight Pipe Run for Flow Meters",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-26",
+  "status": "published",
+  "sort_order": 9,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "grid",
+    "title": "Typical Minimum Straight Runs by Meter",
+    "alt": "Infographic grid of typical minimum upstream and downstream straight runs for electromagnetic, clamp on ultrasonic, vortex, turbine, orifice and Coriolis meters",
+    "steps": [
+      [
+        "Electromagnetic",
+        "5 D upstream, 2 D downstream (KROHNE)."
+      ],
+      [
+        "Clamp on ultrasonic",
+        "10 D upstream, 5 D downstream as a typical minimum (Siemens)."
+      ],
+      [
+        "Vortex",
+        "10 D and 5 D minimum; 35 D upstream for reference accuracy (Rosemount 8800D)."
+      ],
+      [
+        "Turbine",
+        "At least 10 D upstream and 5 D downstream (Seametrics)."
+      ],
+      [
+        "Orifice plate",
+        "16 D after one bend at beta 0.4, 44 D at beta 0.65 (ISO 5167)."
+      ],
+      [
+        "Coriolis",
+        "No inlet or outlet run requirements (Promass 80E and 83E)."
+      ]
+    ]
+  },
+  "slug": "straight-pipe-run-requirements-for-flow-meters"
+}

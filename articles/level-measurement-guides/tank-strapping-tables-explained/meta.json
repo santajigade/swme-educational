@@ -1,0 +1,42 @@
+{
+  "title": "Tank Level to Volume: Strapping Tables Explained",
+  "keyword": "strapping table",
+  "subtitle": "What a tank strapping table is, why level and volume are not proportional in horizontal and spherical tanks, how tanks are calibrated, and how transmitters and DCS systems use the table",
+  "meta_title": "Tank Level to Volume: Strapping Tables Explained",
+  "meta_description": "Strapping table explained: tank level to volume, the horizontal tank formula, calibration methods, transmitter linearisation, interpolation and TOV to GSV.",
+  "summary": "How a strapping table converts a measured tank level into volume, why horizontal and spherical tanks need one, how tanks are calibrated and how transmitters use it.",
+  "card_title": "Tank Strapping Tables",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-26",
+  "status": "published",
+  "sort_order": 10,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "steps",
+    "title": "From Measured Level to Standard Volume",
+    "alt": "Infographic showing how a tank level reading becomes a volume: measure level, read the strapping table, get total observed volume, subtract free water, apply the volume correction factor",
+    "steps": [
+      [
+        "Measure the level",
+        "A level gauge or transmitter gives the liquid height."
+      ],
+      [
+        "Read the table",
+        "The tank capacity table gives the volume at that height, interpolating between rows."
+      ],
+      [
+        "Total observed volume",
+        "The table volume is the TOV, after any shell temperature correction."
+      ],
+      [
+        "Subtract free water",
+        "TOV minus free water gives the gross observed volume, GOV."
+      ],
+      [
+        "Correct to standard",
+        "GOV times the volume correction factor gives GSV at 15 °C or 60 °F."
+      ]
+    ]
+  },
+  "slug": "tank-strapping-tables-explained"
+}

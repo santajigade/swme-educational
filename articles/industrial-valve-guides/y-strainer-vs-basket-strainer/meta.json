@@ -1,0 +1,49 @@
+{
+  "title": "Y Strainer vs Basket Strainer: How to Choose",
+  "keyword": "y strainer",
+  "subtitle": "How Y and basket strainers are built, which way they must be installed, how dirt capacity and pressure drop compare, which screen to choose and when the screen needs cleaning",
+  "meta_title": "Y Strainer vs Basket Strainer: How to Choose",
+  "meta_description": "Y strainer vs basket strainer: construction, orientation, dirt capacity, pressure drop, open area ratio, mesh and perforation sizes, duplex units and cleaning.",
+  "summary": "How a Y strainer and a basket strainer differ in construction, installation, dirt capacity and pressure drop, how to pick the screen, and when to clean it.",
+  "card_title": "Y Strainer vs Basket Strainer",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-26",
+  "status": "published",
+  "sort_order": 9,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "levels",
+    "title": "Strainer Screens from Coarse to Fine",
+    "alt": "Infographic ranking strainer screens from coarse to fine: 1/8 inch and 1/16 inch perforated plate, then 20, 60 and 200 mesh with their openings",
+    "top_label": "Coarse",
+    "bottom_label": "Fine",
+    "levels": [
+      [
+        "1/8 in perforation",
+        "0.125 in holes, 43% open area.",
+        0.92
+      ],
+      [
+        "1/16 in perforation",
+        "0.062 in holes, 30% open area.",
+        0.7
+      ],
+      [
+        "20 mesh",
+        "About 840 micron opening.",
+        0.48
+      ],
+      [
+        "60 mesh",
+        "About 250 micron opening.",
+        0.27
+      ],
+      [
+        "200 mesh",
+        "About 74 micron opening.",
+        0.06
+      ]
+    ]
+  },
+  "slug": "y-strainer-vs-basket-strainer"
+}

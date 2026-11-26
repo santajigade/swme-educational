@@ -1,0 +1,38 @@
+{
+  "title": "How to Calibrate a Pressure Gauge: Step by Step",
+  "keyword": "pressure gauge calibration",
+  "subtitle": "The reference equipment you need, the test points to run up and down, how to read the error as a percent of span, how to adjust zero, span and linearity, and how often to check",
+  "meta_title": "How to Calibrate a Pressure Gauge: Step by Step",
+  "meta_description": "Pressure gauge calibration step by step: deadweight tester or comparator, the 4:1 rule, ASME grades, test points up and down, hysteresis and adjustment.",
+  "summary": "How to calibrate a pressure gauge against a deadweight tester or reference gauge, run test points up and down, work out the error and adjust the movement.",
+  "card_title": "How to Calibrate a Pressure Gauge",
+  "author": "SWME Technical Staff",
+  "published": "2026-11-26",
+  "status": "published",
+  "sort_order": 9,
+  "thumbnail": "thumbnail.webp",
+  "infographic": {
+    "layout": "flow",
+    "title": "Pressure Gauge Calibration Sequence",
+    "alt": "Infographic of the pressure gauge calibration sequence: exercise the gauge, take readings going up, take readings coming down, then adjust and repeat",
+    "steps": [
+      [
+        "Exercise",
+        "Apply full scale for a minute, vent, wait a minute. Repeat 2 to 3 times."
+      ],
+      [
+        "Go up",
+        "Set the pointer exactly on the 25, 50, 75 and 100% marks and read the reference."
+      ],
+      [
+        "Come down",
+        "Check 75, 50 and 25% on the way down to find hysteresis."
+      ],
+      [
+        "Adjust, repeat",
+        "Correct zero, span or linearity, then run all points again."
+      ]
+    ]
+  },
+  "slug": "how-to-calibrate-a-pressure-gauge"
+}
